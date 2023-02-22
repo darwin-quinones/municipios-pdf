@@ -1,12 +1,19 @@
 import React from "react";
-import { Page, Image, Text, Document, StyleSheet, View } from "@react-pdf/renderer";
+import {
+  Page,
+  Image,
+  Text,
+  Document,
+  StyleSheet,
+  View,
+} from "@react-pdf/renderer";
 
 const styles = StyleSheet.create({
   body: {
     paddingTop: 35,
     paddingBottom: 65,
     paddingHorizontal: 35,
-    border:'1px solid black'
+    border: "1px solid black",
   },
   title: {
     fontSize: 24,
@@ -33,55 +40,60 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "grey",
   },
-  view:{
+  view: {
     // display: "flex",
     // flexDirection: "column",
     // justifyContent: "center",
     // alignItems: "center",
-    // border:'1px solid black',
-    width: '816px'
+     border:'1px solid black',
+    width: "816px",
   },
-  row:{
+  row: {
     // border:'1px solid black',
   },
-  border:{
-    border:'1px solid black',
-  }
+  border: {
+    border: "1px solid black",
+  },
 });
 
 const PDFFile = () => {
   return (
     // <Document>
-      <div style={styles.border} className="">
-        <div style={styles.view} className="container container-sm text-center">
-
-          <div className="row align-items-start" style={styles.row}>
-                <div className="col-12 col-lg-3 " style={styles.border}>
-                  <p>Hola1</p>
-                </div>
-                <div className="col-12 col-lg-6" style={styles.border}>
-                  <div className="row">
-                    <div className="row" style={styles.border}>
-                      <h6>REPÚBLICA DE COLOMBIA</h6>
-                    </div>
-                    <div className="row" style={styles.border}>
-                      <h6>DEPARTAMENTO DE BOLÍVAR</h6>
-                    </div>
-                    <div className="row" style={styles.border}>
-                      <h6>ALCALDIA MUNICIPAL DE SANTA ROSA</h6>
-                      <h6>NIT 8904813433</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-12 col-lg-3" style={styles.border}>
-                  <p>Hola3</p>
-                </div>
-
-
+    <div style={styles.border} className="">
+      <div style={styles.view} className="container text-center">
+        <div className="row">
+          <div className="col-lg-3 " style={styles.border}>
+            <p>Hola1</p>
+          </div>
+          <div className="col-lg-6" style={styles.border}>
+            <div className="row" style={styles.border}>
+              <h6>REPÚBLICA DE COLOMBIA</h6>
+            </div>
+            <div className="row" style={styles.border}>
+              <h6>DEPARTAMENTO DE BOLÍVAR</h6>
+            </div>
+            <div className="row" style={styles.border}>
+              <h6>ALCALDIA MUNICIPAL DE SANTA ROSA</h6>
+              <h6>NIT 8904813433</h6>
+            </div>
           </div>
 
-            {/* <Text style={styles.header}>Lorem Ipsum pdf</Text>
+          <div className="col-lg-3" style={styles.border}>
+            <p>Hola3</p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="row">
+            <div className="col-lg-6">Fecha Emisión: 21/07/2022</div>
+            <div className="col-lg-6">Fecha Impresión: 22/02/2023</div>
+          </div>
+          <div>
+            <h5>LIQUIDACIÓN OFICIAL NO. 13112022-28</h5>
+            <h5>IMPUESTO ALUMBRADO PÚBLICO</h5>
+          </div>
+        </div>
+
+        {/* <Text style={styles.header}>Lorem Ipsum pdf</Text>
             <Image
             style={{ maxWidth: "600px", maxHeight: "400" }}
             src="https://picsum.photos/600/400"
@@ -99,14 +111,12 @@ const PDFFile = () => {
             since the 1500s, when an unknown printer took a galley of type and
             scrambled it to make a type specimen book.
             </Text> */}
-
-           
-        </div>
-        {/* <Text style={styles.pageNumber} 
+      </div>
+      {/* <Text style={styles.pageNumber} 
             render={({pageNumber, totalPages}) => `${ pageNumber } / ${ totalPages }`}
             fixed
             /> */}
-      </div>
+    </div>
     // </Document>
   );
 };
