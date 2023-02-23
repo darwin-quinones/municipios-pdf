@@ -14,16 +14,16 @@ function App() {
 
   return (
     <div style={{minHeight: "100vh"}}>
-    <PDFViewer width="1000" height="600">
+    {/* <PDFViewer width="1000" height="600">
 
       <PdfEjemplo></PdfEjemplo>
-    </PDFViewer>
+    </PDFViewer> */}
 
-      {/* <PDFViewer style={{width: "100%", height: "90vh"}}>
+      <PDFViewer style={{width: "100%", height: "90vh"}}>
         <PDFFile></PDFFile>
-      </PDFViewer>  */}
+      </PDFViewer>
 
-      {/* <VistaWeb></VistaWeb> */}
+      <VistaWeb></VistaWeb>
     </div>
   );
 }
