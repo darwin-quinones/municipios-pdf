@@ -3,7 +3,9 @@ import React, {useState} from "react";
 import "./App.css";
 import { Button } from "react-bootstrap";
 import PDFFile from "./components/PDFFile";
-// import { PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
+import VistaWeb from "./components/VistaWeb";
+import { PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
+import PdfEjemplo from "./components/pdfEjemplo";
 
 
 
@@ -11,11 +13,17 @@ import PDFFile from "./components/PDFFile";
 function App() {
 
   return (
-    <div style={{ minHeight: "100vh" }}>
-      {/* <PDFViewer style={{ width: "100%", height: "90vh" }}>
+    <div style={{minHeight: "100vh"}}>
+    <PDFViewer width="1000" height="600">
+
+      <PdfEjemplo></PdfEjemplo>
+    </PDFViewer>
+
+      {/* <PDFViewer style={{width: "100%", height: "90vh"}}>
         <PDFFile></PDFFile>
       </PDFViewer>  */}
-      <PDFFile></PDFFile>
+
+      {/* <VistaWeb></VistaWeb> */}
     </div>
   );
 }

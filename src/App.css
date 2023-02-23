@@ -1,4 +1,11 @@
 
+body{
+  font-family: 'Cabin';
+  src: url('./font/Cabin.ttf');
+  font-weight: 400;
+  /* word-spacing: -2px; */
+}
+
 .view {
     border: 1px solid black;
     width: 816px;
@@ -19,6 +26,23 @@
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
+  font-size: 13px;
+}
+hr {
+  margin: 0;
+  opacity: unset;
+}
+.col-12  {
+  margin: unset;
+  padding: unset !important;
+}
+p{
+  margin: unset;
+  padding: unset !important;
+}
+
+.th-width{
+  width: 45%;
 }
 .initial {
   text-align: initial;
@@ -26,4 +50,18 @@ table, th, td {
 
 .text-grey {
   color: #949292;
+}
+.p-inline {
+  display: inline;
+}
+
+.hr-green{
+  border-top: 5px solid #00B050;
+  margin: 0px;
+  opacity: unset;
+}
+.hr-red {
+  border-top: 10px solid #EA0000; 
+  margin: 0px;
+  opacity: unset;
 }
