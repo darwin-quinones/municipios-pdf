@@ -23,7 +23,7 @@ function App() {
         <PDFFile></PDFFile>
       </PDFViewer>
 
-      <VistaWeb></VistaWeb>
+      {/* <VistaWeb></VistaWeb> */}
     </div>
   );
 }
