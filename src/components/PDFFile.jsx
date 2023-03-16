@@ -198,6 +198,17 @@ const PDFFile = () => {
                         <Text style={[styles.main_text]}>NIT 8904813433</Text>
                       </View>
                     </View>
+
+                    
+                      <View style={styles.col_lg_3} className="col-lg-3 border">
+                        <Image
+                          style={styles.img}
+                          className="pt-3"
+                          src={escudoSantaRosa}
+                          alt="img escudo de colombia"
+                        />
+                      </View>
+                  
                   </View>
                 );
               default:
@@ -235,21 +246,21 @@ const PDFFile = () => {
                         <Text style={[styles.main_text]}>NIT 8904813433</Text>
                       </View>
                     </View>
+
+                    
+                      <View style={styles.col_lg_3} className="col-lg-3 border">
+                        <Image
+                          style={styles.img}
+                          className="pt-3"
+                          src={escudoSantaRosa}
+                          alt="img escudo de colombia"
+                        />
+                      </View>
+                  
                   </View>
                 );
             }
           }}
-
-          <View>
-            <View style={styles.col_lg_3} className="col-lg-3 border">
-              <Image
-                style={styles.img}
-                className="pt-3"
-                src={escudoSantaRosa}
-                alt="img escudo de colombia"
-              />
-            </View>
-          </View>
 
           <View style={[styles.row]}>
             <View style={[styles.row, styles.row_align]}>
