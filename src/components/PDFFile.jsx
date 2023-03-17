@@ -3,231 +3,254 @@ import { Page, Image, Text, Document, View } from "@react-pdf/renderer";
 import { styles } from "./StylosFacturacionMunicipios";
 import escudoColombia from "../img/EscudoColombia.png";
 import escudoSantaRosa from "../img/EscudoSantaRosa.png";
-import fontCabin from "../font/Cabin.ttf";
-import cabinBold from '../font/Cabin-Bold.ttf'
+import escudoMagangue from "../Images/Magangue/Escudo Magangue.png";
+import escudoSanJuanCesar from '../Images/San Juan del Cesar/Escudo San Juan del Cesar.png'
+import escudoAlcaldiaSanJuanCesar from '../Images/San Juan del Cesar/Escudo Alcaldia.png'
+import escudo1AlcaldiaSanJuanC from '../Images/San Juan del Cesar/Escudo 1.png'
 
-Font.register({
-  family: "Cabin",
-  fonts: [
-    {
-      src: cabinBold,
-      fontWeight: "bold"
-    },
-  ],
-});
-const styles = StyleSheet.create({
-  body: {
-    paddingTop: 35,
-    paddingBottom: 65,
-    paddingHorizontal: 45,
-    fontSize: 9,
-  },
-  title: {
-    fontSize: 24,
-    textAlign: "center",
-  },
-  text: {
-    margin: 12,
-    fontSize: 14,
-    textAlign: "justify",
-    fontFamily: "Times-Roman",
-  },
-  header: {
-    fontSize: 12,
-    marginBottom: 20,
-    textAlign: "center",
-    color: "grey",
-  },
-  pageNumber: {
-    position: "absolute",
-    fontSize: 12,
-    bottom: 30,
-    left: 0,
-    right: 0,
-    textAlign: "center",
-    color: "grey",
-  },
-  view: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    // border: "1px solid black",
-    width: "505px",
-  },
-  row: {
-    display: "flex",
-    // -ms-flex-wrap: wrap,
-    flexWrap: "wrap",
-    marginRight: "-15px",
-    marginLeft: "-15px",
-    flexDirection: "row",
-    paddingTop: 4,
-    // paddingBottom: 8,
-    width: "505px",
-  },
-  col_lg_6: {
-    textAlign: "center",
-    width: "285px",
-    border: "1px solid black",
-    display: "flex",
-    justifyContent: "center",
-    flexWrap: "wrap",
-  },
-  col_row_3: {
-    width: "285px",
-    borderBottom: " 1px solid black",
-    flexWrap: "wrap",
-  },
-  col_row_3_2: {
-    width: "285px",
-    flexWrap: "wrap",
-    
-  },
+let alcaldia = "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR";
 
-  color_text_row: {
-    color: "red",
-    fontSize: '13px'
-  },
-  main_text: {
-    fontSize: '12px', 
-   
-    fontStyle: 'italic'
-    
-  },
-  col_lg_3: {
-    width: "110px",
-    height: "70px",
-    border: "1px solid black",
-    alignItems: "center",
-    display: "flex",
-    justifyContent: "center",
-  },
-  p: {
-    paddingLeft: "25px",
-  },
-  text_bold:{
- 
-    fontWeight: 'bold',
-  },
-  row_align: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  p_end: {
-    float: "right",
-    display: "inline-block",
-  },
-  p_center: {
-    alignItems: "center",
-    textAlign: "center",
-    justifyContent: "center",
-  },
+const headerPDF = () => {
+  switch (alcaldia) {
+    case "ALCALDIA MUNICIPAL DE MAGANGUE":
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_lg_3}>
+            <Image
+              style={styles.img}
+              src={escudoMagangue}
+              alt="img escudo de magangue"
+            />
+          </View>
+          <View style={[styles.col_header_magangue]}>
+            <View style={[styles.col_row_3_magangue]}>
+              <Text style={{ fontSize: "9px" }}>
+                ALCALDIA MUNICIPAL DE MAGANGUE
+              </Text>
+              <Text style={{ fontSize: "9px" }}>NIT 8000284322</Text>
+            </View>
 
-  img: {
-    width: "70px",
-    // height: "80px"
-  },
-  line: {
-    width: "505px",
-    border: "2px solid #C4C4C4",
-    display: "inline-block",
-  },
-  italic_text: {
-    fontStyle: "italic",
-    fontWeight: "bold",
-    fontFamily: "Cabin",
-  },
-  table_row_left: {
-    flexDirection: "row",
-    border: "1px solid black",
-    borderBottom: 0,
-  },
-  table_row_right: {
-    flexDirection: "row",
-    borderTop: "1px solid black",
-    borderRight: "1px solid black",
-    textAlign: "center",
-  },
-});
+            <View style={[styles.col_row_3_magangue]}>
+              <Text style={{ fontSize: "8px" }}>
+                LIQUIDACIÓN IMPUESTO ALUMBRADO PÚBLICO
+              </Text>
+            </View>
+            <View style={[styles.col_row_3_2_magangue]}>
+              <Text style={{ fontSize: "9px" }}>
+                SECRETARÍA DE HACIENDA MUNICIPAL
+              </Text>
+            </View>
+          </View>
+          <View style={[styles.col_header_magangue_small]}>
+            <View style={[styles.col_row_3_magangue_small]}>
+              <Text style={{ fontSize: "9px" }}>Vigencia:</Text>
+              <Text style={{ fontSize: "9px" }}>01/08/2018</Text>
+            </View>
 
-let alcaldia = 'ALCALDIA MUNICIPAL DE MAGANGUE'
+            <View style={[styles.col_row_3_magangue_small]}>
+              <Text style={{ fontSize: "9px" }}> </Text>
+            </View>
+            <View style={{ width: "59px" }}>
+              <Text style={{ fontSize: "9px" }}>Versión: 01</Text>
+            </View>
+          </View>
 
+          <View style={styles.col_lg_3}>
+            <Image
+              style={styles.img}
+              src={escudoColombia}
+              alt="img escudo de colombia"
+            />
+          </View>
+        </View>
+      );
+    case 'ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR':
+      return(
+        <View style={styles.row}>
+          <View style={styles.col_img_header_sanJuanC}>
+            <Image
+              style={styles.img}
+              src={escudoSanJuanCesar}
+              alt="img escudo de san juan del cesar"
+            />
+          </View>
+          <View style={[styles.col_img_header_sanJuanC]}>
+            <View style={{width: '125px'}}>
+              <Text style={{ fontSize: "7px" }}>
+              REPUBLICA DE COLOMBIA
+              </Text>
+              <Text style={{ fontSize: "7px" }}>
+              DEPARTAMENTO DE LA GUAJIRA
+              </Text>
+              <Text style={{ fontSize: "7px" }}>
+              MUNICIPIO DE SAN JUAN DEL CESAR
+              </Text>
+              <Text style={{ fontSize: "7px" }}>
+              NIT. 892115179
+              </Text>
+            </View>
+
+          </View>
+          <View style={[styles.col_img_header_sanJuanC]}>
+          <Image
+              style={styles.img}
+              src={escudoAlcaldiaSanJuanCesar}
+              alt="img escudo de alcaldia de san juan del cesar"
+            />
+          </View>
+
+          <View style={styles.col_img_header_sanJuanC}>
+            <Image
+              style={styles.img}
+              src={escudo1AlcaldiaSanJuanC}
+              alt="img escudo 1 de san juan c"
+            />
+          </View>
+        </View>
+      )
+
+    default:
+      return (
+        <View style={styles.row} className="row">
+          <View style={styles.col_lg_3} className="col-lg-3 border">
+            <Image
+              style={styles.img}
+              className="pt-2"
+              src={escudoColombia}
+              alt="img escudo de colombia"
+            />
+          </View>
+          <View style={[styles.col_lg_6]} className="col-lg-6 border">
+            <View style={[styles.col_row_3]} className="row border">
+              <Text style={[styles.color_text_row]} className="text-danger">
+                REPÚBLICA DE COLOMBIA
+              </Text>
+            </View>
+            <View style={[styles.col_row_3]} className="row border">
+              <Text style={[styles.color_text_row]} className="text-danger">
+                DEPARTAMENTO DE BOLÍVAR
+              </Text>
+            </View>
+            <View style={[styles.col_row_3_2]} className="row border">
+              <Text style={[styles.main_text]}>
+                ALCALDIA MUNICIPAL DE SANTA ROSA
+              </Text>
+              <Text style={[styles.main_text]}>NIT 8904813433</Text>
+            </View>
+          </View>
+
+          <View style={styles.col_lg_3} className="col-lg-3 border">
+            <Image
+              style={styles.img}
+              className="pt-3"
+              src={escudoSantaRosa}
+              alt="img escudo de colombia"
+            />
+          </View>
+        </View>
+      );
+  }
+};
+
+const footerPDF = () => {
+  switch (alcaldia) {
+    case "ALCALDIA MUNICIPAL DE MAGANGUE":
+      return (
+        <View>
+          <View style={{ marginTop: "50px", marginBottom: "10px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>DIRECTOR FINANCIERO</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>Magangué (Bolivar)</Text>
+            </View>
+          </View>
+          <View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>"Magangué educada, comunal e incluyente"</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <View style={[styles.line_footer_magangue]}></View>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>
+                Alcadía Municipal de Magangué - Calle 16B No. 16a - 208 Barrio
+                San Martín
+              </Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>Teléfono: 6877720 - 6876020</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <View style={[styles.line_footer_magangue]}></View>
+            </View>
+          </View>
+        </View>
+      );
+    default:
+      return (
+        <View>
+          <View style={{ marginTop: "60px", marginBottom: "10px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>EDGAR GUERRERO</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIO DE HACIENDA</Text>
+            </View>
+          </View>
+          <View>
+            <View
+              style={[
+                styles.view,
+                { borderTop: "3px solid #00B050", margin: "0px" },
+              ]}
+            ></View>
+            <View
+              style={[
+                styles.view,
+                { borderTop: "6px solid #EA0000", margin: "0px" },
+              ]}
+            ></View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>“Unidos Hacemos Más por Santa Rosa”</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>
+                CALLE 16 Nº 27-71. TEL 6297108. Página web:
+                www.santarosadelnorte-bolivar.gov.co
+              </Text>
+            </View>
+          </View>
+        </View>
+      );
+  }
+};
 const PDFFile = () => {
   return (
     <Document>
       <Page style={styles.body} size="A4" className="border">
         <View style={styles.view} className="view container text-center">
-        {
-          (() => {
-            switch(alcaldia) {
-              case 'ALCALDIA MUNICIPAL DE MAGANGUE':
-                return(
-
-
-                  
-
-
-
-
-                )
-              default:
-                return('Hola')
-            }
-          })
-        }
-          <View style={styles.row} className="row">
-            <View style={styles.col_lg_3} className="col-lg-3 border">
-              <Image
-                style={styles.img}
-                className="pt-2"
-                src={escudoColombia}
-                alt="img escudo de colombia"
-              />
-            </View>
-            <View style={[styles.col_lg_6]} className="col-lg-6 border">
-              <View style={[styles.col_row_3]} className="row border">
-                <Text style={[styles.color_text_row]} className="text-danger">
-                  REPÚBLICA DE COLOMBIA
-                </Text>
-              </View>
-              <View style={[styles.col_row_3]} className="row border">
-                <Text style={[styles.color_text_row]} className="text-danger">DEPARTAMENTO DE BOLÍVAR</Text>
-              </View>
-              <View style={[styles.col_row_3_2]} className="row border">
-                <Text style={[styles.main_text]}>
-                  ALCALDIA MUNICIPAL DE SANTA ROSA
-                </Text>
-                <Text style={[styles.main_text]}>NIT 8904813433</Text>
-              </View>
-            </View>
-
-            <View style={styles.col_lg_3} className="col-lg-3 border">
-              <Image
-                style={styles.img}
-                className="pt-3"
-                src={escudoSantaRosa}
-                alt="img escudo de colombia"
-              />
-            </View>
-          </View>
+          {/* FUNTION THAT RETURNS THE HEADER */}
+          {headerPDF()}
 
           <View style={[styles.row]}>
             <View style={[styles.row, styles.row_align]}>
               <View style={[styles.p]}>
-                <Text style={[styles.text_bold]}>Fecha Emisión: 21/07/2022</Text>
+                <Text style={[]}>Fecha Emisión: 21/07/2022</Text>
               </View>
               <View style={[styles.p_end]}>
-                <Text style={[styles.text_bold]}>Fecha Impresión: 22/02/2023</Text>
+                <Text style={[]}>Fecha Impresión: 22/02/2023</Text>
               </View>
             </View>
 
-            <View style={[styles.row, styles.p_center, {marginTop: '10px'}]}>
-                <Text style={[styles.text_bold]}>LIQUIDACIÓN OFICIAL NO. 13112022-28</Text>
+            <View style={[styles.row, styles.p_center, { marginTop: "10px" }]}>
+              <Text style={[]}>LIQUIDACIÓN OFICIAL NO. 13112022-28</Text>
             </View>
 
-            <View style={[styles.row, styles.p_center, {marginBottom: '10px'}]}>
-                <Text style={[styles.text_bold]}>IMPUESTO ALUMBRADO PÚBLICO</Text>
+            <View
+              style={[styles.row, styles.p_center, { marginBottom: "10px" }]}
+            >
+              <Text style={[]}>IMPUESTO ALUMBRADO PÚBLICO</Text>
             </View>
 
             <View style={[styles.line]}></View>
@@ -470,24 +493,7 @@ const PDFFile = () => {
               722 del mismo ordenamiento jurídico, y presentarla en la oficina
               de la Secretaria de Hacienda del Municipio.
             </Text>
-            
-            <View style={{marginTop: '60px', marginBottom: '10px'}}>
-              <View style={[styles.row, styles.p_center]}>
-                  <Text style={{}}>EDGAR GUERRERO</Text>
-              </View>
-              <View style={[styles.row, styles.p_center]}>
-                  <Text>SECRETARIO DE HACIENDA</Text>
-              </View>
-            </View>
-            <View>
-              <View style={[styles.view, {borderTop: '3px solid #00B050', margin: '0px' }]}></View>
-              <View style={[styles.view, {borderTop: '6px solid #EA0000', margin: '0px' }]}></View>
-              <View style={[styles.row, styles.p_center]}><Text>“Unidos Hacemos Más por Santa Rosa”</Text></View>
-              <View style={[styles.row, styles.p_center]}>
-                <Text>CALLE 16 Nº 27-71.     TEL 6297108.     Página web: www.santarosadelnorte-bolivar.gov.co</Text>
-              </View>
-            </View>
-         
+            {footerPDF()}
           </View>
         </View>
         <Text
@@ -503,3 +509,5 @@ const PDFFile = () => {
 };
 
 export default PDFFile;
+
+
