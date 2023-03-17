@@ -5,6 +5,7 @@ import escudoColombia from "../img/EscudoColombia.png";
 import escudoSantaRosa from "../img/EscudoSantaRosa.png";
 import fontCabin from "../font/Cabin.ttf";
 import cabinBold from '../font/Cabin-Bold.ttf'
+
 Font.register({
   family: "Cabin",
   fonts: [
