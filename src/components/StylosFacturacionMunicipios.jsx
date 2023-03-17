@@ -183,18 +183,53 @@ export const styles = StyleSheet.create({
   line_footer_magangue: {
     width: "350px",
     border: "1px solid #C4C4C4",
-    display: "inline-block",
-
   },
 //   Estilos de San juan del cesar
   col_img_header_sanJuanC: {
-    width: "125px",
+    width: "100px",
     height: "70px",
     //border: "1px solid black",
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
     textAlign: "center",
+  },
+  line_footer_sanJuanC: {
+    width: "350px",
+    border: "1px solid #C4C4C4",
+  },
+  row_line: {
+    display: "flex",
+    marginRight: "-15px",
+    marginLeft: "-15px",
+    flexDirection: "row",
+  },
+
+  // Estilos Arjona
+  col_img_header: {
+    width: "100%",
+    height: "80px",
+    border: "1px solid black",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+  },
+
+  // Agustin codazzi
+  col_header_agustinC: {
+    textAlign: "center",
+    width: "280px",
+    border: "1px solid black",
+    display: "flex",
+    justifyContent: "center",
+  },
+
+  col_header_agustinC2: {
+    width: "110px",
+    border: "1px solid black",
+    alignItems: "center",
+    display: "flex",
+    justifyContent: "center",
   }
   
 });

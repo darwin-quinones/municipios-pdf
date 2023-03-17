@@ -4,11 +4,23 @@ import { styles } from "./StylosFacturacionMunicipios";
 import escudoColombia from "../img/EscudoColombia.png";
 import escudoSantaRosa from "../img/EscudoSantaRosa.png";
 import escudoMagangue from "../Images/Magangue/Escudo Magangue.png";
-import escudoSanJuanCesar from '../Images/San Juan del Cesar/Escudo San Juan del Cesar.png'
-import escudoAlcaldiaSanJuanCesar from '../Images/San Juan del Cesar/Escudo Alcaldia.png'
-import escudo1AlcaldiaSanJuanC from '../Images/San Juan del Cesar/Escudo 1.png'
-
-let alcaldia = "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR";
+import escudoSanJuanCesar from "../Images/San Juan del Cesar/Escudo San Juan del Cesar.png";
+import escudoAlcaldiaSanJuanCesar from "../Images/San Juan del Cesar/Escudo Alcaldia.png";
+import escudo1AlcaldiaSanJuanC from "../Images/San Juan del Cesar/Escudo 1.png";
+import escudoAlcaldiaArjona from "../Images/Arjona/Escudo Alcaldia Arjona.png";
+import membreteSanJacinto from "../Images/San Jacinto/Membrete San Jacinto 1.png";
+import membreteElPaso from "../Images/El Paso/Membrete El Paso 1.png";
+import escudosVillaNueva from "../Images/Villanueva-Bolivar/Escudos Villanueva - Colombia.png";
+import escudoAgustinCodazzi from "../Images/Agustin Codazzi/Escudo Agustin Codazzi.png";
+import escudoAgustinCodazzi2 from "../Images/Agustin Codazzi/Escudo Agustin Codazzi 2.png";
+// let alcaldia = "ALCALDIA MUNICIPAL DE MAGANGUE";
+// let alcaldia = "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR";
+// let alcaldia = 'ALCALDIA MUNICIPAL DE ARJONA';
+// let alcaldia = 'ALCALDIA MUNICIPAL DE SAN JACINTO'
+// let alcaldia = 'ALCALDIA MUNICIPAL DE EL PASO'
+// let alcaldia = 'ALCALDIA MUNICIPAL DE SANTA ROSA'
+// let alcaldia = "ALCALDIA MUNICIPAL DE VILLANUEVA-BOLIVAR";
+let alcaldia = "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI";
 
 const headerPDF = () => {
   switch (alcaldia) {
@@ -64,8 +76,8 @@ const headerPDF = () => {
           </View>
         </View>
       );
-    case 'ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR':
-      return(
+    case "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR":
+      return (
         <View style={styles.row}>
           <View style={styles.col_img_header_sanJuanC}>
             <Image
@@ -74,25 +86,20 @@ const headerPDF = () => {
               alt="img escudo de san juan del cesar"
             />
           </View>
-          <View style={[styles.col_img_header_sanJuanC]}>
-            <View style={{width: '125px'}}>
-              <Text style={{ fontSize: "7px" }}>
-              REPUBLICA DE COLOMBIA
+          <View style={[styles.col_img_header_sanJuanC, { width: "200px" }]}>
+            <View style={{ width: "200px" }}>
+              <Text style={{ fontSize: "9px" }}>REPUBLICA DE COLOMBIA</Text>
+              <Text style={{ fontSize: "9px" }}>
+                DEPARTAMENTO DE LA GUAJIRA
               </Text>
-              <Text style={{ fontSize: "7px" }}>
-              DEPARTAMENTO DE LA GUAJIRA
+              <Text style={{ fontSize: "9px" }}>
+                MUNICIPIO DE SAN JUAN DEL CESAR
               </Text>
-              <Text style={{ fontSize: "7px" }}>
-              MUNICIPIO DE SAN JUAN DEL CESAR
-              </Text>
-              <Text style={{ fontSize: "7px" }}>
-              NIT. 892115179
-              </Text>
+              <Text style={{ fontSize: "9px" }}>NIT. 892115179</Text>
             </View>
-
           </View>
           <View style={[styles.col_img_header_sanJuanC]}>
-          <Image
+            <Image
               style={styles.img}
               src={escudoAlcaldiaSanJuanCesar}
               alt="img escudo de alcaldia de san juan del cesar"
@@ -107,8 +114,154 @@ const headerPDF = () => {
             />
           </View>
         </View>
-      )
+      );
+    case "ALCALDIA MUNICIPAL DE ARJONA":
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_img_header}>
+            <Image
+              style={[{ height: "80px" }]}
+              src={escudoAlcaldiaArjona}
+              alt="img escudo de arjona"
+            />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE SAN JACINTO":
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_img_header}>
+            <Image
+              style={[{ maxWidth: "60%" }]}
+              src={membreteSanJacinto}
+              alt="img membrete san jacinto"
+            />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE EL PASO":
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_img_header}>
+            <Image
+              style={[{ maxWidth: "60%" }]}
+              src={membreteElPaso}
+              alt="img membrete el paso"
+            />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE SANTA ROSA":
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_lg_3}>
+            <Image
+              style={styles.img}
+              src={escudoColombia}
+              alt="img escudo de colombia"
+            />
+          </View>
+          <View style={[styles.col_lg_6]}>
+            <View style={[styles.col_row_3]}>
+              <Text style={[styles.color_text_row]}>REPÚBLICA DE COLOMBIA</Text>
+            </View>
+            <View style={[styles.col_row_3]}>
+              <Text style={[styles.color_text_row]}>
+                DEPARTAMENTO DE BOLÍVAR
+              </Text>
+            </View>
+            <View style={[styles.col_row_3_2]}>
+              <Text style={[styles.main_text]}>
+                ALCALDIA MUNICIPAL DE SANTA ROSA
+              </Text>
+              <Text style={[styles.main_text]}>NIT 8904813433</Text>
+            </View>
+          </View>
 
+          <View style={styles.col_lg_3}>
+            <Image
+              style={styles.img}
+              src={escudoSantaRosa}
+              alt="img escudo de colombia"
+            />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE VILLANUEVA-BOLIVAR":
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_img_header}>
+            <Image
+              style={[{ maxWidth: "60%" }]}
+              src={escudosVillaNueva}
+              alt="img escudos villanueva Bolivar"
+            />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI":
+      return (
+        <View>
+          <View style={styles.row}>
+            <View style={styles.col_lg_3}>
+              <Image
+                style={styles.img}
+                src={escudoAgustinCodazzi}
+                alt="img escudo de agustin codazzi"
+              />
+            </View>
+            <View style={[styles.col_header_agustinC]}>
+              <Text style={{ fontSize: "10px" }}>REPUBLICA DE COLOMBIA</Text>
+              <Text style={{ fontSize: "10px" }}>DEPARTAMENTO DEL CESAR</Text>
+              <Text style={{ fontSize: "10px" }}>
+                ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI CESAR
+              </Text>
+              <Text style={{ fontSize: "10px" }}>NIT 8000965581</Text>
+            </View>
+
+            <View style={styles.col_lg_3}>
+              <Image
+                style={styles.img}
+                src={escudoAgustinCodazzi2}
+                alt="img escudo de agustin codazzi2"
+              />
+            </View>
+          </View>
+          <View style={[styles.row, {paddingTop: '1px',}]}>
+            <View style={[styles.col_header_agustinC2, { height: '20px'}]}>
+              <Text style={{ fontSize: "5px" }}>VERSIÓN: 01</Text>
+              <Text style={{ fontSize: "5px" }}>ACTUALIZACION: 13/02/2020</Text>
+            </View>
+            <View style={[styles.col_header_agustinC]}>
+              <Text style={{ fontSize: "10px" }}>SECRETARIA DE HACIENDA</Text>
+            </View>
+            <View
+              style={[styles.col_header_agustinC2, {width: '65px'}]}
+            >
+              <View
+                styles={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Text style={{ fontSize: "5px" }}>ESTADO: CONTROLADO</Text>
+              </View>
+            </View>
+            <View style={[styles.col_header_agustinC2, {width: '45px'}]}>
+              <View
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Text style={{ fontSize: "5px" }}>Página 1 de 2</Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      );
     default:
       return (
         <View style={styles.row} className="row">
@@ -181,8 +334,42 @@ const footerPDF = () => {
             <View style={[styles.row, styles.p_center]}>
               <Text>Teléfono: 6877720 - 6876020</Text>
             </View>
-            <View style={[styles.row, styles.p_center]}>
+            <View style={[styles.row_line, styles.p_center]}>
               <View style={[styles.line_footer_magangue]}></View>
+            </View>
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR":
+      return (
+        <View>
+          <View style={{ marginTop: "50px", marginBottom: "10px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>DIEGO VEGA</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIO DE HACIENDA</Text>
+            </View>
+          </View>
+          <View style={{ marginTop: "10px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>
+                Dirección: Calle 7 # 9ª-36 Avenida Manuel Antonio Dávila –
+                Teléfono: (095) 7740090
+              </Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>
+                – (095) 7740000 www.sanjuandelcesar-laguajira.gov.co - Email:
+              </Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>
+                alcaldia@sanjuandelcesar-laguajira.gov.co Código Postal: 444030
+              </Text>
+            </View>
+            <View style={[styles.row_line, styles.p_center]}>
+              <View style={[styles.line_footer_sanJuanC]}></View>
             </View>
           </View>
         </View>
@@ -509,5 +696,3 @@ const PDFFile = () => {
 };
 
 export default PDFFile;
-
-
