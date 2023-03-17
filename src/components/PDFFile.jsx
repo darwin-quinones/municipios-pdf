@@ -13,6 +13,9 @@ import membreteElPaso from "../Images/El Paso/Membrete El Paso 1.png";
 import escudosVillaNueva from "../Images/Villanueva-Bolivar/Escudos Villanueva - Colombia.png";
 import escudoAgustinCodazzi from "../Images/Agustin Codazzi/Escudo Agustin Codazzi.png";
 import escudoAgustinCodazzi2 from "../Images/Agustin Codazzi/Escudo Agustin Codazzi 2.png";
+import escudoElCopey1 from "../Images/El Copey/Escudo 1 El Copey.png";
+import escudoElCopey2 from "../Images/El Copey/Escudo 2 El Copey.png";
+import escudoLaPaz from '../Images/La Paz/Escudo La Paz.png'
 // let alcaldia = "ALCALDIA MUNICIPAL DE MAGANGUE";
 // let alcaldia = "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR";
 // let alcaldia = 'ALCALDIA MUNICIPAL DE ARJONA';
@@ -20,7 +23,10 @@ import escudoAgustinCodazzi2 from "../Images/Agustin Codazzi/Escudo Agustin Coda
 // let alcaldia = 'ALCALDIA MUNICIPAL DE EL PASO'
 // let alcaldia = 'ALCALDIA MUNICIPAL DE SANTA ROSA'
 // let alcaldia = "ALCALDIA MUNICIPAL DE VILLANUEVA-BOLIVAR";
-let alcaldia = "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI";
+// let alcaldia = "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI";
+// let alcaldia = "ALCALDIA MUNICIPAL DE EL COPEY";
+let alcaldia = 'ALCALDIA MUNICIPAL DE LA PAZ'
+
 
 const headerPDF = () => {
   switch (alcaldia) {
@@ -227,17 +233,15 @@ const headerPDF = () => {
               />
             </View>
           </View>
-          <View style={[styles.row, {paddingTop: '1px',}]}>
-            <View style={[styles.col_header_agustinC2, { height: '20px'}]}>
+          <View style={[styles.row, { paddingTop: "1px" }]}>
+            <View style={[styles.col_header_agustinC2, { height: "20px" }]}>
               <Text style={{ fontSize: "5px" }}>VERSIÓN: 01</Text>
               <Text style={{ fontSize: "5px" }}>ACTUALIZACION: 13/02/2020</Text>
             </View>
             <View style={[styles.col_header_agustinC]}>
               <Text style={{ fontSize: "10px" }}>SECRETARIA DE HACIENDA</Text>
             </View>
-            <View
-              style={[styles.col_header_agustinC2, {width: '65px'}]}
-            >
+            <View style={[styles.col_header_agustinC2, { width: "65px" }]}>
               <View
                 styles={{
                   display: "flex",
@@ -248,7 +252,7 @@ const headerPDF = () => {
                 <Text style={{ fontSize: "5px" }}>ESTADO: CONTROLADO</Text>
               </View>
             </View>
-            <View style={[styles.col_header_agustinC2, {width: '45px'}]}>
+            <View style={[styles.col_header_agustinC2, { width: "45px" }]}>
               <View
                 style={{
                   display: "flex",
@@ -262,29 +266,93 @@ const headerPDF = () => {
           </View>
         </View>
       );
-    default:
+    case "ALCALDIA MUNICIPAL DE EL COPEY":
       return (
-        <View style={styles.row} className="row">
-          <View style={styles.col_lg_3} className="col-lg-3 border">
+        <View style={styles.row}>
+          <View style={styles.col_lg_3}>
             <Image
               style={styles.img}
-              className="pt-2"
+              src={escudoElCopey1}
+              alt="img escudo 1 de El Copey"
+            />
+          </View>
+          <View style={[styles.col_header_agustinC]}>
+            <View style={[{ borderBottom: " 1px solid black", color: "red" }]}>
+              <Text style={{ fontSize: "10px" }}>RÉPUBLICA DE COLOMBIA</Text>
+            </View>
+            <View style={[{ borderBottom: " 1px solid black", color: "red" }]}>
+              <Text style={{ fontSize: "10px" }}>DEPARTAMENTO DEL CESAR</Text>
+            </View>
+            <View style={[{ }]}>
+              <Text style={{ fontSize: "10px" }}>
+                ALCALDIA MUNICIPAL DE EL COPEY{" "}
+              </Text>
+              <Text style={{ fontSize: "10px" }}>NIT 8000965875</Text>
+            </View>
+          </View>
+
+          <View style={styles.col_lg_3}>
+            <Image
+              style={[{height: '60px'}]}
+              src={escudoElCopey2}
+              alt="img escudo 2 de El Copey"
+            />
+          </View>
+        </View>
+      );
+    case 'ALCALDIA MUNICIPAL DE LA PAZ':
+      return(
+        <View style={styles.row}>
+          <View style={styles.col_lg_3}>
+            <Image
+              style={styles.img}
+              src={escudoLaPaz}
+              alt="img escudo de la paz"
+            />
+          </View>
+          <View style={[styles.col_header_agustinC]}>
+            <View style={[{ borderBottom: " 1px solid black", }]}>
+              <Text style={{ fontSize: "10px" }}>ALCALDIA MUNICIPAL DE LA PAZ</Text>
+              <Text>NIT 8000966051</Text>
+            </View>
+          
+            <View style={[{ }]}>
+              <Text style={{ fontSize: "10px" }}>
+                ALCALDIA MUNICIPAL DE EL COPEY{" "}
+              </Text>
+              <Text style={{ fontSize: "10px" }}>NIT 8000965875</Text>
+            </View>
+          </View>
+
+          <View style={styles.col_lg_3}>
+            <Image
+              style={styles.img}
+              src={escudoLaPaz}
+              alt="img escudo de la paz"
+            />
+          </View>
+        </View>
+      )
+    default:
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_lg_3}>
+            <Image
+              style={styles.img}
               src={escudoColombia}
               alt="img escudo de colombia"
             />
           </View>
-          <View style={[styles.col_lg_6]} className="col-lg-6 border">
-            <View style={[styles.col_row_3]} className="row border">
-              <Text style={[styles.color_text_row]} className="text-danger">
-                REPÚBLICA DE COLOMBIA
-              </Text>
+          <View style={[styles.col_lg_6]}>
+            <View style={[styles.col_row_3]}>
+              <Text style={[styles.color_text_row]}>REPÚBLICA DE COLOMBIA</Text>
             </View>
-            <View style={[styles.col_row_3]} className="row border">
-              <Text style={[styles.color_text_row]} className="text-danger">
+            <View style={[styles.col_row_3]}>
+              <Text style={[styles.color_text_row]}>
                 DEPARTAMENTO DE BOLÍVAR
               </Text>
             </View>
-            <View style={[styles.col_row_3_2]} className="row border">
+            <View style={[styles.col_row_3_2]}>
               <Text style={[styles.main_text]}>
                 ALCALDIA MUNICIPAL DE SANTA ROSA
               </Text>
@@ -292,10 +360,9 @@ const headerPDF = () => {
             </View>
           </View>
 
-          <View style={styles.col_lg_3} className="col-lg-3 border">
+          <View style={styles.col_lg_3}>
             <Image
               style={styles.img}
-              className="pt-3"
               src={escudoSantaRosa}
               alt="img escudo de colombia"
             />
