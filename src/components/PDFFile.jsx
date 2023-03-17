@@ -1,23 +1,16 @@
 import React from "react";
-import {
-  Page,
-  Image,
-  Text,
-  Document,
-  StyleSheet,
-  View,
-  Font,
-} from "@react-pdf/renderer";
+import { Page, Image, Text, Document, View } from "@react-pdf/renderer";
+import { styles } from "./StylosFacturacionMunicipios";
 import escudoColombia from "../img/EscudoColombia.png";
 import escudoSantaRosa from "../img/EscudoSantaRosa.png";
 import fontCabin from "../font/Cabin.ttf";
-import cabinBold from "../font/Cabin-Bold.ttf";
+import cabinBold from '../font/Cabin-Bold.ttf'
 Font.register({
   family: "Cabin",
   fonts: [
     {
       src: cabinBold,
-      fontWeight: "bold",
+      fontWeight: "bold"
     },
   ],
 });
@@ -88,16 +81,18 @@ const styles = StyleSheet.create({
   col_row_3_2: {
     width: "285px",
     flexWrap: "wrap",
+    
   },
 
   color_text_row: {
     color: "red",
-    fontSize: "13px",
+    fontSize: '13px'
   },
   main_text: {
-    fontSize: "12px",
-
-    fontStyle: "italic",
+    fontSize: '12px', 
+   
+    fontStyle: 'italic'
+    
   },
   col_lg_3: {
     width: "110px",
@@ -110,8 +105,9 @@ const styles = StyleSheet.create({
   p: {
     paddingLeft: "25px",
   },
-  text_bold: {
-    fontWeight: "bold",
+  text_bold:{
+ 
+    fontWeight: 'bold',
   },
   row_align: {
     display: "flex",
@@ -154,138 +150,83 @@ const styles = StyleSheet.create({
   },
 });
 
-let alcaldia = "ALCALDIA MUNICIPAL DE MAGANGUE";
+let alcaldia = 'ALCALDIA MUNICIPAL DE MAGANGUE'
 
 const PDFFile = () => {
   return (
     <Document>
       <Page style={styles.body} size="A4" className="border">
         <View style={styles.view} className="view container text-center">
-          {() => {
-            switch (alcaldia) {
-              case "ALCALDIA MUNICIPAL DE MAGANGUE":
-                return (
-                  <View style={styles.row} className="row">
-                    <View style={styles.col_lg_3} className="col-lg-3 border">
-                      <Image
-                        style={styles.img}
-                        className="pt-2"
-                        src={escudoColombia}
-                        alt="img escudo de colombia"
-                      />
-                    </View>
-                    <View style={[styles.col_lg_6]} className="col-lg-6 border">
-                      <View style={[styles.col_row_3]} className="row border">
-                        <Text
-                          style={[styles.color_text_row]}
-                          className="text-danger"
-                        >
-                          REPÚBLICA DE COLOMBIA
-                        </Text>
-                      </View>
-                      <View style={[styles.col_row_3]} className="row border">
-                        <Text
-                          style={[styles.color_text_row]}
-                          className="text-danger"
-                        >
-                          DEPARTAMENTO DE BOLÍVAR
-                        </Text>
-                      </View>
-                      <View style={[styles.col_row_3_2]} className="row border">
-                        <Text style={[styles.main_text]}>
-                          ALCALDIA MUNICIPAL DE SANTA ROSA
-                        </Text>
-                        <Text style={[styles.main_text]}>NIT 8904813433</Text>
-                      </View>
-                    </View>
+        {
+          (() => {
+            switch(alcaldia) {
+              case 'ALCALDIA MUNICIPAL DE MAGANGUE':
+                return(
 
-                    
-                      <View style={styles.col_lg_3} className="col-lg-3 border">
-                        <Image
-                          style={styles.img}
-                          className="pt-3"
-                          src={escudoSantaRosa}
-                          alt="img escudo de colombia"
-                        />
-                      </View>
+
                   
-                  </View>
-                );
+
+
+
+
+                )
               default:
-                return (
-                  <View style={styles.row} className="row">
-                    <View style={styles.col_lg_3} className="col-lg-3 border">
-                      <Image
-                        style={styles.img}
-                        className="pt-2"
-                        src={escudoColombia}
-                        alt="img escudo de colombia"
-                      />
-                    </View>
-                    <View style={[styles.col_lg_6]} className="col-lg-6 border">
-                      <View style={[styles.col_row_3]} className="row border">
-                        <Text
-                          style={[styles.color_text_row]}
-                          className="text-danger"
-                        >
-                          REPÚBLICA DE COLOMBIA
-                        </Text>
-                      </View>
-                      <View style={[styles.col_row_3]} className="row border">
-                        <Text
-                          style={[styles.color_text_row]}
-                          className="text-danger"
-                        >
-                          DEPARTAMENTO DE BOLÍVAR
-                        </Text>
-                      </View>
-                      <View style={[styles.col_row_3_2]} className="row border">
-                        <Text style={[styles.main_text]}>
-                          ALCALDIA MUNICIPAL DE SANTA ROSA
-                        </Text>
-                        <Text style={[styles.main_text]}>NIT 8904813433</Text>
-                      </View>
-                    </View>
-
-                    
-                      <View style={styles.col_lg_3} className="col-lg-3 border">
-                        <Image
-                          style={styles.img}
-                          className="pt-3"
-                          src={escudoSantaRosa}
-                          alt="img escudo de colombia"
-                        />
-                      </View>
-                  
-                  </View>
-                );
+                return('Hola')
             }
-          }}
+          })
+        }
+          <View style={styles.row} className="row">
+            <View style={styles.col_lg_3} className="col-lg-3 border">
+              <Image
+                style={styles.img}
+                className="pt-2"
+                src={escudoColombia}
+                alt="img escudo de colombia"
+              />
+            </View>
+            <View style={[styles.col_lg_6]} className="col-lg-6 border">
+              <View style={[styles.col_row_3]} className="row border">
+                <Text style={[styles.color_text_row]} className="text-danger">
+                  REPÚBLICA DE COLOMBIA
+                </Text>
+              </View>
+              <View style={[styles.col_row_3]} className="row border">
+                <Text style={[styles.color_text_row]} className="text-danger">DEPARTAMENTO DE BOLÍVAR</Text>
+              </View>
+              <View style={[styles.col_row_3_2]} className="row border">
+                <Text style={[styles.main_text]}>
+                  ALCALDIA MUNICIPAL DE SANTA ROSA
+                </Text>
+                <Text style={[styles.main_text]}>NIT 8904813433</Text>
+              </View>
+            </View>
+
+            <View style={styles.col_lg_3} className="col-lg-3 border">
+              <Image
+                style={styles.img}
+                className="pt-3"
+                src={escudoSantaRosa}
+                alt="img escudo de colombia"
+              />
+            </View>
+          </View>
 
           <View style={[styles.row]}>
             <View style={[styles.row, styles.row_align]}>
               <View style={[styles.p]}>
-                <Text style={[styles.text_bold]}>
-                  Fecha Emisión: 21/07/2022
-                </Text>
+                <Text style={[styles.text_bold]}>Fecha Emisión: 21/07/2022</Text>
               </View>
               <View style={[styles.p_end]}>
-                <Text style={[styles.text_bold]}>
-                  Fecha Impresión: 22/02/2023
-                </Text>
+                <Text style={[styles.text_bold]}>Fecha Impresión: 22/02/2023</Text>
               </View>
             </View>
 
-            <View style={[styles.row, styles.p_center, { marginTop: "10px" }]}>
-              <Text style={[styles.text_bold]}>
-                LIQUIDACIÓN OFICIAL NO. 13112022-28
-              </Text>
+            <View style={[styles.row, styles.p_center, {marginTop: '10px'}]}>
+                <Text style={[styles.text_bold]}>LIQUIDACIÓN OFICIAL NO. 13112022-28</Text>
             </View>
 
-            <View
-              style={[styles.row, styles.p_center, { marginBottom: "10px" }]}
-            >
-              <Text style={[styles.text_bold]}>IMPUESTO ALUMBRADO PÚBLICO</Text>
+            <View style={[styles.row, styles.p_center, {marginBottom: '10px'}]}>
+                <Text style={[styles.text_bold]}>IMPUESTO ALUMBRADO PÚBLICO</Text>
             </View>
 
             <View style={[styles.line]}></View>
@@ -528,38 +469,24 @@ const PDFFile = () => {
               722 del mismo ordenamiento jurídico, y presentarla en la oficina
               de la Secretaria de Hacienda del Municipio.
             </Text>
-
-            <View style={{ marginTop: "60px", marginBottom: "10px" }}>
+            
+            <View style={{marginTop: '60px', marginBottom: '10px'}}>
               <View style={[styles.row, styles.p_center]}>
-                <Text style={{}}>EDGAR GUERRERO</Text>
+                  <Text style={{}}>EDGAR GUERRERO</Text>
               </View>
               <View style={[styles.row, styles.p_center]}>
-                <Text>SECRETARIO DE HACIENDA</Text>
+                  <Text>SECRETARIO DE HACIENDA</Text>
               </View>
             </View>
             <View>
-              <View
-                style={[
-                  styles.view,
-                  { borderTop: "3px solid #00B050", margin: "0px" },
-                ]}
-              ></View>
-              <View
-                style={[
-                  styles.view,
-                  { borderTop: "6px solid #EA0000", margin: "0px" },
-                ]}
-              ></View>
+              <View style={[styles.view, {borderTop: '3px solid #00B050', margin: '0px' }]}></View>
+              <View style={[styles.view, {borderTop: '6px solid #EA0000', margin: '0px' }]}></View>
+              <View style={[styles.row, styles.p_center]}><Text>“Unidos Hacemos Más por Santa Rosa”</Text></View>
               <View style={[styles.row, styles.p_center]}>
-                <Text>“Unidos Hacemos Más por Santa Rosa”</Text>
-              </View>
-              <View style={[styles.row, styles.p_center]}>
-                <Text>
-                  CALLE 16 Nº 27-71. TEL 6297108. Página web:
-                  www.santarosadelnorte-bolivar.gov.co
-                </Text>
+                <Text>CALLE 16 Nº 27-71.     TEL 6297108.     Página web: www.santarosadelnorte-bolivar.gov.co</Text>
               </View>
             </View>
+         
           </View>
         </View>
         <Text
