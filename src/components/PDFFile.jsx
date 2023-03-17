@@ -10,6 +10,10 @@ import escudo1AlcaldiaSanJuanC from '../Images/San Juan del Cesar/Escudo 1.png'
 
 let alcaldia = "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR";
 
+
+
+
+
 const headerPDF = () => {
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE MAGANGUE":
@@ -74,6 +78,7 @@ const headerPDF = () => {
               alt="img escudo de san juan del cesar"
             />
           </View>
+
           <View style={[styles.col_img_header_sanJuanC]}>
             <View style={{width: '125px'}}>
               <Text style={{ fontSize: "7px" }}>
@@ -340,7 +345,7 @@ const PDFFile = () => {
             </View>
             <View style={[styles.table_row_left]}>
               <View style={{ width: 197 }}>
-                <Text>SECTOR:</Text>
+                <Text>SECTOR: </Text>
               </View>
             </View>
             <View style={[styles.table_row_right]}>
