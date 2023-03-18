@@ -15,7 +15,12 @@ import escudoAgustinCodazzi from "../Images/Agustin Codazzi/Escudo Agustin Codaz
 import escudoAgustinCodazzi2 from "../Images/Agustin Codazzi/Escudo Agustin Codazzi 2.png";
 import escudoElCopey1 from "../Images/El Copey/Escudo 1 El Copey.png";
 import escudoElCopey2 from "../Images/El Copey/Escudo 2 El Copey.png";
-import escudoLaPaz from '../Images/La Paz/Escudo La Paz.png'
+import escudoLaPaz from "../Images/La Paz/Escudo La Paz.png";
+import escudoRiohacha from "../Images/Riohacha/Escudo Riohacha.png";
+import membreteTurbaco1 from "../Images/Turbaco/Membrete 1 Turbaco.png";
+import escudoFacatativa from "../Images/Facatativa/Escudo Facatativa.png";
+import escudoCundinamarca from "../Images/Facatativa/Escudo Cundinamarca.png";
+import membreteAguachica1 from '../Images/Aguachica/Membrete 1 - Aguachica.png'
 // let alcaldia = "ALCALDIA MUNICIPAL DE MAGANGUE";
 // let alcaldia = "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR";
 // let alcaldia = 'ALCALDIA MUNICIPAL DE ARJONA';
@@ -25,8 +30,11 @@ import escudoLaPaz from '../Images/La Paz/Escudo La Paz.png'
 // let alcaldia = "ALCALDIA MUNICIPAL DE VILLANUEVA-BOLIVAR";
 // let alcaldia = "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI";
 // let alcaldia = "ALCALDIA MUNICIPAL DE EL COPEY";
-let alcaldia = 'ALCALDIA MUNICIPAL DE LA PAZ'
-
+// let alcaldia = "ALCALDIA MUNICIPAL DE LA PAZ";
+// let alcaldia = "ALCALDIA MUNICIPAL DE RIOHACHA";
+// let alcaldia = "ALCALDIA MUNICIPAL DE TURBACO";
+// let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
+let alcaldia = 'ALCALDIA MUNICIPAL DE AGUACHIC';
 
 const headerPDF = () => {
   switch (alcaldia) {
@@ -34,11 +42,7 @@ const headerPDF = () => {
       return (
         <View style={styles.row}>
           <View style={styles.col_lg_3}>
-            <Image
-              style={styles.img}
-              src={escudoMagangue}
-              alt="img escudo de magangue"
-            />
+            <Image style={styles.img} src={escudoMagangue} />
           </View>
           <View style={[styles.col_header_magangue]}>
             <View style={[styles.col_row_3_magangue]}>
@@ -74,11 +78,7 @@ const headerPDF = () => {
           </View>
 
           <View style={styles.col_lg_3}>
-            <Image
-              style={styles.img}
-              src={escudoColombia}
-              alt="img escudo de colombia"
-            />
+            <Image style={styles.img} src={escudoColombia} />
           </View>
         </View>
       );
@@ -86,11 +86,7 @@ const headerPDF = () => {
       return (
         <View style={styles.row}>
           <View style={styles.col_img_header_sanJuanC}>
-            <Image
-              style={styles.img}
-              src={escudoSanJuanCesar}
-              alt="img escudo de san juan del cesar"
-            />
+            <Image style={styles.img} src={escudoSanJuanCesar} />
           </View>
           <View style={[styles.col_img_header_sanJuanC, { width: "200px" }]}>
             <View style={{ width: "200px" }}>
@@ -105,19 +101,11 @@ const headerPDF = () => {
             </View>
           </View>
           <View style={[styles.col_img_header_sanJuanC]}>
-            <Image
-              style={styles.img}
-              src={escudoAlcaldiaSanJuanCesar}
-              alt="img escudo de alcaldia de san juan del cesar"
-            />
+            <Image style={styles.img} src={escudoAlcaldiaSanJuanCesar} />
           </View>
 
           <View style={styles.col_img_header_sanJuanC}>
-            <Image
-              style={styles.img}
-              src={escudo1AlcaldiaSanJuanC}
-              alt="img escudo 1 de san juan c"
-            />
+            <Image style={styles.img} src={escudo1AlcaldiaSanJuanC} />
           </View>
         </View>
       );
@@ -125,11 +113,7 @@ const headerPDF = () => {
       return (
         <View style={styles.row}>
           <View style={styles.col_img_header}>
-            <Image
-              style={[{ height: "80px" }]}
-              src={escudoAlcaldiaArjona}
-              alt="img escudo de arjona"
-            />
+            <Image style={[{ height: "80px" }]} src={escudoAlcaldiaArjona} />
           </View>
         </View>
       );
@@ -137,11 +121,7 @@ const headerPDF = () => {
       return (
         <View style={styles.row}>
           <View style={styles.col_img_header}>
-            <Image
-              style={[{ maxWidth: "60%" }]}
-              src={membreteSanJacinto}
-              alt="img membrete san jacinto"
-            />
+            <Image style={[{ maxWidth: "60%" }]} src={membreteSanJacinto} />
           </View>
         </View>
       );
@@ -149,11 +129,7 @@ const headerPDF = () => {
       return (
         <View style={styles.row}>
           <View style={styles.col_img_header}>
-            <Image
-              style={[{ maxWidth: "60%" }]}
-              src={membreteElPaso}
-              alt="img membrete el paso"
-            />
+            <Image style={[{ maxWidth: "60%" }]} src={membreteElPaso} />
           </View>
         </View>
       );
@@ -161,11 +137,7 @@ const headerPDF = () => {
       return (
         <View style={styles.row}>
           <View style={styles.col_lg_3}>
-            <Image
-              style={styles.img}
-              src={escudoColombia}
-              alt="img escudo de colombia"
-            />
+            <Image style={styles.img} src={escudoColombia} />
           </View>
           <View style={[styles.col_lg_6]}>
             <View style={[styles.col_row_3]}>
@@ -185,11 +157,7 @@ const headerPDF = () => {
           </View>
 
           <View style={styles.col_lg_3}>
-            <Image
-              style={styles.img}
-              src={escudoSantaRosa}
-              alt="img escudo de colombia"
-            />
+            <Image style={styles.img} src={escudoSantaRosa} />
           </View>
         </View>
       );
@@ -197,11 +165,7 @@ const headerPDF = () => {
       return (
         <View style={styles.row}>
           <View style={styles.col_img_header}>
-            <Image
-              style={[{ maxWidth: "60%" }]}
-              src={escudosVillaNueva}
-              alt="img escudos villanueva Bolivar"
-            />
+            <Image style={[{ maxWidth: "60%" }]} src={escudosVillaNueva} />
           </View>
         </View>
       );
@@ -210,11 +174,7 @@ const headerPDF = () => {
         <View>
           <View style={styles.row}>
             <View style={styles.col_lg_3}>
-              <Image
-                style={styles.img}
-                src={escudoAgustinCodazzi}
-                alt="img escudo de agustin codazzi"
-              />
+              <Image style={styles.img} src={escudoAgustinCodazzi} />
             </View>
             <View style={[styles.col_header_agustinC]}>
               <Text style={{ fontSize: "10px" }}>REPUBLICA DE COLOMBIA</Text>
@@ -226,11 +186,7 @@ const headerPDF = () => {
             </View>
 
             <View style={styles.col_lg_3}>
-              <Image
-                style={styles.img}
-                src={escudoAgustinCodazzi2}
-                alt="img escudo de agustin codazzi2"
-              />
+              <Image style={styles.img} src={escudoAgustinCodazzi2} />
             </View>
           </View>
           <View style={[styles.row, { paddingTop: "1px" }]}>
@@ -243,7 +199,7 @@ const headerPDF = () => {
             </View>
             <View style={[styles.col_header_agustinC2, { width: "65px" }]}>
               <View
-                styles={{
+                style={{
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -270,20 +226,16 @@ const headerPDF = () => {
       return (
         <View style={styles.row}>
           <View style={styles.col_lg_3}>
-            <Image
-              style={styles.img}
-              src={escudoElCopey1}
-              alt="img escudo 1 de El Copey"
-            />
+            <Image style={styles.img} src={escudoElCopey1} />
           </View>
-          <View style={[styles.col_header_agustinC]}>
+          <View style={[styles.col_header_copey]}>
             <View style={[{ borderBottom: " 1px solid black", color: "red" }]}>
               <Text style={{ fontSize: "10px" }}>RÉPUBLICA DE COLOMBIA</Text>
             </View>
             <View style={[{ borderBottom: " 1px solid black", color: "red" }]}>
               <Text style={{ fontSize: "10px" }}>DEPARTAMENTO DEL CESAR</Text>
             </View>
-            <View style={[{ }]}>
+            <View style={[{}]}>
               <Text style={{ fontSize: "10px" }}>
                 ALCALDIA MUNICIPAL DE EL COPEY{" "}
               </Text>
@@ -292,81 +244,100 @@ const headerPDF = () => {
           </View>
 
           <View style={styles.col_lg_3}>
+            <Image style={[{ height: "60px" }]} src={escudoElCopey2} />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE LA PAZ":
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_lg_3}>
+            <Image style={styles.img} src={escudoLaPaz} />
+          </View>
+          <View style={[styles.col_header_laPaz]}>
+            <View style={[styles.col_header_laPaz_small2]}>
+              <Text style={{ fontSize: "12px" }}>
+                ALCALDIA MUNICIPAL DE LA PAZ
+              </Text>
+              <Text style={{ fontSize: "12px" }}>NIT 8000966051</Text>
+            </View>
+            <View style={[{ display: "flex", flexDirection: "row" }]}>
+              <View style={[styles.col_header_laPaz_small, { width: "78px" }]}>
+                <Text>Codigo: 110</Text>
+              </View>
+              <View style={[styles.col_header_laPaz_small, { width: "118px" }]}>
+                <Text>Versión: 1 Fecha 01-2013</Text>
+              </View>
+              <View style={[styles.col_header_laPaz_small, { width: "78px" }]}>
+                <Text>Pág: 1 de 1</Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={styles.col_lg_3}>
+            <Image style={styles.img} src={escudoLaPaz} />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE RIOHACHA":
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_img_header}>
+            <Image style={[{ maxWidth: "50%" }]} src={escudoRiohacha} />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE TURBACO":
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_img_header}>
+            <Image style={[{ maxWidth: "70%" }]} src={membreteTurbaco1} />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE FACATATIVA":
+      return (
+        <View style={styles.row}>
+          <View style={styles.col_lg_3}>
+            <Image style={styles.img} src={escudoFacatativa} />
+          </View>
+          <View style={[styles.col_header_facatativa]}>
+            <View style={[]}>
+              <Text style={[styles.text_facatativa]}>
+                LIQUIDACIÓN OFICIAL DE IMPUESTO DE ALUMBRADO PÚBLICO
+              </Text>
+              <Text style={[styles.text_facatativa]}>
+                REPÚBLICA DE COLOMBIA
+              </Text>
+              <Text style={[styles.text_facatativa]}>
+                DEPARTAMENTO DE CUNDINAMARCA
+              </Text>
+              <Text style={[styles.text_facatativa]}>
+                MUNICIPIO DE FACATATIVA
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.col_lg_3}>
             <Image
-              style={[{height: '60px'}]}
-              src={escudoElCopey2}
-              alt="img escudo 2 de El Copey"
+              style={[styles.img, { width: "100%" }]}
+              src={escudoCundinamarca}
             />
           </View>
         </View>
       );
-    case 'ALCALDIA MUNICIPAL DE LA PAZ':
-      return(
+    case 'ALCALDIA MUNICIPAL DE AGUACHICA':
+      return (
         <View style={styles.row}>
-          <View style={styles.col_lg_3}>
-            <Image
-              style={styles.img}
-              src={escudoLaPaz}
-              alt="img escudo de la paz"
-            />
-          </View>
-          <View style={[styles.col_header_agustinC]}>
-            <View style={[{ borderBottom: " 1px solid black", }]}>
-              <Text style={{ fontSize: "10px" }}>ALCALDIA MUNICIPAL DE LA PAZ</Text>
-              <Text>NIT 8000966051</Text>
-            </View>
-          
-            <View style={[{ }]}>
-              <Text style={{ fontSize: "10px" }}>
-                ALCALDIA MUNICIPAL DE EL COPEY{" "}
-              </Text>
-              <Text style={{ fontSize: "10px" }}>NIT 8000965875</Text>
-            </View>
-          </View>
-
-          <View style={styles.col_lg_3}>
-            <Image
-              style={styles.img}
-              src={escudoLaPaz}
-              alt="img escudo de la paz"
-            />
-          </View>
+        <View style={[styles.col_img_header, {border: '0px'}]}>
+          <Image style={[{ maxWidth: "100%" }]} src={membreteAguachica1} />
         </View>
+      </View>
       )
     default:
       return (
         <View style={styles.row}>
-          <View style={styles.col_lg_3}>
-            <Image
-              style={styles.img}
-              src={escudoColombia}
-              alt="img escudo de colombia"
-            />
-          </View>
-          <View style={[styles.col_lg_6]}>
-            <View style={[styles.col_row_3]}>
-              <Text style={[styles.color_text_row]}>REPÚBLICA DE COLOMBIA</Text>
-            </View>
-            <View style={[styles.col_row_3]}>
-              <Text style={[styles.color_text_row]}>
-                DEPARTAMENTO DE BOLÍVAR
-              </Text>
-            </View>
-            <View style={[styles.col_row_3_2]}>
-              <Text style={[styles.main_text]}>
-                ALCALDIA MUNICIPAL DE SANTA ROSA
-              </Text>
-              <Text style={[styles.main_text]}>NIT 8904813433</Text>
-            </View>
-          </View>
-
-          <View style={styles.col_lg_3}>
-            <Image
-              style={styles.img}
-              src={escudoSantaRosa}
-              alt="img escudo de colombia"
-            />
-          </View>
+          <Text style={{color: 'red'}}>NOTA: NO EXISTE CABEZERA PARA ESTÁ ALCALDIA. POR FAVOR VERIFICAR CON LOS INGENIEROS DE SISTEMAS</Text>
         </View>
       );
   }
@@ -482,8 +453,8 @@ const footerPDF = () => {
 const PDFFile = () => {
   return (
     <Document>
-      <Page style={styles.body} size="A4" className="border">
-        <View style={styles.view} className="view container text-center">
+      <Page style={styles.body} size="A4">
+        <View style={styles.view}>
           {/* FUNTION THAT RETURNS THE HEADER */}
           {headerPDF()}
 
@@ -507,11 +478,13 @@ const PDFFile = () => {
               <Text style={[]}>IMPUESTO ALUMBRADO PÚBLICO</Text>
             </View>
 
-            <View style={[styles.line]}></View>
-            <Text
-              style={{ paddingBottom: "15px", marginTop: "5px" }}
-              className="justify-text pb-2"
-            >
+            <View
+              style={[
+                styles.view,
+                { borderTop: "3px solid #C4C4C4", margin: "0px" },
+              ]}
+            ></View>
+            <Text style={{ paddingBottom: "15px", marginTop: "5px" }}>
               La Secretaría de Hacienda del Municipio de SANTA ROSA, en uso de
               las atribuciones conferidas por los artículos 684, 686, 688 del
               Estatuto Tributario Nacional y El ACUERDO MUNICIPAL 015 DE 2007

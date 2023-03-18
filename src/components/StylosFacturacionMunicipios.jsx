@@ -145,16 +145,13 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     width: "222px",
     border: "1px solid black",
-    display: "grid",
+
     justifyContent: "center",
- 
-    
   },
-  
+
   col_row_3_magangue: {
     width: "222px",
     borderBottom: " 1px solid black",
- 
   },
   col_row_3_2_magangue: {
     width: "222px",
@@ -169,22 +166,24 @@ export const styles = StyleSheet.create({
   col_row_3_magangue_small: {
     width: "59px",
     borderBottom: " 1px solid black",
- 
   },
 
-  col_header_center_magangue:{
-     textAlign: "center",
+  col_header_center_magangue: {
+    textAlign: "center",
     width: "225px",
     border: "1px solid black",
     display: "flex",
     justifyContent: "center",
-
   },
   line_footer_magangue: {
     width: "350px",
     border: "1px solid #C4C4C4",
   },
-//   Estilos de San juan del cesar
+  // style={[
+  //   styles.view,
+  //   { borderTop: "3px solid #C4C4C4", margin: "0px" },
+  // ]}
+  //   Estilos de San juan del cesar
   col_img_header_sanJuanC: {
     width: "100px",
     height: "70px",
@@ -230,6 +229,47 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
-  }
-  
+  },
+  // El copey
+  col_header_copey: {
+    textAlign: "center",
+    width: "280px",
+    border: "1px solid black",
+    display: "flex",
+    justifyContent: "center",
+  },
+
+  // La paz
+  col_header_laPaz: {
+    textAlign: "center",
+    width: "280px",
+    border: "1px solid black",
+    display: "flex",
+    justifyContent: "center",
+  },
+  col_header_laPaz_small: {
+    textAlign: "center",
+    justifyContent: "center",
+    border: "1px solid black",
+    margin: "4px",
+    height: "17px",
+    color: "red",
+  },
+  col_header_laPaz_small2: {
+    border: " 1px solid black",
+    marginLeft: "4px",
+    marginRight: "4px",
+    height: "30px",
+  },
+
+  // Facatativa
+  // La paz
+  col_header_facatativa: {
+    textAlign: "center",
+    width: "280px",
+    border: "1px solid black",
+    display: "flex",
+    justifyContent: "center",
+  },
+  text_facatativa: { fontSize: "8.5px", padding: "2px" },
 });
