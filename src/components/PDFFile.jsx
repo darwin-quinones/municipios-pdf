@@ -20,7 +20,7 @@ import escudoRiohacha from "../Images/Riohacha/Escudo Riohacha.png";
 import membreteTurbaco1 from "../Images/Turbaco/Membrete 1 Turbaco.png";
 import escudoFacatativa from "../Images/Facatativa/Escudo Facatativa.png";
 import escudoCundinamarca from "../Images/Facatativa/Escudo Cundinamarca.png";
-import membreteAguachica1 from '../Images/Aguachica/Membrete 1 - Aguachica.png'
+import membreteAguachica1 from "../Images/Aguachica/Membrete 1 - Aguachica.png";
 // let alcaldia = "ALCALDIA MUNICIPAL DE MAGANGUE";
 // let alcaldia = "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR";
 // let alcaldia = 'ALCALDIA MUNICIPAL DE ARJONA';
@@ -33,8 +33,8 @@ import membreteAguachica1 from '../Images/Aguachica/Membrete 1 - Aguachica.png'
 // let alcaldia = "ALCALDIA MUNICIPAL DE LA PAZ";
 // let alcaldia = "ALCALDIA MUNICIPAL DE RIOHACHA";
 // let alcaldia = "ALCALDIA MUNICIPAL DE TURBACO";
-// let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
-let alcaldia = 'ALCALDIA MUNICIPAL DE AGUACHIC';
+let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
+// let alcaldia = "ALCALDIA MUNICIPAL DE AGUACHICA";
 
 const headerPDF = () => {
   switch (alcaldia) {
@@ -326,18 +326,80 @@ const headerPDF = () => {
           </View>
         </View>
       );
-    case 'ALCALDIA MUNICIPAL DE AGUACHICA':
+    case "ALCALDIA MUNICIPAL DE AGUACHICA":
       return (
         <View style={styles.row}>
-        <View style={[styles.col_img_header, {border: '0px'}]}>
-          <Image style={[{ maxWidth: "100%" }]} src={membreteAguachica1} />
+          <View style={[styles.col_img_header, { border: "0px" }]}>
+            <Image style={[{ maxWidth: "100%" }]} src={membreteAguachica1} />
+          </View>
         </View>
-      </View>
-      )
+      );
     default:
       return (
         <View style={styles.row}>
-          <Text style={{color: 'red'}}>NOTA: NO EXISTE CABEZERA PARA ESTÁ ALCALDIA. POR FAVOR VERIFICAR CON LOS INGENIEROS DE SISTEMAS</Text>
+          <Text style={{ color: "red" }}>
+            NOTA: NO EXISTE CABEZERA PARA ESTÁ ALCALDIA. POR FAVOR VERIFICAR CON
+            LOS INGENIEROS DE SISTEMAS
+          </Text>
+        </View>
+      );
+  }
+};
+
+const fechasPDF = () => {
+  switch (alcaldia) {
+    case "ALCALDIA MUNICIPAL DE FACATATIVA":
+      break;
+    default:
+      return (
+        <View style={[styles.row, styles.row_align]}>
+          <View style={[styles.p]}>
+            <Text style={[]}>Fecha Emisión: 21/07/2022</Text>
+          </View>
+          <View style={[styles.p_end]}>
+            <Text style={[]}>Fecha Impresión: 22/02/2023</Text>
+          </View>
+        </View>
+      );
+  }
+};
+
+const mainText = () => {
+  switch (alcaldia) {
+    case "ALCALDIA MUNICIPAL DE FACATATIVA":
+      return (
+        <View style={{border: "1px solid black", marginBottom: "2px"}}>
+          <Text style={{ paddingBottom: "5px", margin: "5px", textAlign: "center", fontSize: '10.5px' }}>
+            La Secretaría de Hacienda del Municipio de SANTA ROSA, en uso de las
+            atribuciones conferidas por los artículos 684, 686, 688 del Estatuto
+            Tributario Nacional y El ACUERDO MUNICIPAL 015 DE 2007 por medio del
+            cual se actualiza el Estatuto Tributario Municipal, expide la
+            presente Liquidación Oficial del impuesto de Alumbrado Público:
+          </Text>
+        </View>
+      );
+    default:
+      return (
+        <View>
+          <View style={[styles.row, styles.p_center, { marginTop: "10px" }]}>
+            <Text style={[]}>LIQUIDACIÓN OFICIAL NO. 13112022-28</Text>
+          </View>
+          <View style={[styles.row, styles.p_center, { marginBottom: "10px" }]}>
+            <Text style={[]}>IMPUESTO ALUMBRADO PÚBLICO</Text>
+          </View>
+          <View
+            style={[
+              styles.view,
+              { borderTop: "3px solid #C4C4C4", margin: "0px" },
+            ]}
+          ></View>
+          <Text style={{ paddingBottom: "15px", marginTop: "5px" }}>
+            La Secretaría de Hacienda del Municipio de SANTA ROSA, en uso de las
+            atribuciones conferidas por los artículos 684, 686, 688 del Estatuto
+            Tributario Nacional y El ACUERDO MUNICIPAL 015 DE 2007 por medio del
+            cual se actualiza el Estatuto Tributario Municipal, expide la
+            presente Liquidación Oficial del impuesto de Alumbrado Público:
+          </Text>
         </View>
       );
   }
@@ -459,39 +521,12 @@ const PDFFile = () => {
           {headerPDF()}
 
           <View style={[styles.row]}>
-            <View style={[styles.row, styles.row_align]}>
-              <View style={[styles.p]}>
-                <Text style={[]}>Fecha Emisión: 21/07/2022</Text>
-              </View>
-              <View style={[styles.p_end]}>
-                <Text style={[]}>Fecha Impresión: 22/02/2023</Text>
-              </View>
-            </View>
+            {/* // FECHAS */}
+            {fechasPDF()}
 
-            <View style={[styles.row, styles.p_center, { marginTop: "10px" }]}>
-              <Text style={[]}>LIQUIDACIÓN OFICIAL NO. 13112022-28</Text>
-            </View>
+            {/* MAIN TEXT */}
+            {mainText()}
 
-            <View
-              style={[styles.row, styles.p_center, { marginBottom: "10px" }]}
-            >
-              <Text style={[]}>IMPUESTO ALUMBRADO PÚBLICO</Text>
-            </View>
-
-            <View
-              style={[
-                styles.view,
-                { borderTop: "3px solid #C4C4C4", margin: "0px" },
-              ]}
-            ></View>
-            <Text style={{ paddingBottom: "15px", marginTop: "5px" }}>
-              La Secretaría de Hacienda del Municipio de SANTA ROSA, en uso de
-              las atribuciones conferidas por los artículos 684, 686, 688 del
-              Estatuto Tributario Nacional y El ACUERDO MUNICIPAL 015 DE 2007
-              por medio del cual se actualiza el Estatuto Tributario Municipal,
-              expide la presente Liquidación Oficial del impuesto de Alumbrado
-              Público:
-            </Text>
             <View style={[styles.table_row_left]}>
               <View style={{ width: 197 }}>
                 <Text>CONTRIBUYENTE:</Text>
@@ -661,9 +696,7 @@ const PDFFile = () => {
                 <Text>CONSIGNAR EN LA SIGUIENTE CUENTA</Text>
               </View>
             </View>
-
             {/* Last table */}
-
             <View style={[styles.table_row_left]}>
               <View style={{ width: 240 }}>
                 <Text>CUENTA DE AHORROS DEL BANCO DE OCCIDENTE: </Text>
