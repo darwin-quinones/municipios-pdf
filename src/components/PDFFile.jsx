@@ -1,5 +1,5 @@
 import React from "react";
-import { Page, Image, Text, Document, View } from "@react-pdf/renderer";
+import { Page, Image, Text, Document, View, Note } from "@react-pdf/renderer";
 import { styles } from "./StylosFacturacionMunicipios";
 import escudoColombia from "../img/EscudoColombia.png";
 import escudoSantaRosa from "../img/EscudoSantaRosa.png";
@@ -35,6 +35,9 @@ import membreteAguachica1 from "../Images/Aguachica/Membrete 1 - Aguachica.png";
 // let alcaldia = "ALCALDIA MUNICIPAL DE TURBACO";
 let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
 // let alcaldia = "ALCALDIA MUNICIPAL DE AGUACHICA";
+
+
+const bancoFacatativa = 'BANCO DE LA MICROEMPRESA DE COLOMBIA S.A. (MIBANCO S.A.) - FACATATIVA'
 
 const headerPDF = () => {
   switch (alcaldia) {
@@ -405,21 +408,98 @@ const mainText = () => {
   }
 };
 
+
+
 const bodyPDF = () => {
   switch (alcaldia) {
     case 'ALCALDIA MUNICIPAL DE FACATATIVA':
       return (
-        <View style={[styles.row, {}]}>
-          <Text>2</Text>
-          <Text>0</Text>
-          <Text>2</Text>
-          <Text>2</Text>
+        <View style={[styles.row, { border: '1px solid black' }]}>
+
+          <Text>1. AÑO GRABABLE:</Text>
+
+
+          <Text style={[styles.text_border]} >2</Text>
+          <Text style={[styles.text_border]} >0</Text>
+          <Text style={[styles.text_border]} >2</Text>
+          <Text style={[styles.text_border, { marginRight: '20px' }]} >2</Text>
+
+
+
           <Text>2. PERIODO:</Text>
-          <Text>E</Text>
-          <Text>N</Text>
-          <Text>E</Text>
-          <Text>R</Text>
-          <Text>O</Text>
+          <Text style={[styles.text_border]} >E</Text>
+          <Text style={[styles.text_border]} >N</Text>
+          <Text style={[styles.text_border]} >E</Text>
+          <Text style={[styles.text_border]} >R</Text>
+          <Text style={[styles.text_border]} >O</Text>
+
+          {/* A. INFORMACIÓN DEL CONTRIBUYENTE */}
+
+          <View style={[styles.row, { borderTop: '1px solid black', }]}>
+
+            <Text>A. INFORMACIÓN DEL CONTRIBUYENTE</Text>
+          </View>
+          <View style={[styles.row, { borderTop: '1px solid black', }]}>
+
+            <Text>3. APELLIDOS Y NOMBRES O RAZÓN SOCIAL</Text>
+          </View>
+
+          {/* BANCO DE LA MICROEMPRESA DE COLOMBIA S.A. (MIBANCO S.A.) - FACATATIVA */}
+          <View style={[styles.row,]}>
+
+            {
+              [...bancoFacatativa].map((letter, index) => {
+                return (
+                  <Text style={[styles.text_border]} key={index}>{letter}</Text>
+                )
+              })
+
+            }
+          </View>
+          <View style={[styles.row,]}>
+            <Text>4. IDENTIFICACIÓN DEL RESPONSABLE</Text>
+          </View>
+          {/* TABLE */}
+          <View style={[]}>
+            <View style={[ styles.row,]}>
+              <Text style={[ styles.table_row1, {}]}>CC</Text>
+              <Text style={[ styles.table_row1,{}]}>NIT</Text>
+              <Text style={[ styles.table_row1,{}]}>TI</Text>
+              <Text style={[ styles.table_row1,{}]}>CE</Text>
+              <Text style={[ styles.table_row2,{}]}>NÚMERO</Text>
+              <Text style={[ styles.table_row1,{}]}>DV</Text>
+              <Text style={[ styles.table_row3,{}]}>5. TELÉFONO FIJO O MÓVIL</Text>
+            </View>
+            <View>
+
+            <View style={[ styles.row,]}>
+              <Text style={[ styles.table_row1,  {}]}>CC</Text>
+              <Text style={[ styles.table_row1,  {}]}>X</Text>
+              <Text style={[ styles.table_row1,  {}]}>TI</Text>
+              <Text style={[ styles.table_row1,  {}]}>CE</Text>
+
+              {/* NUMEROS */}
+              
+               
+                <Text style={[ styles.text_border,{}]}>8</Text>
+                <Text style={[ styles.text_border,{}]}>6</Text>
+                <Text style={[ styles.text_border,{}]}>0</Text>
+                <Text style={[ styles.text_border,{}]}>0</Text>
+                <Text style={[ styles.text_border,{}]}>25</Text>
+                <Text style={[ styles.text_border,{}]}>9</Text>
+                <Text style={[ styles.text_border,{}]}>7</Text>
+                <Text style={[ styles.text_border,{}]}>1</Text>
+         
+                 {/* NUMEROS */}
+
+             
+
+              <Text style={[ styles.table_row1,{}]}>DV</Text>
+              <Text style={[ styles.table_row3,{}]}>5. TELÉFONO FIJO O MÓVIL</Text>
+            </View>
+            </View>
+
+          </View>
 
 
         </View>
@@ -781,7 +861,7 @@ const PDFFile = () => {
             {mainText()}
 
             {/* PDF BODY */}
-            { bodyPDF() }
+            {bodyPDF()}
 
             {footerPDF()}
           </View>

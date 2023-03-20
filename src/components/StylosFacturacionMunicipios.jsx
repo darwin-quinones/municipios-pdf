@@ -274,4 +274,22 @@ export const styles = StyleSheet.create({
     marginRight: '2px'
   },
   text_facatativa: { fontSize: "8.5px", padding: "2px" },
+
+  text_border: {
+    border: '1px solid black',
+    padding: '2px'
+  },
+  table_row1:{
+    width: '5%',
+    marginRight: '2px',
+    border: '1px solid black',
+    justifyContent: 'center',
+    textAlign: 'center'
+  },
+  table_row2:{
+    width: '15%'
+  },
+  table_row3: {
+    width: '20%'
+  }
 });
