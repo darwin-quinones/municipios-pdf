@@ -56,14 +56,14 @@ export const styles = StyleSheet.create({
     display: "flex",
     // -ms-flex-wrap: wrap,
     flexWrap: "wrap",
-    marginRight: "-15px",
-    marginLeft: "-15px",
+    // marginRight: "-15px",
+    // marginLeft: "-15px",
     flexDirection: "row",
     paddingTop: 4,
     // paddingBottom: 8,
     width: "505px",
   },
-  col_lg_6: {
+  col_header_santaR: {
     textAlign: "center",
     width: "285px",
     border: "1px solid black",
@@ -266,10 +266,12 @@ export const styles = StyleSheet.create({
   // La paz
   col_header_facatativa: {
     textAlign: "center",
-    width: "280px",
+    width: "281px",
     border: "1px solid black",
     display: "flex",
     justifyContent: "center",
+    marginLeft: '2px',
+    marginRight: '2px'
   },
   text_facatativa: { fontSize: "8.5px", padding: "2px" },
 });

@@ -139,7 +139,7 @@ const headerPDF = () => {
           <View style={styles.col_lg_3}>
             <Image style={styles.img} src={escudoColombia} />
           </View>
-          <View style={[styles.col_lg_6]}>
+          <View style={[styles.col_header_santaR]}>
             <View style={[styles.col_row_3]}>
               <Text style={[styles.color_text_row]}>REPÚBLICA DE COLOMBIA</Text>
             </View>
@@ -368,7 +368,7 @@ const mainText = () => {
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE FACATATIVA":
       return (
-        <View style={{border: "1px solid black", marginBottom: "2px"}}>
+        <View style={{ border: "1px solid black", marginBottom: "2px" }}>
           <Text style={{ paddingBottom: "5px", margin: "5px", textAlign: "center", fontSize: '10.5px' }}>
             La Secretaría de Hacienda del Municipio de SANTA ROSA, en uso de las
             atribuciones conferidas por los artículos 684, 686, 688 del Estatuto
@@ -404,6 +404,259 @@ const mainText = () => {
       );
   }
 };
+
+const bodyPDF = () => {
+  switch (alcaldia) {
+    case 'ALCALDIA MUNICIPAL DE FACATATIVA':
+      return (
+        <View style={[styles.row, {}]}>
+          <Text>2</Text>
+          <Text>0</Text>
+          <Text>2</Text>
+          <Text>2</Text>
+          <Text>2. PERIODO:</Text>
+          <Text>E</Text>
+          <Text>N</Text>
+          <Text>E</Text>
+          <Text>R</Text>
+          <Text>O</Text>
+
+
+        </View>
+      )
+    default:
+      return (
+        <View style={[styles.row]}>
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 197 }}>
+              <Text>CONTRIBUYENTE:</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 305 }}>
+              <Text>
+                INTERCONEXION ELECTRICA S.A. E.S.P. - ISA SANTA ROSA:
+              </Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 197 }}>
+              <Text>NIT:</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 305 }}>
+              <Text>8600166103</Text>
+            </View>
+          </View>
+          <View
+            style={[
+              styles.table_row_left,
+              { marginBottom: "10px", borderBottom: "1px solid black" },
+            ]}
+          >
+            <View style={{ width: 197 }}>
+              <Text>DIRECCIÓN:</Text>
+            </View>
+          </View>
+          <View
+            style={[
+              styles.table_row_right,
+              { marginBottom: "10px", borderBottom: "1px solid black" },
+            ]}
+          >
+            <View style={{ width: 305 }}>
+              <Text>CALLE 12 SUR # 8 - 168 MEDELLIN - ANTIOQUIA</Text>
+            </View>
+          </View>
+          {/* Brake */}
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 197 }}>
+              <Text>PERIODO CORRIENTE:</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 305 }}>
+              <Text>NOVIEMBRE de 2022</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 197 }}>
+              <Text>NO. LIQUIDACIONES VENCIDAS:</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 305 }}>
+              <Text>0</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 197 }}>
+              <Text>VALOR TOTAL LIQUIDACIONES VENCIDAS: </Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 305 }}>
+              <Text>$0</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 197 }}>
+              <Text>SECTOR:</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 305 }}>
+              <Text>DISTRIBUCION Y COMERCIALIZACION DE ENERGIA</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 197 }}>
+              <Text>TARIFA:</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 305 }}>
+              <Text>15 SMMLV</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 197 }}>
+              <Text>BASE GRAVABLE / UVT / S.M.L.V.: </Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 305 }}>
+              <Text>$ 1.000.000</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 197 }}>
+              <Text>VALOR IMPUESTO</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 305 }}>
+              <Text>$ 15.000.000</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 197 }}>
+              <Text>VALOR TOTAL PERIODO:</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 305 }}>
+              <Text>$ 15.000.000</Text>
+            </View>
+          </View>
+          <View
+            style={[
+              styles.table_row_left,
+              { borderBottom: "1px solid black" },
+            ]}
+          >
+            <View style={{ width: 197 }}>
+              <Text>FECHA VENCIMIENTO:</Text>
+            </View>
+          </View>
+          <View
+            style={[
+              styles.table_row_right,
+              { borderBottom: "1px solid black" },
+            ]}
+          >
+            <View style={{ width: 305 }}>
+              <Text>30/11/2022</Text>
+            </View>
+          </View>
+          <Text style={{ marginTop: "5px" }}>
+            Adjunto relación de valores liquidados.
+          </Text>
+          <Text style={{ marginTop: "15px", marginBottom: "15px" }}>
+            El Contribuyente es sujeto pasivo del impuesto de Alumbrado
+            Público por cuanto: i) Se analizó y determinó que es usuario
+            potencial del servicio ii) Está clasificado de acuerdo a los
+            principios de progresividad y equidad en materia tributaria. iii)
+            Opera o posee cualquier tipo de infraestructura en el Municipio
+            y/o tiene establecimiento físico en la jurisdicción del Municipio
+            y iv) en virtud de lo anterior, cumple el hecho generador del
+            impuesto de alumbrado público que es el beneficio por la
+            prestación del mismo. Los contribuyentes del Impuesto de Alumbrado
+            Público están en la obligación de aplicar las tarifas
+            correspondientes a cada sector y de realizar el pago mensual,
+            según lo establecido en el ACUERDO MUNICIPAL 015 DE 2007. Las
+            facturas vencidas generan intereses moratorios por cada día de
+            retraso.
+          </Text>
+          <View
+            style={[styles.row, styles.p_center, { marginBottom: "10px" }]}
+          >
+            <View style={{ margin: 5 }}>
+              <Text>CONSIGNAR EN LA SIGUIENTE CUENTA</Text>
+            </View>
+          </View>
+          {/* Last table */}
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 240 }}>
+              <Text>CUENTA DE AHORROS DEL BANCO DE OCCIDENTE: </Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 262 }}>
+              <Text>800-96222-7</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_left]}>
+            <View style={{ width: 240 }}>
+              <Text>A NOMBRE DE:</Text>
+            </View>
+          </View>
+          <View style={[styles.table_row_right]}>
+            <View style={{ width: 262 }}>
+              <Text>
+                ACCION FIDUCIARIA PATRIMONIOS AUTONOMOS FA 4675 FIDEICOMISO
+                ALUMBRADO PUBLICO SANTA ROSA
+              </Text>
+            </View>
+          </View>
+          <View
+            style={[
+              styles.table_row_left,
+              { borderBottom: "1px solid black" },
+            ]}
+          >
+            <View style={{ width: 240 }}>
+              <Text>NIT:</Text>
+            </View>
+          </View>
+          <View
+            style={[
+              styles.table_row_right,
+              { borderBottom: "1px solid black" },
+            ]}
+          >
+            <View style={{ width: 262 }}>
+              <Text>8050129210</Text>
+            </View>
+          </View>
+          <Text style={{ marginTop: "5px" }}>
+            Enviar soporte de pago al correo electrónico:
+            alumbradopublicosantarosa@gmail.com
+          </Text>
+          <Text style={{ marginTop: "10px" }}>
+            Contra la presente Liquidación Oficial del Impuesto de Alumbrado
+            Público, procede el recurso de reconsideración de que trata el
+            artículo 720 del Estatuto Tributario Nacional, el cual deberá
+            interponerse dentro de los dos (2) meses siguientes a su
+            notificación, cumpliendo los requisitos señalados en el artículo
+            722 del mismo ordenamiento jurídico, y presentarla en la oficina
+            de la Secretaria de Hacienda del Municipio.
+          </Text>
+        </View>
+      )
+  }
+}
 
 const footerPDF = () => {
   switch (alcaldia) {
@@ -527,232 +780,9 @@ const PDFFile = () => {
             {/* MAIN TEXT */}
             {mainText()}
 
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 197 }}>
-                <Text>CONTRIBUYENTE:</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 305 }}>
-                <Text>
-                  INTERCONEXION ELECTRICA S.A. E.S.P. - ISA SANTA ROSA:
-                </Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 197 }}>
-                <Text>NIT:</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 305 }}>
-                <Text>8600166103</Text>
-              </View>
-            </View>
-            <View
-              style={[
-                styles.table_row_left,
-                { marginBottom: "10px", borderBottom: "1px solid black" },
-              ]}
-            >
-              <View style={{ width: 197 }}>
-                <Text>DIRECCIÓN:</Text>
-              </View>
-            </View>
-            <View
-              style={[
-                styles.table_row_right,
-                { marginBottom: "10px", borderBottom: "1px solid black" },
-              ]}
-            >
-              <View style={{ width: 305 }}>
-                <Text>CALLE 12 SUR # 8 - 168 MEDELLIN - ANTIOQUIA</Text>
-              </View>
-            </View>
-            {/* Brake */}
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 197 }}>
-                <Text>PERIODO CORRIENTE:</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 305 }}>
-                <Text>NOVIEMBRE de 2022</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 197 }}>
-                <Text>NO. LIQUIDACIONES VENCIDAS:</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 305 }}>
-                <Text>0</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 197 }}>
-                <Text>VALOR TOTAL LIQUIDACIONES VENCIDAS: </Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 305 }}>
-                <Text>$0</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 197 }}>
-                <Text>SECTOR:</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 305 }}>
-                <Text>DISTRIBUCION Y COMERCIALIZACION DE ENERGIA</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 197 }}>
-                <Text>TARIFA:</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 305 }}>
-                <Text>15 SMMLV</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 197 }}>
-                <Text>BASE GRAVABLE / UVT / S.M.L.V.: </Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 305 }}>
-                <Text>$ 1.000.000</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 197 }}>
-                <Text>VALOR IMPUESTO</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 305 }}>
-                <Text>$ 15.000.000</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 197 }}>
-                <Text>VALOR TOTAL PERIODO:</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 305 }}>
-                <Text>$ 15.000.000</Text>
-              </View>
-            </View>
-            <View
-              style={[
-                styles.table_row_left,
-                { borderBottom: "1px solid black" },
-              ]}
-            >
-              <View style={{ width: 197 }}>
-                <Text>FECHA VENCIMIENTO:</Text>
-              </View>
-            </View>
-            <View
-              style={[
-                styles.table_row_right,
-                { borderBottom: "1px solid black" },
-              ]}
-            >
-              <View style={{ width: 305 }}>
-                <Text>30/11/2022</Text>
-              </View>
-            </View>
-            <Text style={{ marginTop: "5px" }}>
-              Adjunto relación de valores liquidados.
-            </Text>
-            <Text style={{ marginTop: "15px", marginBottom: "15px" }}>
-              El Contribuyente es sujeto pasivo del impuesto de Alumbrado
-              Público por cuanto: i) Se analizó y determinó que es usuario
-              potencial del servicio ii) Está clasificado de acuerdo a los
-              principios de progresividad y equidad en materia tributaria. iii)
-              Opera o posee cualquier tipo de infraestructura en el Municipio
-              y/o tiene establecimiento físico en la jurisdicción del Municipio
-              y iv) en virtud de lo anterior, cumple el hecho generador del
-              impuesto de alumbrado público que es el beneficio por la
-              prestación del mismo. Los contribuyentes del Impuesto de Alumbrado
-              Público están en la obligación de aplicar las tarifas
-              correspondientes a cada sector y de realizar el pago mensual,
-              según lo establecido en el ACUERDO MUNICIPAL 015 DE 2007. Las
-              facturas vencidas generan intereses moratorios por cada día de
-              retraso.
-            </Text>
-            <View
-              style={[styles.row, styles.p_center, { marginBottom: "10px" }]}
-            >
-              <View style={{ margin: 5 }}>
-                <Text>CONSIGNAR EN LA SIGUIENTE CUENTA</Text>
-              </View>
-            </View>
-            {/* Last table */}
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 240 }}>
-                <Text>CUENTA DE AHORROS DEL BANCO DE OCCIDENTE: </Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 262 }}>
-                <Text>800-96222-7</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_left]}>
-              <View style={{ width: 240 }}>
-                <Text>A NOMBRE DE:</Text>
-              </View>
-            </View>
-            <View style={[styles.table_row_right]}>
-              <View style={{ width: 262 }}>
-                <Text>
-                  ACCION FIDUCIARIA PATRIMONIOS AUTONOMOS FA 4675 FIDEICOMISO
-                  ALUMBRADO PUBLICO SANTA ROSA
-                </Text>
-              </View>
-            </View>
-            <View
-              style={[
-                styles.table_row_left,
-                { borderBottom: "1px solid black" },
-              ]}
-            >
-              <View style={{ width: 240 }}>
-                <Text>NIT:</Text>
-              </View>
-            </View>
-            <View
-              style={[
-                styles.table_row_right,
-                { borderBottom: "1px solid black" },
-              ]}
-            >
-              <View style={{ width: 262 }}>
-                <Text>8050129210</Text>
-              </View>
-            </View>
-            <Text style={{ marginTop: "5px" }}>
-              Enviar soporte de pago al correo electrónico:
-              alumbradopublicosantarosa@gmail.com
-            </Text>
-            <Text style={{ marginTop: "10px" }}>
-              Contra la presente Liquidación Oficial del Impuesto de Alumbrado
-              Público, procede el recurso de reconsideración de que trata el
-              artículo 720 del Estatuto Tributario Nacional, el cual deberá
-              interponerse dentro de los dos (2) meses siguientes a su
-              notificación, cumpliendo los requisitos señalados en el artículo
-              722 del mismo ordenamiento jurídico, y presentarla en la oficina
-              de la Secretaria de Hacienda del Municipio.
-            </Text>
+            {/* PDF BODY */}
+            { bodyPDF() }
+
             {footerPDF()}
           </View>
         </View>
