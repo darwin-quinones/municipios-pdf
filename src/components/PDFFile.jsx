@@ -38,11 +38,24 @@ let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
 
 const bancoFacatativa =
   "BANCO DE LA MICROEMPRESA DE COLOMBIA S.A. (MIBANCO S.A.) - FACATATIVA";
-const DIRECCION_CONTRIBUYENTE = 'CRA. 2 NO. 7 - 120'
-const NOMBRE_MUNICIPIO = 'FACATATIVA'
-let PERIODO_CORRIENTE = 'ENERO'
-let NO_LIQUIDACIONES_VENCIDAS = 0
-
+const DIRECCION_CONTRIBUYENTE = "CRA. 2 NO. 7 - 120";
+const NOMBRE_MUNICIPIO = "FACATATIVA";
+let PERIODO_CORRIENTE = "ENERO";
+let NO_LIQUIDACIONES_VENCIDAS = "0";
+let SECTOR_ACTIVIDADES = "ENTIDADES BANCARIAS O SIMILARES";
+let TIPO_FACTURACION = "VALOR SMMLV";
+let VALOR_TARIFA = "908526";
+let TARIFA = "2";
+let VALOR_FACTURA = "1817000";
+let VALOR_SANCION = "0";
+let INTERESES_POR_MORA = "0";
+let PAGO_TOTAL = "1817000";
+let FECHA_FACTURA = "21022022";
+let BANCO_FIDUCIA = " BANCO DE OCCIDENTE";
+let CUENTA_FIDUCIA = "800963225";
+let NOMBRE_FIDUCIA =
+  "PATRIMONIO AUTONOMO FA 5106 FID ALUMBRADO PUBLICO FACATATIVA";
+let NIT_FIDUCIA = "8050129210";
 const headerPDF = () => {
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE MAGANGUE":
@@ -423,15 +436,17 @@ const bodyPDF = () => {
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE FACATATIVA":
       return (
-        <View style={[styles.row, { border: "1px solid black" }]}>
-          <Text>1. AÑO GRABABLE:</Text>
+        <View
+          style={[styles.row, { border: "1px solid black", fontSize: "7.5px" }]}
+        >
+          <Text style={[{ padding: "2px" }]}>1. AÑO GRABABLE:</Text>
 
           <Text style={[styles.text_border]}>2</Text>
           <Text style={[styles.text_border]}>0</Text>
           <Text style={[styles.text_border]}>2</Text>
           <Text style={[styles.text_border, { marginRight: "20px" }]}>2</Text>
 
-          <Text>2. PERIODO:</Text>
+          <Text style={[{ padding: "2px" }]}>2. PERIODO:</Text>
           <Text style={[styles.text_border]}>E</Text>
           <Text style={[styles.text_border]}>N</Text>
           <Text style={[styles.text_border]}>E</Text>
@@ -440,10 +455,19 @@ const bodyPDF = () => {
 
           {/* A. INFORMACIÓN DEL CONTRIBUYENTE */}
 
-          <View style={[styles.row, { borderTop: "1px solid black" }]}>
+          <View
+            style={[
+              styles.row,
+              {
+                borderBottom: "1px solid black",
+                borderTop: "1px solid black",
+                marginTop: "5px",
+              },
+            ]}
+          >
             <Text>A. INFORMACIÓN DEL CONTRIBUYENTE</Text>
           </View>
-          <View style={[styles.row, { borderTop: "1px solid black" }]}>
+          <View style={[styles.row, { marginTop: "10px" }]}>
             <Text>3. APELLIDOS Y NOMBRES O RAZÓN SOCIAL</Text>
           </View>
 
@@ -451,13 +475,16 @@ const bodyPDF = () => {
           <View style={[styles.row]}>
             {[...bancoFacatativa].map((letter, index) => {
               return (
-                <Text style={[styles.text_border]} key={index}>
+                <Text
+                  style={[styles.text_border, { marginBottom: "3px" }]}
+                  key={index}
+                >
                   {letter}
                 </Text>
               );
             })}
           </View>
-          <View style={[styles.row]}>
+          <View style={[styles.row, { marginTop: "10px" }]}>
             <Text>4. IDENTIFICACIÓN DEL RESPONSABLE</Text>
           </View>
           {/* TABLE */}
@@ -529,56 +556,253 @@ const bodyPDF = () => {
               {/* 5. TELÉFONO FIJO O MÓVIL */}
             </View>
 
-            <View style={[styles.row,]}>
-              <Text style={[{fontSize: '6px'}]}>
+            <View style={[styles.row, { marginTop: "15px" }]}>
+              <Text style={[{ fontSize: "6px" }]}>
                 6. DIRECCIÓN DE NOTIFICACIÓN. Escriba la dirección donde la
                 Secretaria de Hacienda puede comunicarse con usted. Recuerde el
                 apartado aéreo no sirve como dirección de notificación
               </Text>
 
               {/* DIRECCION CONTRIBUYENTE */}
-              {
-                [...DIRECCION_CONTRIBUYENTE].map((letter, index) => {
-                  return(
-                    <Text key={index} style={[styles.text_border, {}]}>{letter}</Text>
-                  )
-                })
-              }
+              {[...DIRECCION_CONTRIBUYENTE].map((letter, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {letter}
+                  </Text>
+                );
+              })}
             </View>
             <View style={[styles.row]}>
-              <View style={[styles.row]}><Text>6.1 CIUDAD</Text></View>
-              
+              <View style={[styles.row]}>
+                <Text>6.1 CIUDAD</Text>
+              </View>
+
               {/* CIUDAD O NOMBRE DE MUNICIPIO */}
-              {
-                [...NOMBRE_MUNICIPIO].map((letter, index) => {
-                  return(
-                    <Text key={index} style={[styles.text_border, {}]}>{letter}</Text>
-                  )
-                })
-              }
+              {[...NOMBRE_MUNICIPIO].map((letter, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {letter}
+                  </Text>
+                );
+              })}
             </View>
 
-            <View style={[ styles.row, {marginTop: '15px', borderTop: "1px solid black"}]}>
+            <View
+              style={[
+                styles.row,
+                {
+                  marginTop: "15px",
+                  borderTop: "1px solid black",
+                  borderBottom: "1px solid black",
+                },
+              ]}
+            >
               <Text>B. PAGO</Text>
             </View>
-            <View style={[styles.row, {borderTop: "1px solid black"}]}>
-              <Text>7. PERIODO CORRIENTE</Text>
-              {
-                [...PERIODO_CORRIENTE].map((letter, index) => {
-                  return(
-                    <Text key={index} style={[styles.text_border, {}]}>{letter}</Text>
-                  )
-                })
-              }
+            <View style={[styles.row, { marginTop: "5px" }]}>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "3px", paddingLeft: "0" },
+                ]}
+              >
+                7. PERIODO CORRIENTE
+              </Text>
+              {[...PERIODO_CORRIENTE].map((letter, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {letter}
+                  </Text>
+                );
+              })}
 
-              <Text>8. NO. LIQUIDACIONES VENCIDAS</Text>
-              {
-                [...NO_LIQUIDACIONES_VENCIDAS].map((number, index) => {
-                  return(
-                    <Text key={index} style={[styles.text_border, {}]}>{number}</Text>
-                  )
-                })
-              }
+              <Text
+                style={[
+                  { marginLeft: "15px", marginRight: "1px", padding: "3px" },
+                ]}
+              >
+                8. NO. LIQUIDACIONES VENCIDAS
+              </Text>
+              {[...NO_LIQUIDACIONES_VENCIDAS].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
+            </View>
+
+            <View style={[styles.row, { marginTop: "5px" }]}>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "3px", paddingLeft: "0" },
+                ]}
+              >
+                9. SECTOR Y/O ACTIVIDAD
+              </Text>
+              {/* ENTIDADES BANCARIAS O SIMILARES  */}
+              {[...SECTOR_ACTIVIDADES].map((letter, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {letter}
+                  </Text>
+                );
+              })}
+            </View>
+
+            <View style={[styles.row, {}]}>
+              <Text style={[{ marginRight: "1px" }]}>
+                10. TIPO DE BASE GRAVABLE
+              </Text>
+              {[...TIPO_FACTURACION].map((letter, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {letter}
+                  </Text>
+                );
+              })}
+            </View>
+
+            <View style={[styles.row, {}]}>
+              <Text style={[{ marginRight: "1px" }]}>
+                11. VALOR BASE GRAVABLE
+              </Text>
+              {[...VALOR_TARIFA].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
+              <Text style={[{ marginRight: "1px" }]}>12. TARIFA</Text>
+              {[...TARIFA].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
+            </View>
+
+            <View style={[styles.row, {}]}>
+              <Text style={[{ marginRight: "1px" }]}>
+                13. VALOR IMPUESTO MENSUAL
+              </Text>
+              {[...VALOR_FACTURA].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
+              <Text style={[{ marginRight: "1px" }]}>14. VALOR SANCIÓN</Text>
+              {[...VALOR_SANCION].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
+
+              <Text style={[{ marginRight: "1px" }]}>
+                15. INTERESES POR MORA
+              </Text>
+              {[...INTERESES_POR_MORA].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
+            </View>
+
+            <View style={[styles.row, {}]}>
+              <Text>16. PAGO TOTAL</Text>
+              {[...PAGO_TOTAL].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
+              <Text>17. FECHA</Text>
+              {[...FECHA_FACTURA].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
+            </View>
+
+            <View style={[styles.row, {}]}>
+              <Text>18. CUENTA DE AHORROS DEL {BANCO_FIDUCIA}</Text>
+              {[...CUENTA_FIDUCIA].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
+            </View>
+
+            <View style={[styles.row, { marginBottom: "10px" }]}>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "3px", paddingLeft: "0" },
+                ]}
+              >
+                19. A NOMBRE DE:
+              </Text>{" "}
+              <Text style={[styles.text_border, { marginRight: "10px" }]}>
+                {NOMBRE_FIDUCIA}
+              </Text>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "3px", paddingLeft: "0" },
+                ]}
+              >
+                20. NIT:
+              </Text>
+              <Text style={[styles.text_border, {}]}>{NIT_FIDUCIA}</Text>
+            </View>
+
+            {/* PARRAFO LARGO */}
+
+            <View style={[styles.row, {}]}>
+              <Text style={[{}]}>
+                El Contribuyente es sujeto pasivo del impuesto de Alumbrado
+                Público por cuanto: i) Se analizó y determinó que es usuario
+                potencial del servicio ii) Está clasificado de acuerdo a los
+                principios de progresividad y equidad en materia tributaria iii)
+                Opera o posee cualquier tipo de infraestructura en el Municipio
+                y/o tiene establecimiento físico en la jurisdicción del
+                Municipio y iv) en virtud de lo anterior, cumple el hecho
+                generador del impuesto de alumbrado público que es el beneficio
+                por la prestación del mismo.
+              </Text>
+              <Text>
+                Los artículos 12 y 13 del Acuerdo No. 007 de 2018 fijaron la
+                base gravable y la tarifa del impuesto de alumbrado público de
+                acuerdo al tipo de usuario y actividad que desarrolla
+              </Text>
+
+              <Text>
+                Contra la presente Liquidación Oficial del Impuesto de Alumbrado
+                Público, procede el recurso de reconsideración de que trata el
+                artículo 720 del Estatuto Tributario Nacional, el cual deberá
+                interponerse dentro de los dos (2) meses siguientes a su
+                notificación, cumpliendo los requisitos señalados en el artículo
+                722 del mismo ordenamiento jurídico, y presentarla en la oficina
+                de la Secretaria de Hacienda del Municipio de Facatativá
+                Cundinamarca.
+              </Text>
+            </View>
+            <View style={[styles.row, {borderTop: '1px solid black'}]}>
+              <Text>
+                Nota esta LIQUIDACIÓN OFICIAL DE IMPUESTO DE ALUMBRADO PÚBLICO
+                deberá pagarse a más tardar el último día hábil de mes siguiente
+                a su liquidación periodo gravable.
+              </Text>
             </View>
           </View>
         </View>
