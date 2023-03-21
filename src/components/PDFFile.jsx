@@ -797,7 +797,7 @@ const bodyPDF = () => {
                 Cundinamarca.
               </Text>
             </View>
-            <View style={[styles.row, {borderTop: '1px solid black'}]}>
+            <View style={[styles.row, { borderTop: "1px solid black" }]}>
               <Text>
                 Nota esta LIQUIDACIÓN OFICIAL DE IMPUESTO DE ALUMBRADO PÚBLICO
                 deberá pagarse a más tardar el último día hábil de mes siguiente
@@ -1097,6 +1097,24 @@ const footerPDF = () => {
               <View style={[styles.line_footer_sanJuanC]}></View>
             </View>
           </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE FACATATIVA":
+      return (
+        <View style={[styles.row, {border: '1px solid black', borderTop: '0'}]}>
+          <View style={[styles.row, ]}>
+            
+            
+          </View>
+          <View style={{ marginTop: "20px", marginBottom: "10px", borderTop: '1px solid black' }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>SECRETARIO DE HACIENDA</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>MUNICIPIO DE FACATATIVA</Text>
+            </View>
+          </View>
+
         </View>
       );
     default:
