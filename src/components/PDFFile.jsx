@@ -36,8 +36,12 @@ import membreteAguachica1 from "../Images/Aguachica/Membrete 1 - Aguachica.png";
 let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
 // let alcaldia = "ALCALDIA MUNICIPAL DE AGUACHICA";
 
-
-const bancoFacatativa = 'BANCO DE LA MICROEMPRESA DE COLOMBIA S.A. (MIBANCO S.A.) - FACATATIVA'
+const bancoFacatativa =
+  "BANCO DE LA MICROEMPRESA DE COLOMBIA S.A. (MIBANCO S.A.) - FACATATIVA";
+const DIRECCION_CONTRIBUYENTE = 'CRA. 2 NO. 7 - 120'
+const NOMBRE_MUNICIPIO = 'FACATATIVA'
+let PERIODO_CORRIENTE = 'ENERO'
+let NO_LIQUIDACIONES_VENCIDAS = 0
 
 const headerPDF = () => {
   switch (alcaldia) {
@@ -372,7 +376,14 @@ const mainText = () => {
     case "ALCALDIA MUNICIPAL DE FACATATIVA":
       return (
         <View style={{ border: "1px solid black", marginBottom: "2px" }}>
-          <Text style={{ paddingBottom: "5px", margin: "5px", textAlign: "center", fontSize: '10.5px' }}>
+          <Text
+            style={{
+              paddingBottom: "5px",
+              margin: "5px",
+              textAlign: "center",
+              fontSize: "10.5px",
+            }}
+          >
             La Secretaría de Hacienda del Municipio de SANTA ROSA, en uso de las
             atribuciones conferidas por los artículos 684, 686, 688 del Estatuto
             Tributario Nacional y El ACUERDO MUNICIPAL 015 DE 2007 por medio del
@@ -408,102 +419,170 @@ const mainText = () => {
   }
 };
 
-
-
 const bodyPDF = () => {
   switch (alcaldia) {
-    case 'ALCALDIA MUNICIPAL DE FACATATIVA':
+    case "ALCALDIA MUNICIPAL DE FACATATIVA":
       return (
-        <View style={[styles.row, { border: '1px solid black' }]}>
-
+        <View style={[styles.row, { border: "1px solid black" }]}>
           <Text>1. AÑO GRABABLE:</Text>
 
-
-          <Text style={[styles.text_border]} >2</Text>
-          <Text style={[styles.text_border]} >0</Text>
-          <Text style={[styles.text_border]} >2</Text>
-          <Text style={[styles.text_border, { marginRight: '20px' }]} >2</Text>
-
-
+          <Text style={[styles.text_border]}>2</Text>
+          <Text style={[styles.text_border]}>0</Text>
+          <Text style={[styles.text_border]}>2</Text>
+          <Text style={[styles.text_border, { marginRight: "20px" }]}>2</Text>
 
           <Text>2. PERIODO:</Text>
-          <Text style={[styles.text_border]} >E</Text>
-          <Text style={[styles.text_border]} >N</Text>
-          <Text style={[styles.text_border]} >E</Text>
-          <Text style={[styles.text_border]} >R</Text>
-          <Text style={[styles.text_border]} >O</Text>
+          <Text style={[styles.text_border]}>E</Text>
+          <Text style={[styles.text_border]}>N</Text>
+          <Text style={[styles.text_border]}>E</Text>
+          <Text style={[styles.text_border]}>R</Text>
+          <Text style={[styles.text_border]}>O</Text>
 
           {/* A. INFORMACIÓN DEL CONTRIBUYENTE */}
 
-          <View style={[styles.row, { borderTop: '1px solid black', }]}>
-
+          <View style={[styles.row, { borderTop: "1px solid black" }]}>
             <Text>A. INFORMACIÓN DEL CONTRIBUYENTE</Text>
           </View>
-          <View style={[styles.row, { borderTop: '1px solid black', }]}>
-
+          <View style={[styles.row, { borderTop: "1px solid black" }]}>
             <Text>3. APELLIDOS Y NOMBRES O RAZÓN SOCIAL</Text>
           </View>
 
           {/* BANCO DE LA MICROEMPRESA DE COLOMBIA S.A. (MIBANCO S.A.) - FACATATIVA */}
-          <View style={[styles.row,]}>
-
-            {
-              [...bancoFacatativa].map((letter, index) => {
-                return (
-                  <Text style={[styles.text_border]} key={index}>{letter}</Text>
-                )
-              })
-
-            }
+          <View style={[styles.row]}>
+            {[...bancoFacatativa].map((letter, index) => {
+              return (
+                <Text style={[styles.text_border]} key={index}>
+                  {letter}
+                </Text>
+              );
+            })}
           </View>
-          <View style={[styles.row,]}>
+          <View style={[styles.row]}>
             <Text>4. IDENTIFICACIÓN DEL RESPONSABLE</Text>
           </View>
           {/* TABLE */}
           <View style={[]}>
-            <View style={[ styles.row,]}>
-              <Text style={[ styles.table_row1, {}]}>CC</Text>
-              <Text style={[ styles.table_row1,{}]}>NIT</Text>
-              <Text style={[ styles.table_row1,{}]}>TI</Text>
-              <Text style={[ styles.table_row1,{}]}>CE</Text>
-              <Text style={[ styles.table_row2,{}]}>NÚMERO</Text>
-              <Text style={[ styles.table_row1,{}]}>DV</Text>
-              <Text style={[ styles.table_row3,{}]}>5. TELÉFONO FIJO O MÓVIL</Text>
+            <View style={[styles.row]}>
+              <Text style={[styles.table_row1, { border: "0" }]}>CC</Text>
+              <Text style={[styles.table_row1, { border: "0" }]}>NIT</Text>
+              <Text style={[styles.table_row1, { border: "0" }]}>TI</Text>
+              <Text
+                style={[
+                  styles.table_row1,
+                  { border: "0", marginRight: "20px" },
+                ]}
+              >
+                CE
+              </Text>
+
+              <Text style={[styles.table_row2, {}]}>NÚMERO</Text>
+              <Text
+                style={[
+                  styles.table_row1,
+                  { border: "0", marginRight: "25px" },
+                ]}
+              >
+                DV
+              </Text>
+              <Text style={[{}]}>5. TELÉFONO FIJO O MÓVIL</Text>
             </View>
-            <View>
 
-            <View style={[ styles.row,]}>
-              <Text style={[ styles.table_row1,  {}]}>CC</Text>
-              <Text style={[ styles.table_row1,  {}]}>X</Text>
-              <Text style={[ styles.table_row1,  {}]}>TI</Text>
-              <Text style={[ styles.table_row1,  {}]}>CE</Text>
+            <View style={[styles.row]}>
+              <Text style={[styles.table_row1, {}]}> </Text>
+              <Text style={[styles.table_row1, {}]}>X</Text>
+              <Text style={[styles.table_row1, {}]}> </Text>
+              <Text style={[styles.table_row1, { marginRight: "20px" }]}>
+                {" "}
+              </Text>
 
-              {/* NUMEROS */}
+              {/* NÚMERO */}
+
+              <Text style={[styles.text_border, {}]}>8</Text>
+              <Text style={[styles.text_border, {}]}>6</Text>
+              <Text style={[styles.text_border, {}]}>0</Text>
+              <Text style={[styles.text_border, {}]}>0</Text>
+              <Text style={[styles.text_border, {}]}>2</Text>
+              <Text style={[styles.text_border, {}]}>5</Text>
+              <Text style={[styles.text_border, {}]}>9</Text>
+              <Text style={[styles.text_border, {}]}>7</Text>
+              <Text style={[styles.text_border, {}]}>1</Text>
+
+              {/* NÚMERO */}
+              <Text style={[]}>-</Text>
+              <Text style={[styles.table_row1, { marginRight: "25px" }]}>
+                5
+              </Text>
+
+              {/* 5. TELÉFONO FIJO O MÓVIL */}
+
+              <Text style={[styles.text_border, {}]}>8</Text>
+              <Text style={[styles.text_border, {}]}>6</Text>
+              <Text style={[styles.text_border, {}]}>0</Text>
+              <Text style={[styles.text_border, {}]}>0</Text>
+              <Text style={[styles.text_border, {}]}>2</Text>
+              <Text style={[styles.text_border, {}]}>5</Text>
+              <Text style={[styles.text_border, {}]}>9</Text>
+              <Text style={[styles.text_border, {}]}>7</Text>
+              <Text style={[styles.text_border, {}]}>1</Text>
+              <Text style={[styles.text_border, {}]}>5</Text>
+
+              {/* 5. TELÉFONO FIJO O MÓVIL */}
+            </View>
+
+            <View style={[styles.row,]}>
+              <Text style={[{fontSize: '6px'}]}>
+                6. DIRECCIÓN DE NOTIFICACIÓN. Escriba la dirección donde la
+                Secretaria de Hacienda puede comunicarse con usted. Recuerde el
+                apartado aéreo no sirve como dirección de notificación
+              </Text>
+
+              {/* DIRECCION CONTRIBUYENTE */}
+              {
+                [...DIRECCION_CONTRIBUYENTE].map((letter, index) => {
+                  return(
+                    <Text key={index} style={[styles.text_border, {}]}>{letter}</Text>
+                  )
+                })
+              }
+            </View>
+            <View style={[styles.row]}>
+              <View style={[styles.row]}><Text>6.1 CIUDAD</Text></View>
               
-               
-                <Text style={[ styles.text_border,{}]}>8</Text>
-                <Text style={[ styles.text_border,{}]}>6</Text>
-                <Text style={[ styles.text_border,{}]}>0</Text>
-                <Text style={[ styles.text_border,{}]}>0</Text>
-                <Text style={[ styles.text_border,{}]}>25</Text>
-                <Text style={[ styles.text_border,{}]}>9</Text>
-                <Text style={[ styles.text_border,{}]}>7</Text>
-                <Text style={[ styles.text_border,{}]}>1</Text>
-         
-                 {/* NUMEROS */}
-
-             
-
-              <Text style={[ styles.table_row1,{}]}>DV</Text>
-              <Text style={[ styles.table_row3,{}]}>5. TELÉFONO FIJO O MÓVIL</Text>
-            </View>
+              {/* CIUDAD O NOMBRE DE MUNICIPIO */}
+              {
+                [...NOMBRE_MUNICIPIO].map((letter, index) => {
+                  return(
+                    <Text key={index} style={[styles.text_border, {}]}>{letter}</Text>
+                  )
+                })
+              }
             </View>
 
+            <View style={[ styles.row, {marginTop: '15px', borderTop: "1px solid black"}]}>
+              <Text>B. PAGO</Text>
+            </View>
+            <View style={[styles.row, {borderTop: "1px solid black"}]}>
+              <Text>7. PERIODO CORRIENTE</Text>
+              {
+                [...PERIODO_CORRIENTE].map((letter, index) => {
+                  return(
+                    <Text key={index} style={[styles.text_border, {}]}>{letter}</Text>
+                  )
+                })
+              }
+
+              <Text>8. NO. LIQUIDACIONES VENCIDAS</Text>
+              {
+                [...NO_LIQUIDACIONES_VENCIDAS].map((number, index) => {
+                  return(
+                    <Text key={index} style={[styles.text_border, {}]}>{number}</Text>
+                  )
+                })
+              }
+            </View>
           </View>
-
-
         </View>
-      )
+      );
     default:
       return (
         <View style={[styles.row]}>
@@ -514,9 +593,7 @@ const bodyPDF = () => {
           </View>
           <View style={[styles.table_row_right]}>
             <View style={{ width: 305 }}>
-              <Text>
-                INTERCONEXION ELECTRICA S.A. E.S.P. - ISA SANTA ROSA:
-              </Text>
+              <Text>INTERCONEXION ELECTRICA S.A. E.S.P. - ISA SANTA ROSA:</Text>
             </View>
           </View>
           <View style={[styles.table_row_left]}>
@@ -631,10 +708,7 @@ const bodyPDF = () => {
             </View>
           </View>
           <View
-            style={[
-              styles.table_row_left,
-              { borderBottom: "1px solid black" },
-            ]}
+            style={[styles.table_row_left, { borderBottom: "1px solid black" }]}
           >
             <View style={{ width: 197 }}>
               <Text>FECHA VENCIMIENTO:</Text>
@@ -654,24 +728,21 @@ const bodyPDF = () => {
             Adjunto relación de valores liquidados.
           </Text>
           <Text style={{ marginTop: "15px", marginBottom: "15px" }}>
-            El Contribuyente es sujeto pasivo del impuesto de Alumbrado
-            Público por cuanto: i) Se analizó y determinó que es usuario
-            potencial del servicio ii) Está clasificado de acuerdo a los
-            principios de progresividad y equidad en materia tributaria. iii)
-            Opera o posee cualquier tipo de infraestructura en el Municipio
-            y/o tiene establecimiento físico en la jurisdicción del Municipio
-            y iv) en virtud de lo anterior, cumple el hecho generador del
-            impuesto de alumbrado público que es el beneficio por la
-            prestación del mismo. Los contribuyentes del Impuesto de Alumbrado
-            Público están en la obligación de aplicar las tarifas
-            correspondientes a cada sector y de realizar el pago mensual,
-            según lo establecido en el ACUERDO MUNICIPAL 015 DE 2007. Las
-            facturas vencidas generan intereses moratorios por cada día de
-            retraso.
+            El Contribuyente es sujeto pasivo del impuesto de Alumbrado Público
+            por cuanto: i) Se analizó y determinó que es usuario potencial del
+            servicio ii) Está clasificado de acuerdo a los principios de
+            progresividad y equidad en materia tributaria. iii) Opera o posee
+            cualquier tipo de infraestructura en el Municipio y/o tiene
+            establecimiento físico en la jurisdicción del Municipio y iv) en
+            virtud de lo anterior, cumple el hecho generador del impuesto de
+            alumbrado público que es el beneficio por la prestación del mismo.
+            Los contribuyentes del Impuesto de Alumbrado Público están en la
+            obligación de aplicar las tarifas correspondientes a cada sector y
+            de realizar el pago mensual, según lo establecido en el ACUERDO
+            MUNICIPAL 015 DE 2007. Las facturas vencidas generan intereses
+            moratorios por cada día de retraso.
           </Text>
-          <View
-            style={[styles.row, styles.p_center, { marginBottom: "10px" }]}
-          >
+          <View style={[styles.row, styles.p_center, { marginBottom: "10px" }]}>
             <View style={{ margin: 5 }}>
               <Text>CONSIGNAR EN LA SIGUIENTE CUENTA</Text>
             </View>
@@ -701,10 +772,7 @@ const bodyPDF = () => {
             </View>
           </View>
           <View
-            style={[
-              styles.table_row_left,
-              { borderBottom: "1px solid black" },
-            ]}
+            style={[styles.table_row_left, { borderBottom: "1px solid black" }]}
           >
             <View style={{ width: 240 }}>
               <Text>NIT:</Text>
@@ -729,14 +797,14 @@ const bodyPDF = () => {
             Público, procede el recurso de reconsideración de que trata el
             artículo 720 del Estatuto Tributario Nacional, el cual deberá
             interponerse dentro de los dos (2) meses siguientes a su
-            notificación, cumpliendo los requisitos señalados en el artículo
-            722 del mismo ordenamiento jurídico, y presentarla en la oficina
-            de la Secretaria de Hacienda del Municipio.
+            notificación, cumpliendo los requisitos señalados en el artículo 722
+            del mismo ordenamiento jurídico, y presentarla en la oficina de la
+            Secretaria de Hacienda del Municipio.
           </Text>
         </View>
-      )
+      );
   }
-}
+};
 
 const footerPDF = () => {
   switch (alcaldia) {

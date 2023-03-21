@@ -287,9 +287,9 @@ export const styles = StyleSheet.create({
     textAlign: 'center'
   },
   table_row2:{
-    width: '15%'
+    width: '20%'
   },
   table_row3: {
-    width: '20%'
+    
   }
 });
