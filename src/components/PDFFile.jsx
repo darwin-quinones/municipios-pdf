@@ -17,9 +17,10 @@ import escudoElCopey1 from "../Images/El Copey/Escudo 1 El Copey.png";
 import escudoElCopey2 from "../Images/El Copey/Escudo 2 El Copey.png";
 import escudoLaPaz from "../Images/La Paz/Escudo La Paz.png";
 import escudoRiohacha from "../Images/Riohacha/Escudo Riohacha.png";
-import membreteRiohacha1 from '../Images/Riohacha/Membrete 1 Riohacha.png'
-import membreteRiohacha2 from '../Images/Riohacha/Membrete 2 Riohacha.png'
+import membreteRiohacha1 from "../Images/Riohacha/Membrete 1 Riohacha.png";
+import membreteRiohacha2 from "../Images/Riohacha/Membrete 2 Riohacha.png";
 import membreteTurbaco1 from "../Images/Turbaco/Membrete 1 Turbaco.png";
+import membreteTurbaco2 from "../Images/Turbaco/Membrete 2 Turbaco.png";
 import escudoFacatativa from "../Images/Facatativa/Escudo Facatativa.png";
 import membreteFacatativa from "../Images/Facatativa/Membrete Facatativa.png";
 import escudoCundinamarca from "../Images/Facatativa/Escudo Cundinamarca.png";
@@ -32,10 +33,10 @@ import membreteAguachica1 from "../Images/Aguachica/Membrete 1 - Aguachica.png";
 // let alcaldia = 'ALCALDIA MUNICIPAL DE EL PASO'
 // let alcaldia = 'ALCALDIA MUNICIPAL DE SANTA ROSA'
 // let alcaldia = "ALCALDIA MUNICIPAL DE VILLANUEVA-BOLIVAR";
-// let alcaldia = "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI";
+let alcaldia = "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI";
 // let alcaldia = "ALCALDIA MUNICIPAL DE EL COPEY";
 // let alcaldia = "ALCALDIA MUNICIPAL DE LA PAZ";
-let alcaldia = "ALCALDIA MUNICIPAL DE RIOHACHA";
+// let alcaldia = "ALCALDIA MUNICIPAL DE RIOHACHA";
 // let alcaldia = "ALCALDIA MUNICIPAL DE TURBACO";
 // let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
 // let alcaldia = "ALCALDIA MUNICIPAL DE AGUACHICA";
@@ -869,13 +870,13 @@ const bodyPDF = () => {
       return (
         <View style={[styles.row]}>
           <View style={[styles.table_row_left]}>
-            <View style={{ width: 197 }}>
-              <Text>CONTRIBUYENTE:</Text>
+            <View style={{ width: 197, backgroundColor: '#003153'}}>
+              <Text style={[{color: '#FFFFFF'}]}>CONTRIBUYENTE:</Text>
             </View>
           </View>
           <View style={[styles.table_row_right]}>
-            <View style={{ width: 305 }}>
-              <Text>INTERCONEXION ELECTRICA S.A. E.S.P. - ISA SANTA ROSA:</Text>
+            <View style={{ width: 305, backgroundColor: '#003153' }}>
+              <Text style={[{color: '#FFFFFF'}]}>INTERCONEXION ELECTRICA S.A. E.S.P. - ISA SANTA ROSA:</Text>
             </View>
           </View>
           <View style={[styles.table_row_left]}>
@@ -980,20 +981,20 @@ const bodyPDF = () => {
             </View>
           </View>
           <View style={[styles.table_row_left]}>
-            <View style={{ width: 197 }}>
-              <Text>VALOR TOTAL PERIODO:</Text>
+            <View style={{ width: 197, backgroundColor: '#003153' }}>
+              <Text style={[{color: '#FFFFFF'}]}>VALOR TOTAL PERIODO:</Text>
             </View>
           </View>
           <View style={[styles.table_row_right]}>
-            <View style={{ width: 305 }}>
-              <Text>$ 15.000.000</Text>
+            <View style={{ width: '305px', backgroundColor: '#003153' }}>
+              <Text style={[{color: '#FFFFFF'}]}>$ 15.000.000</Text>
             </View>
           </View>
           <View
             style={[styles.table_row_left, { borderBottom: "1px solid black" }]}
           >
-            <View style={{ width: 197 }}>
-              <Text>FECHA VENCIMIENTO:</Text>
+            <View style={{ width: '197px', backgroundColor: '#003153' }}>
+              <Text style={[{color: '#FFFFFF'}]}>FECHA VENCIMIENTO:</Text>
             </View>
           </View>
           <View
@@ -1002,8 +1003,8 @@ const bodyPDF = () => {
               { borderBottom: "1px solid black" },
             ]}
           >
-            <View style={{ width: 305 }}>
-              <Text>30/11/2022</Text>
+            <View style={{ width: 305, backgroundColor: '#003153' }}>
+              <Text style={[{color: '#FFFFFF'}]}>30/11/2022</Text>
             </View>
           </View>
           <Text style={{ marginTop: "5px" }}>
@@ -1024,9 +1025,9 @@ const bodyPDF = () => {
             MUNICIPAL 015 DE 2007. Las facturas vencidas generan intereses
             moratorios por cada día de retraso.
           </Text>
-          <View style={[styles.row, styles.p_center, { marginBottom: "10px" }]}>
-            <View style={{ margin: 5 }}>
-              <Text>CONSIGNAR EN LA SIGUIENTE CUENTA</Text>
+          <View style={[styles.row, styles.p_center, { marginBottom: "10px", backgroundColor: '#003153' }]}>
+            <View style={{ marginBottom: 5, }}>
+              <Text style={[{color: '#FFFFFF', }]}>CONSIGNAR EN LA SIGUIENTE CUENTA</Text>
             </View>
           </View>
           {/* Last table */}
@@ -1140,14 +1141,92 @@ const footerPDF = () => {
             </View>
           </View>
 
-          <View style={[styles.col_footer_riohacha, {width: '180px', marginRight: '2px'}]}>
-            <Image style={[{width: '100px', height: '42px', border: '1px solid black',}]} src={membreteRiohacha1} />
+          <View
+            style={[
+              styles.col_footer_riohacha,
+              { width: "180px", marginRight: "2px" },
+            ]}
+          >
+            <Image
+              style={[
+                { width: "100px", height: "42px", border: "1px solid black" },
+              ]}
+              src={membreteRiohacha1}
+            />
           </View>
-          <View style={[styles.col_footer_riohacha, {width: '323px'}]}>
-            <Image style={[{width: '200px', height: '42px', border: '1px solid black',}]} src={membreteRiohacha2} />
+          <View style={[styles.col_footer_riohacha, { width: "323px" }]}>
+            <Image
+              style={[
+                { width: "200px", height: "42px", border: "1px solid black" },
+              ]}
+              src={membreteRiohacha2}
+            />
           </View>
         </View>
       );
+    case "ALCALDIA MUNICIPAL DE TURBACO":
+      return (
+        <View style={[styles.row, {}]}>
+          <View
+            style={{
+              marginTop: "20px",
+              marginBottom: "10px",
+            }}
+          >
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>DIOGENES ARRIETA VARGAS</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIO DE HACIENDA</Text>
+            </View>
+          </View>
+
+          <View style={[styles.row, { justifyContent: 'center', marginTop: '10px' }]}>
+            <Image
+              style={[
+                {  height: "42px",},
+              ]}
+              src={membreteTurbaco2}
+            />
+          </View>
+        </View>
+      );
+    case 'ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI':
+      return(
+        <View>
+        <View style={{ marginTop: "20px", marginBottom: "10px" }}>
+          <View style={[styles.row, styles.p_center]}>
+            <Text style={{}}>OMAYRA GONZALEZ MONTERO</Text>
+          </View>
+          <View style={[styles.row, styles.p_center]}>
+            <Text>SECRETARIA DE HACIENDA</Text>
+          </View>
+        </View>
+        <View style={{ marginTop: "5px" }}>
+          <View style={[styles.row, styles.p_center]}>
+            <Text style={{}}>
+            Carrera 16 No. 17 - 02. Agustín Codazzi, Cesa
+            </Text>
+          </View>
+          <View style={[styles.row, styles.p_center]}>
+            <Text>
+              Telefono: (57) 5 5765733 - Fax: (57)5 5765733
+            </Text>
+          </View>
+          <View style={[styles.row, styles.p_center]}>
+            <Text style={[{textDecoration: 'underline'}]}>
+            alcaldia@agustincodazzi-cesar.gov.co
+            </Text>
+          </View>
+          <View style={[styles.row, styles.p_center]}>
+            <Text>
+            Bienestar para Todos
+            </Text>
+          </View>
+         
+        </View>
+      </View>
+      )
     case "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR":
       return (
         <View>
