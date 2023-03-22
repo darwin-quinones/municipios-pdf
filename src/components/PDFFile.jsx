@@ -17,10 +17,14 @@ import escudoElCopey1 from "../Images/El Copey/Escudo 1 El Copey.png";
 import escudoElCopey2 from "../Images/El Copey/Escudo 2 El Copey.png";
 import escudoLaPaz from "../Images/La Paz/Escudo La Paz.png";
 import escudoRiohacha from "../Images/Riohacha/Escudo Riohacha.png";
+import membreteRiohacha1 from '../Images/Riohacha/Membrete 1 Riohacha.png'
+import membreteRiohacha2 from '../Images/Riohacha/Membrete 2 Riohacha.png'
 import membreteTurbaco1 from "../Images/Turbaco/Membrete 1 Turbaco.png";
 import escudoFacatativa from "../Images/Facatativa/Escudo Facatativa.png";
+import membreteFacatativa from "../Images/Facatativa/Membrete Facatativa.png";
 import escudoCundinamarca from "../Images/Facatativa/Escudo Cundinamarca.png";
 import membreteAguachica1 from "../Images/Aguachica/Membrete 1 - Aguachica.png";
+
 // let alcaldia = "ALCALDIA MUNICIPAL DE MAGANGUE";
 // let alcaldia = "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR";
 // let alcaldia = 'ALCALDIA MUNICIPAL DE ARJONA';
@@ -31,9 +35,9 @@ import membreteAguachica1 from "../Images/Aguachica/Membrete 1 - Aguachica.png";
 // let alcaldia = "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI";
 // let alcaldia = "ALCALDIA MUNICIPAL DE EL COPEY";
 // let alcaldia = "ALCALDIA MUNICIPAL DE LA PAZ";
-// let alcaldia = "ALCALDIA MUNICIPAL DE RIOHACHA";
+let alcaldia = "ALCALDIA MUNICIPAL DE RIOHACHA";
 // let alcaldia = "ALCALDIA MUNICIPAL DE TURBACO";
-let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
+// let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
 // let alcaldia = "ALCALDIA MUNICIPAL DE AGUACHICA";
 
 const bancoFacatativa =
@@ -56,6 +60,10 @@ let CUENTA_FIDUCIA = "800963225";
 let NOMBRE_FIDUCIA =
   "PATRIMONIO AUTONOMO FA 5106 FID ALUMBRADO PUBLICO FACATATIVA";
 let NIT_FIDUCIA = "8050129210";
+let NUMERO_TELEFONO = "860025971";
+let TELEFONO_FIJO = "8600259715";
+let PERIODO = "ENERO";
+
 const headerPDF = () => {
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE MAGANGUE":
@@ -303,7 +311,7 @@ const headerPDF = () => {
       return (
         <View style={styles.row}>
           <View style={styles.col_img_header}>
-            <Image style={[{ maxWidth: "50%" }]} src={escudoRiohacha} />
+            <Image style={[{ maxWidth: "40%" }]} src={escudoRiohacha} />
           </View>
         </View>
       );
@@ -391,7 +399,7 @@ const mainText = () => {
         <View style={{ border: "1px solid black", marginBottom: "2px" }}>
           <Text
             style={{
-              paddingBottom: "5px",
+              paddingBottom: "0px",
               margin: "5px",
               textAlign: "center",
               fontSize: "10.5px",
@@ -447,12 +455,14 @@ const bodyPDF = () => {
           <Text style={[styles.text_border, { marginRight: "20px" }]}>2</Text>
 
           <Text style={[{ padding: "2px" }]}>2. PERIODO:</Text>
-          <Text style={[styles.text_border]}>E</Text>
-          <Text style={[styles.text_border]}>N</Text>
-          <Text style={[styles.text_border]}>E</Text>
-          <Text style={[styles.text_border]}>R</Text>
-          <Text style={[styles.text_border]}>O</Text>
-
+          {/* PERIODO */}
+          {[...PERIODO].map((letter, index) => {
+            return (
+              <Text key={index} style={[styles.text_border, {}]}>
+                {letter}
+              </Text>
+            );
+          })}
           {/* A. INFORMACIÓN DEL CONTRIBUYENTE */}
 
           <View
@@ -467,7 +477,7 @@ const bodyPDF = () => {
           >
             <Text>A. INFORMACIÓN DEL CONTRIBUYENTE</Text>
           </View>
-          <View style={[styles.row, { marginTop: "10px" }]}>
+          <View style={[styles.row, { marginTop: "0px" }]}>
             <Text>3. APELLIDOS Y NOMBRES O RAZÓN SOCIAL</Text>
           </View>
 
@@ -476,7 +486,7 @@ const bodyPDF = () => {
             {[...bancoFacatativa].map((letter, index) => {
               return (
                 <Text
-                  style={[styles.text_border, { marginBottom: "3px" }]}
+                  style={[styles.text_border, { marginBottom: "2px" }]}
                   key={index}
                 >
                   {letter}
@@ -484,7 +494,7 @@ const bodyPDF = () => {
               );
             })}
           </View>
-          <View style={[styles.row, { marginTop: "10px" }]}>
+          <View style={[styles.row, { marginTop: "0px" }]}>
             <Text>4. IDENTIFICACIÓN DEL RESPONSABLE</Text>
           </View>
           {/* TABLE */}
@@ -506,7 +516,7 @@ const bodyPDF = () => {
               <Text
                 style={[
                   styles.table_row1,
-                  { border: "0", marginRight: "25px" },
+                  { border: "1px solid black", marginRight: "25px" },
                 ]}
               >
                 DV
@@ -515,25 +525,19 @@ const bodyPDF = () => {
             </View>
 
             <View style={[styles.row]}>
-              <Text style={[styles.table_row1, {}]}> </Text>
+              <Text style={[styles.table_row1, {}]}></Text>
               <Text style={[styles.table_row1, {}]}>X</Text>
-              <Text style={[styles.table_row1, {}]}> </Text>
-              <Text style={[styles.table_row1, { marginRight: "20px" }]}>
-                {" "}
-              </Text>
+              <Text style={[styles.table_row1, {}]}></Text>
+              <Text style={[styles.table_row1, { marginRight: "20px" }]}></Text>
 
               {/* NÚMERO */}
-
-              <Text style={[styles.text_border, {}]}>8</Text>
-              <Text style={[styles.text_border, {}]}>6</Text>
-              <Text style={[styles.text_border, {}]}>0</Text>
-              <Text style={[styles.text_border, {}]}>0</Text>
-              <Text style={[styles.text_border, {}]}>2</Text>
-              <Text style={[styles.text_border, {}]}>5</Text>
-              <Text style={[styles.text_border, {}]}>9</Text>
-              <Text style={[styles.text_border, {}]}>7</Text>
-              <Text style={[styles.text_border, {}]}>1</Text>
-
+              {[...NUMERO_TELEFONO].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
               {/* NÚMERO */}
               <Text style={[]}>-</Text>
               <Text style={[styles.table_row1, { marginRight: "25px" }]}>
@@ -542,27 +546,24 @@ const bodyPDF = () => {
 
               {/* 5. TELÉFONO FIJO O MÓVIL */}
 
-              <Text style={[styles.text_border, {}]}>8</Text>
-              <Text style={[styles.text_border, {}]}>6</Text>
-              <Text style={[styles.text_border, {}]}>0</Text>
-              <Text style={[styles.text_border, {}]}>0</Text>
-              <Text style={[styles.text_border, {}]}>2</Text>
-              <Text style={[styles.text_border, {}]}>5</Text>
-              <Text style={[styles.text_border, {}]}>9</Text>
-              <Text style={[styles.text_border, {}]}>7</Text>
-              <Text style={[styles.text_border, {}]}>1</Text>
-              <Text style={[styles.text_border, {}]}>5</Text>
-
+              {[...TELEFONO_FIJO].map((number, index) => {
+                return (
+                  <Text key={index} style={[styles.text_border, {}]}>
+                    {number}
+                  </Text>
+                );
+              })}
               {/* 5. TELÉFONO FIJO O MÓVIL */}
             </View>
 
-            <View style={[styles.row, { marginTop: "15px" }]}>
+            <View style={[styles.row, { marginTop: "5px" }]}>
               <Text style={[{ fontSize: "6px" }]}>
                 6. DIRECCIÓN DE NOTIFICACIÓN. Escriba la dirección donde la
                 Secretaria de Hacienda puede comunicarse con usted. Recuerde el
                 apartado aéreo no sirve como dirección de notificación
               </Text>
-
+            </View>
+            <View style={[styles.row, { paddingTop: "0" }]}>
               {/* DIRECCION CONTRIBUYENTE */}
               {[...DIRECCION_CONTRIBUYENTE].map((letter, index) => {
                 return (
@@ -591,9 +592,10 @@ const bodyPDF = () => {
               style={[
                 styles.row,
                 {
-                  marginTop: "15px",
+                  marginTop: "5px",
                   borderTop: "1px solid black",
                   borderBottom: "1px solid black",
+                  width: "503",
                 },
               ]}
             >
@@ -602,7 +604,7 @@ const bodyPDF = () => {
             <View style={[styles.row, { marginTop: "5px" }]}>
               <Text
                 style={[
-                  { marginRight: "1px", padding: "3px", paddingLeft: "0" },
+                  { marginRight: "1px", padding: "2px", paddingLeft: "0" },
                 ]}
               >
                 7. PERIODO CORRIENTE
@@ -617,7 +619,7 @@ const bodyPDF = () => {
 
               <Text
                 style={[
-                  { marginLeft: "15px", marginRight: "1px", padding: "3px" },
+                  { marginLeft: "15px", marginRight: "1px", padding: "2px" },
                 ]}
               >
                 8. NO. LIQUIDACIONES VENCIDAS
@@ -634,7 +636,7 @@ const bodyPDF = () => {
             <View style={[styles.row, { marginTop: "5px" }]}>
               <Text
                 style={[
-                  { marginRight: "1px", padding: "3px", paddingLeft: "0" },
+                  { marginRight: "1px", padding: "2px", paddingLeft: "0" },
                 ]}
               >
                 9. SECTOR Y/O ACTIVIDAD
@@ -650,7 +652,11 @@ const bodyPDF = () => {
             </View>
 
             <View style={[styles.row, {}]}>
-              <Text style={[{ marginRight: "1px" }]}>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "2px", paddingLeft: "0" },
+                ]}
+              >
                 10. TIPO DE BASE GRAVABLE
               </Text>
               {[...TIPO_FACTURACION].map((letter, index) => {
@@ -663,7 +669,11 @@ const bodyPDF = () => {
             </View>
 
             <View style={[styles.row, {}]}>
-              <Text style={[{ marginRight: "1px" }]}>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "2px", paddingLeft: "0" },
+                ]}
+              >
                 11. VALOR BASE GRAVABLE
               </Text>
               {[...VALOR_TARIFA].map((number, index) => {
@@ -673,7 +683,13 @@ const bodyPDF = () => {
                   </Text>
                 );
               })}
-              <Text style={[{ marginRight: "1px" }]}>12. TARIFA</Text>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "2px", paddingLeft: "10px" },
+                ]}
+              >
+                12. TARIFA
+              </Text>
               {[...TARIFA].map((number, index) => {
                 return (
                   <Text key={index} style={[styles.text_border, {}]}>
@@ -684,7 +700,11 @@ const bodyPDF = () => {
             </View>
 
             <View style={[styles.row, {}]}>
-              <Text style={[{ marginRight: "1px" }]}>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "2px", paddingLeft: "0" },
+                ]}
+              >
                 13. VALOR IMPUESTO MENSUAL
               </Text>
               {[...VALOR_FACTURA].map((number, index) => {
@@ -694,7 +714,13 @@ const bodyPDF = () => {
                   </Text>
                 );
               })}
-              <Text style={[{ marginRight: "1px" }]}>14. VALOR SANCIÓN</Text>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "2px", paddingLeft: "10px" },
+                ]}
+              >
+                14. VALOR SANCIÓN
+              </Text>
               {[...VALOR_SANCION].map((number, index) => {
                 return (
                   <Text key={index} style={[styles.text_border, {}]}>
@@ -703,7 +729,11 @@ const bodyPDF = () => {
                 );
               })}
 
-              <Text style={[{ marginRight: "1px" }]}>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "2px", paddingLeft: "10px" },
+                ]}
+              >
                 15. INTERESES POR MORA
               </Text>
               {[...INTERESES_POR_MORA].map((number, index) => {
@@ -716,7 +746,13 @@ const bodyPDF = () => {
             </View>
 
             <View style={[styles.row, {}]}>
-              <Text>16. PAGO TOTAL</Text>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "2px", paddingLeft: "0px" },
+                ]}
+              >
+                16. PAGO TOTAL
+              </Text>
               {[...PAGO_TOTAL].map((number, index) => {
                 return (
                   <Text key={index} style={[styles.text_border, {}]}>
@@ -724,7 +760,13 @@ const bodyPDF = () => {
                   </Text>
                 );
               })}
-              <Text>17. FECHA</Text>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "2px", paddingLeft: "10px" },
+                ]}
+              >
+                17. FECHA
+              </Text>
               {[...FECHA_FACTURA].map((number, index) => {
                 return (
                   <Text key={index} style={[styles.text_border, {}]}>
@@ -735,7 +777,13 @@ const bodyPDF = () => {
             </View>
 
             <View style={[styles.row, {}]}>
-              <Text>18. CUENTA DE AHORROS DEL {BANCO_FIDUCIA}</Text>
+              <Text
+                style={[
+                  { marginRight: "1px", padding: "2px", paddingLeft: "0px" },
+                ]}
+              >
+                18. CUENTA DE AHORROS DEL {BANCO_FIDUCIA}
+              </Text>
               {[...CUENTA_FIDUCIA].map((number, index) => {
                 return (
                   <Text key={index} style={[styles.text_border, {}]}>
@@ -745,20 +793,20 @@ const bodyPDF = () => {
               })}
             </View>
 
-            <View style={[styles.row, { marginBottom: "10px" }]}>
+            <View style={[styles.row, { marginBottom: "5px" }]}>
               <Text
                 style={[
-                  { marginRight: "1px", padding: "3px", paddingLeft: "0" },
+                  { marginRight: "1px", padding: "2px", paddingLeft: "0" },
                 ]}
               >
                 19. A NOMBRE DE:
-              </Text>{" "}
+              </Text>
               <Text style={[styles.text_border, { marginRight: "10px" }]}>
                 {NOMBRE_FIDUCIA}
               </Text>
               <Text
                 style={[
-                  { marginRight: "1px", padding: "3px", paddingLeft: "0" },
+                  { marginRight: "1px", padding: "2px", paddingLeft: "0" },
                 ]}
               >
                 20. NIT:
@@ -768,8 +816,13 @@ const bodyPDF = () => {
 
             {/* PARRAFO LARGO */}
 
-            <View style={[styles.row, {}]}>
-              <Text style={[{}]}>
+            <View
+              style={[
+                styles.row,
+                { borderTop: "1px solid black", width: "503px" },
+              ]}
+            >
+              <Text style={[{ marginRight: "4px", marginLeft: "2px" }]}>
                 El Contribuyente es sujeto pasivo del impuesto de Alumbrado
                 Público por cuanto: i) Se analizó y determinó que es usuario
                 potencial del servicio ii) Está clasificado de acuerdo a los
@@ -780,13 +833,13 @@ const bodyPDF = () => {
                 generador del impuesto de alumbrado público que es el beneficio
                 por la prestación del mismo.
               </Text>
-              <Text>
+              <Text style={[{ marginRight: "4px", marginLeft: "2px" }]}>
                 Los artículos 12 y 13 del Acuerdo No. 007 de 2018 fijaron la
                 base gravable y la tarifa del impuesto de alumbrado público de
                 acuerdo al tipo de usuario y actividad que desarrolla
               </Text>
 
-              <Text>
+              <Text style={[{ marginRight: "4px", marginLeft: "2px" }]}>
                 Contra la presente Liquidación Oficial del Impuesto de Alumbrado
                 Público, procede el recurso de reconsideración de que trata el
                 artículo 720 del Estatuto Tributario Nacional, el cual deberá
@@ -797,7 +850,12 @@ const bodyPDF = () => {
                 Cundinamarca.
               </Text>
             </View>
-            <View style={[styles.row, { borderTop: "1px solid black" }]}>
+            <View
+              style={[
+                styles.row,
+                { width: "503px", borderTop: "1px solid black" },
+              ]}
+            >
               <Text>
                 Nota esta LIQUIDACIÓN OFICIAL DE IMPUESTO DE ALUMBRADO PÚBLICO
                 deberá pagarse a más tardar el último día hábil de mes siguiente
@@ -1065,6 +1123,31 @@ const footerPDF = () => {
           </View>
         </View>
       );
+    case "ALCALDIA MUNICIPAL DE RIOHACHA":
+      return (
+        <View style={[styles.row, {}]}>
+          <View
+            style={{
+              marginTop: "20px",
+              marginBottom: "10px",
+            }}
+          >
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>VANESSA RICCIULLI ROJAS</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>DIRECTORA DE RENTAS</Text>
+            </View>
+          </View>
+
+          <View style={[styles.col_footer_riohacha, {width: '180px', marginRight: '2px'}]}>
+            <Image style={[{width: '100px', height: '42px', border: '1px solid black',}]} src={membreteRiohacha1} />
+          </View>
+          <View style={[styles.col_footer_riohacha, {width: '323px'}]}>
+            <Image style={[{width: '200px', height: '42px', border: '1px solid black',}]} src={membreteRiohacha2} />
+          </View>
+        </View>
+      );
     case "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR":
       return (
         <View>
@@ -1101,12 +1184,17 @@ const footerPDF = () => {
       );
     case "ALCALDIA MUNICIPAL DE FACATATIVA":
       return (
-        <View style={[styles.row, {border: '1px solid black', borderTop: '0'}]}>
-          <View style={[styles.row, ]}>
-            
-            
-          </View>
-          <View style={{ marginTop: "20px", marginBottom: "10px", borderTop: '1px solid black' }}>
+        <View
+          style={[styles.row, { border: "1px solid black", borderTop: "0" }]}
+        >
+          <View style={[styles.row]}></View>
+          <View
+            style={{
+              marginTop: "10px",
+              marginBottom: "10px",
+              borderTop: "1px solid black",
+            }}
+          >
             <View style={[styles.row, styles.p_center]}>
               <Text style={{}}>SECRETARIO DE HACIENDA</Text>
             </View>
@@ -1114,7 +1202,27 @@ const footerPDF = () => {
               <Text>MUNICIPIO DE FACATATIVA</Text>
             </View>
           </View>
+          {/* SECOND PART */}
 
+          <View style={[styles.row, { borderTop: "1px solid black" }]}>
+            <View style={styles.col_footer_facatativa}>
+              <Image style={[{}]} src={membreteFacatativa} />
+            </View>
+            <View style={[{ width: "100px" }]}></View>
+
+            <View style={[styles.col_footer_facatativa2]}>
+              <Text style={{ borderBottom: "1px solid black" }}>
+                CÓDIGO: GF-FR-152
+              </Text>
+              <Text style={{ borderBottom: "1px solid black" }}>
+                VERSIÓN: 01
+              </Text>
+              <Text style={{ borderBottom: "1px solid black" }}>
+                FECHA: 21 AGO 2020
+              </Text>
+              <Text style={{}}>DOCUMENTO CONTROLADO</Text>
+            </View>
+          </View>
         </View>
       );
     default:

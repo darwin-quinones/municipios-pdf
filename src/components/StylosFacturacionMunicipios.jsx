@@ -63,6 +63,13 @@ export const styles = StyleSheet.create({
     // paddingBottom: 8,
     width: "505px",
   },
+  row_line: {
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "row",
+    width: "503px",
+    border: "1px solid black",
+  },
   col_header_santaR: {
     textAlign: "center",
     width: "285px",
@@ -270,26 +277,51 @@ export const styles = StyleSheet.create({
     border: "1px solid black",
     display: "flex",
     justifyContent: "center",
-    marginLeft: '2px',
-    marginRight: '2px'
+    marginLeft: "2px",
+    marginRight: "2px",
   },
   text_facatativa: { fontSize: "8.5px", padding: "2px" },
 
+  col_footer_facatativa: {
+    width: "250px",
+    height: "50px",
+    //border: "1px solid black",
+    alignItems: "center",
+    display: "flex",
+    justifyContent: "center",
+  },
+
+  col_footer_facatativa2: {
+    textAlign: "center",
+    width: "150px",
+    height: "50px",
+    border: "1px solid black",
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "3px",
+  },
+
   text_border: {
-    border: '1px solid black',
-    padding: '2px'
+    border: "1px solid black",
+    padding: "1.5px",
   },
-  table_row1:{
-    width: '5%',
-    marginRight: '2px',
-    border: '1px solid black',
-    justifyContent: 'center',
-    textAlign: 'center'
+  table_row1: {
+    width: "3%",
+    marginRight: "2px",
+    border: "1px solid black",
+    justifyContent: "center",
+    textAlign: "center",
   },
-  table_row2:{
-    width: '20%'
+  table_row2: {
+    width: "17%",
   },
-  table_row3: {
+  // Footer Riohacha
+  col_footer_riohacha:{
     
+    border: '1px solid black',
+    display: 'flex',
+    textAlign: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
   }
 });
