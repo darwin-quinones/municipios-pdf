@@ -8,9 +8,13 @@ import escudoSanJuanCesar from "../Images/San Juan del Cesar/Escudo San Juan del
 import escudoAlcaldiaSanJuanCesar from "../Images/San Juan del Cesar/Escudo Alcaldia.png";
 import escudo1AlcaldiaSanJuanC from "../Images/San Juan del Cesar/Escudo 1.png";
 import escudoAlcaldiaArjona from "../Images/Arjona/Escudo Alcaldia Arjona.png";
+import escudoMenbreteArjona from "../Images/Arjona/Escudo - Membrete Arjona.png";
 import membreteSanJacinto from "../Images/San Jacinto/Membrete San Jacinto 1.png";
+import membreteSanJacinto2 from "../Images/San Jacinto/Membrete San Jacinto 2.png";
 import membreteElPaso from "../Images/El Paso/Membrete El Paso 1.png";
+import membreteElPaso2 from "../Images/El Paso/Membrete El Paso 2.png";
 import escudosVillaNueva from "../Images/Villanueva-Bolivar/Escudos Villanueva - Colombia.png";
+import escudoVillaNueva2 from "../Images/Villanueva-Bolivar/Escudo Villanueva-Bolivar.png";
 import escudoAgustinCodazzi from "../Images/Agustin Codazzi/Escudo Agustin Codazzi.png";
 import escudoAgustinCodazzi2 from "../Images/Agustin Codazzi/Escudo Agustin Codazzi 2.png";
 import escudoElCopey1 from "../Images/El Copey/Escudo 1 El Copey.png";
@@ -25,21 +29,22 @@ import escudoFacatativa from "../Images/Facatativa/Escudo Facatativa.png";
 import membreteFacatativa from "../Images/Facatativa/Membrete Facatativa.png";
 import escudoCundinamarca from "../Images/Facatativa/Escudo Cundinamarca.png";
 import membreteAguachica1 from "../Images/Aguachica/Membrete 1 - Aguachica.png";
+import membreteAguachica2 from '../Images/Aguachica/Membrete 2 - Aguachica.png'
 
 // let alcaldia = "ALCALDIA MUNICIPAL DE MAGANGUE";
 // let alcaldia = "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR";
-// let alcaldia = 'ALCALDIA MUNICIPAL DE ARJONA';
-// let alcaldia = 'ALCALDIA MUNICIPAL DE SAN JACINTO'
-// let alcaldia = 'ALCALDIA MUNICIPAL DE EL PASO'
-// let alcaldia = 'ALCALDIA MUNICIPAL DE SANTA ROSA'
+// let alcaldia = "ALCALDIA MUNICIPAL DE ARJONA";
+// let alcaldia = "ALCALDIA MUNICIPAL DE SAN JACINTO";
+// let alcaldia = "ALCALDIA MUNICIPAL DE EL PASO";
+// let alcaldia = "ALCALDIA MUNICIPAL DE SANTA ROSA";
 // let alcaldia = "ALCALDIA MUNICIPAL DE VILLANUEVA-BOLIVAR";
-let alcaldia = "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI";
+// let alcaldia = "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI";
 // let alcaldia = "ALCALDIA MUNICIPAL DE EL COPEY";
 // let alcaldia = "ALCALDIA MUNICIPAL DE LA PAZ";
 // let alcaldia = "ALCALDIA MUNICIPAL DE RIOHACHA";
 // let alcaldia = "ALCALDIA MUNICIPAL DE TURBACO";
 // let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
-// let alcaldia = "ALCALDIA MUNICIPAL DE AGUACHICA";
+
 
 const bancoFacatativa =
   "BANCO DE LA MICROEMPRESA DE COLOMBIA S.A. (MIBANCO S.A.) - FACATATIVA";
@@ -65,7 +70,7 @@ let NUMERO_TELEFONO = "860025971";
 let TELEFONO_FIJO = "8600259715";
 let PERIODO = "ENERO";
 
-const headerPDF = () => {
+const headerPDF = (alcaldia) => {
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE MAGANGUE":
       return (
@@ -375,7 +380,7 @@ const headerPDF = () => {
   }
 };
 
-const fechasPDF = () => {
+const fechasPDF = (alcaldia) => {
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE FACATATIVA":
       break;
@@ -393,7 +398,7 @@ const fechasPDF = () => {
   }
 };
 
-const mainText = () => {
+const mainText = (alcaldia) => {
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE FACATATIVA":
       return (
@@ -441,7 +446,8 @@ const mainText = () => {
   }
 };
 
-const bodyPDF = () => {
+const bodyPDF = (alcaldia) => {
+
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE FACATATIVA":
       return (
@@ -1099,7 +1105,7 @@ const bodyPDF = () => {
   }
 };
 
-const footerPDF = () => {
+const footerPDF = (alcaldia) => {
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE MAGANGUE":
       return (
@@ -1137,12 +1143,166 @@ const footerPDF = () => {
     case "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR":
       return (
         <View>
-          <View style={{ marginTop: "20px", marginBottom: "10px" }}>
+          <View style={{ marginTop: "40px", marginBottom: "10px" }}>
             <View style={[styles.row, styles.p_center]}>
               <Text style={{}}>DIEGO VEGA</Text>
             </View>
             <View style={[styles.row, styles.p_center]}>
               <Text>SECRETARIO DE HACIENDA</Text>
+            </View>
+          </View>
+          <View style={{ marginTop: "5px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>
+                Dirección: Calle 7 # 9ª-36 Avenida Manuel Antonio Dávila –
+                Teléfono: (095) 7740090
+              </Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>
+                – (095) 7740000 www.sanjuandelcesar-laguajira.gov.co - Email:
+              </Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={[{}]}>
+                alcaldia@sanjuandelcesar-laguajira.gov.co Código Postal: 444030
+              </Text>
+            </View>
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE ARJONA":
+      return (
+        <View>
+          <View
+            style={{
+              marginTop: "40px",
+              marginBottom: "10px",
+            }}
+          >
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>JUAN DAVID ROMERO JURADO</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIO DE HACIENDA</Text>
+            </View>
+          </View>
+          <View style={[styles.row, { justifyContent: "center" }]}>
+            <Image style={[{ width: "320px" }]} src={escudoMenbreteArjona} />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE EL PASO":
+      return (
+        <View>
+          <View
+            style={{
+              marginTop: "40px",
+              marginBottom: "10px",
+            }}
+          >
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>ARISTIDES GUTIERREZ DE PIÑERES</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIO DE HACIENDA</Text>
+            </View>
+          </View>
+          <View style={[styles.row, { justifyContent: "center" }]}>
+            <Image style={[{ width: "320px" }]} src={membreteElPaso2} />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE SAN JACINTO":
+      return (
+        <View>
+          <View
+            style={{
+              marginTop: "40px",
+              marginBottom: "10px",
+            }}
+          >
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>MARIAALEJANDRA MESA BUELVAS</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIO DE HACIENDA</Text>
+            </View>
+          </View>
+          <View style={[styles.row, { justifyContent: "center" }]}>
+            <Image style={[{ width: "280px" }]} src={membreteSanJacinto2} />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE SANTA ROSA":
+      return (
+        <View>
+          <View style={{ marginTop: "60px", marginBottom: "10px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>EDGAR GUERRERO</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIO DE HACIENDA</Text>
+            </View>
+          </View>
+          <View>
+            <View
+              style={[
+                styles.view,
+                { borderTop: "3px solid #00B050", margin: "0px" },
+              ]}
+            ></View>
+            <View
+              style={[
+                styles.view,
+                { borderTop: "6px solid #EA0000", margin: "0px" },
+              ]}
+            ></View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>“Unidos Hacemos Más por Santa Rosa”</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>
+                CALLE 16 Nº 27-71. TEL 6297108. Página web:
+                <Text style={{ textDecoration: "underline" }}>
+                  {" "}
+                  www.santarosadelnorte-bolivar.gov.co
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE VILLANUEVA-BOLIVAR":
+      return (
+        <View>
+          <View
+            style={{
+              marginTop: "20px",
+              marginBottom: "10px",
+            }}
+          >
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>ARTURO MARRUGO</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIO DE HACIENDA</Text>
+            </View>
+          </View>
+          <View style={[styles.row, { justifyContent: "center" }]}>
+            <Image style={[{ width: "280px" }]} src={escudoVillaNueva2} />
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI":
+      return (
+        <View>
+          <View style={{ marginTop: "20px", marginBottom: "10px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>OMAYRA GONZALEZ MONTERO</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIA DE HACIENDA</Text>
             </View>
           </View>
           <View style={{ marginTop: "5px" }}>
@@ -1161,6 +1321,75 @@ const footerPDF = () => {
             </View>
             <View style={[styles.row, styles.p_center]}>
               <Text>Bienestar para Todos</Text>
+            </View>
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE EL COPEY":
+      return (
+        <View>
+          <View style={{ marginTop: "20px", marginBottom: "10px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>IRINA BARRIONUEVO</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIA DE HACIENDA</Text>
+            </View>
+          </View>
+          <View style={{ marginTop: "5px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{ color: "#339966" }}>
+                ¡Una Oportunidad para el Desarrollo¡
+              </Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>
+                El Copey - Cesar, Carrera 16 No. 9 – 10, Teléfonos 5255629 -
+                3216990632
+              </Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>
+                email:{" "}
+                <Text style={[{ textDecoration: "underline" }]}>
+                  contactenos@elcopey-cesar.gov.co
+                </Text>
+              </Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={[{ textDecoration: "underline" }]}>
+                www.elcopeycesar.migobiernodigital.gov.co
+              </Text>
+            </View>
+          </View>
+        </View>
+      );
+    case "ALCALDIA MUNICIPAL DE LA PAZ":
+      return (
+        <View>
+          <View style={{ marginTop: "20px", marginBottom: "10px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>IVAN DARIO MEJIA PEREZ</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIA DE HACIENDA</Text>
+            </View>
+          </View>
+          <View style={{ marginTop: "5px" }}>
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>LA PAZ SOMOS TODOS</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>
+                Palacio Municipal: Cra. 7 No. 8A -09 La Paz Cesar Colombia /
+                Telefax: (095) 5771240
+              </Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>
+                <Text style={[{ textDecoration: "underline" }]}>www.lapazrobles-cesar.gov.co</Text> / E:mail:
+                alcaldia@lapazrobles-cesar.gov.co
+              </Text>
             </View>
           </View>
         </View>
@@ -1232,71 +1461,7 @@ const footerPDF = () => {
           </View>
         </View>
       );
-    case "ALCALDIA MUNICIPAL DE AGUSTIN CODAZZI":
-      return (
-        <View>
-          <View style={{ marginTop: "20px", marginBottom: "10px" }}>
-            <View style={[styles.row, styles.p_center]}>
-              <Text style={{}}>OMAYRA GONZALEZ MONTERO</Text>
-            </View>
-            <View style={[styles.row, styles.p_center]}>
-              <Text>SECRETARIA DE HACIENDA</Text>
-            </View>
-          </View>
-          <View style={{ marginTop: "5px" }}>
-            <View style={[styles.row, styles.p_center]}>
-              <Text style={{}}>
-                Carrera 16 No. 17 - 02. Agustín Codazzi, Cesa
-              </Text>
-            </View>
-            <View style={[styles.row, styles.p_center]}>
-              <Text>Telefono: (57) 5 5765733 - Fax: (57)5 5765733</Text>
-            </View>
-            <View style={[styles.row, styles.p_center]}>
-              <Text style={[{ textDecoration: "underline" }]}>
-                alcaldia@agustincodazzi-cesar.gov.co
-              </Text>
-            </View>
-            <View style={[styles.row, styles.p_center]}>
-              <Text>Bienestar para Todos</Text>
-            </View>
-          </View>
-        </View>
-      );
-    case "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR":
-      return (
-        <View>
-          <View style={{ marginTop: "50px", marginBottom: "10px" }}>
-            <View style={[styles.row, styles.p_center]}>
-              <Text style={{}}>DIEGO VEGA</Text>
-            </View>
-            <View style={[styles.row, styles.p_center]}>
-              <Text>SECRETARIO DE HACIENDA</Text>
-            </View>
-          </View>
-          <View style={{ marginTop: "10px" }}>
-            <View style={[styles.row, styles.p_center]}>
-              <Text style={{}}>
-                Dirección: Calle 7 # 9ª-36 Avenida Manuel Antonio Dávila –
-                Teléfono: (095) 7740090
-              </Text>
-            </View>
-            <View style={[styles.row, styles.p_center]}>
-              <Text>
-                – (095) 7740000 www.sanjuandelcesar-laguajira.gov.co - Email:
-              </Text>
-            </View>
-            <View style={[styles.row, styles.p_center]}>
-              <Text>
-                alcaldia@sanjuandelcesar-laguajira.gov.co Código Postal: 444030
-              </Text>
-            </View>
-            <View style={[styles.row_line, styles.p_center]}>
-              <View style={[styles.line_footer_sanJuanC]}></View>
-            </View>
-          </View>
-        </View>
-      );
+
     case "ALCALDIA MUNICIPAL DE FACATATIVA":
       return (
         <View
@@ -1340,63 +1505,66 @@ const footerPDF = () => {
           </View>
         </View>
       );
+    case 'ALCALDIA MUNICIPAL DE AGUACHICA':
+      return(
+        <View style={[styles.row, {}]}>
+        <View
+          style={{
+            marginTop: "20px",
+            marginBottom: "10px",
+          }}
+        >
+          <View style={[styles.row, styles.p_center]}>
+            <Text style={{}}>EFRÉN TRILLOS PEINADO</Text>
+          </View>
+          <View style={[styles.row, styles.p_center]}>
+            <Text>SECRETARIO DE HACIENDA</Text>
+          </View>
+        </View>
+
+        <View
+          style={[
+            styles.row,
+            { justifyContent: "center", marginTop: "10px" },
+          ]}
+        >
+          <Image style={[{ height: "42px" }]} src={membreteAguachica2} />
+        </View>
+      </View>
+      )
     default:
       return (
-        <View>
-          <View style={{ marginTop: "60px", marginBottom: "10px" }}>
-            <View style={[styles.row, styles.p_center]}>
-              <Text style={{}}>EDGAR GUERRERO</Text>
-            </View>
-            <View style={[styles.row, styles.p_center]}>
-              <Text>SECRETARIO DE HACIENDA</Text>
-            </View>
-          </View>
-          <View>
-            <View
-              style={[
-                styles.view,
-                { borderTop: "3px solid #00B050", margin: "0px" },
-              ]}
-            ></View>
-            <View
-              style={[
-                styles.view,
-                { borderTop: "6px solid #EA0000", margin: "0px" },
-              ]}
-            ></View>
-            <View style={[styles.row, styles.p_center]}>
-              <Text>“Unidos Hacemos Más por Santa Rosa”</Text>
-            </View>
-            <View style={[styles.row, styles.p_center]}>
-              <Text>
-                CALLE 16 Nº 27-71. TEL 6297108. Página web:
-                www.santarosadelnorte-bolivar.gov.co
-              </Text>
-            </View>
-          </View>
+        <View style={styles.row}>
+          <Text style={{ color: "red" }}>
+            NOTA: NO EXISTE PIE DE PÁGINA PARA ESTÁ ALCALDIA. POR FAVOR VERIFICAR CON
+            LOS INGENIEROS DE SISTEMAS
+          </Text>
         </View>
       );
   }
 };
-const PDFFile = () => {
+const PDFFile = ({alcaldia}) => {
+
+  //let alcaldia = "ALCALDIA MUNICIPAL DE AGUACHICA";
+
   return (
     <Document>
       <Page style={styles.body} size="A4">
         <View style={styles.view}>
           {/* FUNTION THAT RETURNS THE HEADER */}
-          {headerPDF()}
+          {headerPDF(alcaldia)}
 
           <View style={[styles.row]}>
             {/* // FECHAS */}
-            {fechasPDF()}
+            {fechasPDF(alcaldia)}
 
             {/* MAIN TEXT */}
-            {mainText()}
+            {mainText(alcaldia)}
 
             {/* PDF BODY */}
-            {bodyPDF()}
+            {bodyPDF(alcaldia)}
 
-            {footerPDF()}
+            {footerPDF(alcaldia)}
           </View>
         </View>
         <Text
