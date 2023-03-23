@@ -150,29 +150,32 @@ export const styles = StyleSheet.create({
 
   col_header_magangue: {
     textAlign: "center",
-    width: "222px",
+    width: "283px",
     border: "1px solid black",
-
+    flexDirection: 'row',
     justifyContent: "center",
   },
 
   col_row_3_magangue: {
-    width: "222px",
-    borderBottom: " 1px solid black",
+    width: "218px",
+    border: " 1px solid black",
+    margin: "1px",
   },
   col_row_3_2_magangue: {
     width: "222px",
   },
   col_header_magangue_small: {
     textAlign: "center",
-    width: "59px",
-    border: "1px solid black",
+    width: "57px",
+    //border: "1px solid black",
     display: "flex",
     justifyContent: "center",
+    margin: '1px'
   },
   col_row_3_magangue_small: {
-    width: "59px",
-    borderBottom: " 1px solid black",
+    width: "55px",
+    border: " 1px solid black",
+    margin: '1px'
   },
 
   col_header_center_magangue: {

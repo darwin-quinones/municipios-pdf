@@ -29,7 +29,7 @@ import escudoFacatativa from "../Images/Facatativa/Escudo Facatativa.png";
 import membreteFacatativa from "../Images/Facatativa/Membrete Facatativa.png";
 import escudoCundinamarca from "../Images/Facatativa/Escudo Cundinamarca.png";
 import membreteAguachica1 from "../Images/Aguachica/Membrete 1 - Aguachica.png";
-import membreteAguachica2 from '../Images/Aguachica/Membrete 2 - Aguachica.png'
+import membreteAguachica2 from "../Images/Aguachica/Membrete 2 - Aguachica.png";
 
 // let alcaldia = "ALCALDIA MUNICIPAL DE MAGANGUE";
 // let alcaldia = "ALCALDIA MUNICIPAL DE SAN JUAN DEL CESAR";
@@ -44,7 +44,6 @@ import membreteAguachica2 from '../Images/Aguachica/Membrete 2 - Aguachica.png'
 // let alcaldia = "ALCALDIA MUNICIPAL DE RIOHACHA";
 // let alcaldia = "ALCALDIA MUNICIPAL DE TURBACO";
 // let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
-
 
 const bancoFacatativa =
   "BANCO DE LA MICROEMPRESA DE COLOMBIA S.A. (MIBANCO S.A.) - FACATATIVA";
@@ -78,7 +77,55 @@ const headerPDF = (alcaldia) => {
           <View style={styles.col_lg_3}>
             <Image style={styles.img} src={escudoMagangue} />
           </View>
-          <View style={[styles.col_header_magangue]}>
+
+          <View
+            style={[
+              styles.col_header_magangue,
+              { marginRight: "1px", marginLeft: "1px" },
+            ]}
+          >
+            <View
+              style={[
+                { margin: "1px", width: "220px" },
+              ]}
+            >
+              <View style={[styles.col_row_3_magangue, {height: '27px', }]}>
+                <Text style={{ fontSize: "9px", marginTop: 4 }}>
+                  ALCALDIA MUNICIPAL DE MAGANGUE
+                </Text>
+                <Text style={{ fontSize: "9px" }}>NIT 8000284322</Text>
+              </View>
+
+              <View style={[styles.col_row_3_magangue]}>
+                <Text style={{ fontSize: "9px", padding: 2 }}>
+                  LIQUIDACIÓN IMPUESTO ALUMBRADO PÚBLICO
+                </Text>
+              </View>
+              <View style={[styles.col_row_3_magangue]}>
+                <Text style={{ fontSize: "9px", padding: 2}}>
+                  SECRETARÍA DE HACIENDA MUNICIPAL
+                </Text>
+              </View>
+            </View>
+
+            {/* SEGUNDO */}
+
+            <View style={[styles.col_header_magangue_small]}>
+              <View style={[styles.col_row_3_magangue_small, {height: '26px',}]}>
+                <Text style={{ fontSize: "7px", marginTop: 4 }}>Vigencia:</Text>
+                <Text style={{ fontSize: "7px" }}>01/08/2018</Text>
+              </View>
+
+              <View style={[styles.col_row_3_magangue_small]}>
+                <Text style={{ fontSize: "7px" , padding: 3}}> </Text>
+              </View>
+              <View style={[styles.col_row_3_magangue_small]}>
+                <Text style={{ fontSize: "7px", padding: 3 }}>Versión: 01</Text>
+              </View>
+            </View>
+          </View>
+
+          {/* <View style={[styles.col_header_magangue]}>
             <View style={[styles.col_row_3_magangue]}>
               <Text style={{ fontSize: "9px" }}>
                 ALCALDIA MUNICIPAL DE MAGANGUE
@@ -96,8 +143,8 @@ const headerPDF = (alcaldia) => {
                 SECRETARÍA DE HACIENDA MUNICIPAL
               </Text>
             </View>
-          </View>
-          <View style={[styles.col_header_magangue_small]}>
+          </View> */}
+          {/* <View style={[styles.col_header_magangue_small]}>
             <View style={[styles.col_row_3_magangue_small]}>
               <Text style={{ fontSize: "9px" }}>Vigencia:</Text>
               <Text style={{ fontSize: "9px" }}>01/08/2018</Text>
@@ -109,7 +156,7 @@ const headerPDF = (alcaldia) => {
             <View style={{ width: "59px" }}>
               <Text style={{ fontSize: "9px" }}>Versión: 01</Text>
             </View>
-          </View>
+          </View> */}
 
           <View style={styles.col_lg_3}>
             <Image style={styles.img} src={escudoColombia} />
@@ -447,7 +494,6 @@ const mainText = (alcaldia) => {
 };
 
 const bodyPDF = (alcaldia) => {
-
   switch (alcaldia) {
     case "ALCALDIA MUNICIPAL DE FACATATIVA":
       return (
@@ -1387,8 +1433,10 @@ const footerPDF = (alcaldia) => {
             </View>
             <View style={[styles.row, styles.p_center]}>
               <Text>
-                <Text style={[{ textDecoration: "underline" }]}>www.lapazrobles-cesar.gov.co</Text> / E:mail:
-                alcaldia@lapazrobles-cesar.gov.co
+                <Text style={[{ textDecoration: "underline" }]}>
+                  www.lapazrobles-cesar.gov.co
+                </Text>{" "}
+                / E:mail: alcaldia@lapazrobles-cesar.gov.co
               </Text>
             </View>
           </View>
@@ -1505,46 +1553,45 @@ const footerPDF = (alcaldia) => {
           </View>
         </View>
       );
-    case 'ALCALDIA MUNICIPAL DE AGUACHICA':
-      return(
+    case "ALCALDIA MUNICIPAL DE AGUACHICA":
+      return (
         <View style={[styles.row, {}]}>
-        <View
-          style={{
-            marginTop: "20px",
-            marginBottom: "10px",
-          }}
-        >
-          <View style={[styles.row, styles.p_center]}>
-            <Text style={{}}>EFRÉN TRILLOS PEINADO</Text>
+          <View
+            style={{
+              marginTop: "20px",
+              marginBottom: "10px",
+            }}
+          >
+            <View style={[styles.row, styles.p_center]}>
+              <Text style={{}}>EFRÉN TRILLOS PEINADO</Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <Text>SECRETARIO DE HACIENDA</Text>
+            </View>
           </View>
-          <View style={[styles.row, styles.p_center]}>
-            <Text>SECRETARIO DE HACIENDA</Text>
-          </View>
-        </View>
 
-        <View
-          style={[
-            styles.row,
-            { justifyContent: "center", marginTop: "10px" },
-          ]}
-        >
-          <Image style={[{ height: "42px" }]} src={membreteAguachica2} />
+          <View
+            style={[
+              styles.row,
+              { justifyContent: "center", marginTop: "10px" },
+            ]}
+          >
+            <Image style={[{ height: "42px" }]} src={membreteAguachica2} />
+          </View>
         </View>
-      </View>
-      )
+      );
     default:
       return (
         <View style={styles.row}>
           <Text style={{ color: "red" }}>
-            NOTA: NO EXISTE PIE DE PÁGINA PARA ESTÁ ALCALDIA. POR FAVOR VERIFICAR CON
-            LOS INGENIEROS DE SISTEMAS
+            NOTA: NO EXISTE PIE DE PÁGINA PARA ESTÁ ALCALDIA. POR FAVOR
+            VERIFICAR CON LOS INGENIEROS DE SISTEMAS
           </Text>
         </View>
       );
   }
 };
-const PDFFile = ({alcaldia}) => {
-
+const PDFFile = ({ alcaldia }) => {
   //let alcaldia = "ALCALDIA MUNICIPAL DE AGUACHICA";
 
   return (
