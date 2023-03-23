@@ -72,19 +72,19 @@ export const styles = StyleSheet.create({
   },
   col_header_santaR: {
     textAlign: "center",
-    width: "285px",
+    width: "283px",
     border: "1px solid black",
     display: "flex",
     justifyContent: "center",
     flexWrap: "wrap",
   },
   col_row_3: {
-    width: "285px",
+    width: "282px",
     borderBottom: " 1px solid black",
     flexWrap: "wrap",
   },
   col_row_3_2: {
-    width: "285px",
+    width: "282px",
     flexWrap: "wrap",
   },
 

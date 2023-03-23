@@ -30,8 +30,9 @@ const SelectFile = () => {
         <option>ALCALDIA MUNICIPAL DE EL COPEY</option>
         <option>ALCALDIA MUNICIPAL DE LA PAZ</option>
         <option>ALCALDIA MUNICIPAL DE RIOHACHA</option>
-        <option>LCALDIA MUNICIPAL DE TURBACO</option>
+        <option>ALCALDIA MUNICIPAL DE TURBACO</option>
         <option>ALCALDIA MUNICIPAL DE FACATATIVA</option>
+        <option>ALCALDIA MUNICIPAL DE AGUACHICA</option>
       </select>
       {/* PDF */}
       <div style={{ minHeight: "100vh" }}>

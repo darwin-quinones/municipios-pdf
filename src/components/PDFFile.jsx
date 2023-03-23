@@ -84,12 +84,8 @@ const headerPDF = (alcaldia) => {
               { marginRight: "1px", marginLeft: "1px" },
             ]}
           >
-            <View
-              style={[
-                { margin: "1px", width: "220px" },
-              ]}
-            >
-              <View style={[styles.col_row_3_magangue, {height: '27px', }]}>
+            <View style={[{ margin: "1px", width: "220px" }]}>
+              <View style={[styles.col_row_3_magangue, { height: "27px" }]}>
                 <Text style={{ fontSize: "9px", marginTop: 4 }}>
                   ALCALDIA MUNICIPAL DE MAGANGUE
                 </Text>
@@ -102,7 +98,7 @@ const headerPDF = (alcaldia) => {
                 </Text>
               </View>
               <View style={[styles.col_row_3_magangue]}>
-                <Text style={{ fontSize: "9px", padding: 2}}>
+                <Text style={{ fontSize: "9px", padding: 2 }}>
                   SECRETARÍA DE HACIENDA MUNICIPAL
                 </Text>
               </View>
@@ -111,13 +107,15 @@ const headerPDF = (alcaldia) => {
             {/* SEGUNDO */}
 
             <View style={[styles.col_header_magangue_small]}>
-              <View style={[styles.col_row_3_magangue_small, {height: '26px',}]}>
+              <View
+                style={[styles.col_row_3_magangue_small, { height: "26px" }]}
+              >
                 <Text style={{ fontSize: "7px", marginTop: 4 }}>Vigencia:</Text>
                 <Text style={{ fontSize: "7px" }}>01/08/2018</Text>
               </View>
 
               <View style={[styles.col_row_3_magangue_small]}>
-                <Text style={{ fontSize: "7px" , padding: 3}}> </Text>
+                <Text style={{ fontSize: "7px", padding: 3 }}> </Text>
               </View>
               <View style={[styles.col_row_3_magangue_small]}>
                 <Text style={{ fontSize: "7px", padding: 3 }}>Versión: 01</Text>
@@ -217,10 +215,10 @@ const headerPDF = (alcaldia) => {
     case "ALCALDIA MUNICIPAL DE SANTA ROSA":
       return (
         <View style={styles.row}>
-          <View style={styles.col_lg_3}>
+          <View style={[styles.col_lg_3, { marginRight: 1 }]}>
             <Image style={styles.img} src={escudoColombia} />
           </View>
-          <View style={[styles.col_header_santaR]}>
+          <View style={[styles.col_header_santaR, { marginRight: 1 }]}>
             <View style={[styles.col_row_3]}>
               <Text style={[styles.color_text_row]}>REPÚBLICA DE COLOMBIA</Text>
             </View>
@@ -230,7 +228,7 @@ const headerPDF = (alcaldia) => {
               </Text>
             </View>
             <View style={[styles.col_row_3_2]}>
-              <Text style={[styles.main_text]}>
+              <Text style={[styles.main_text, { marginTop: 3 }]}>
                 ALCALDIA MUNICIPAL DE SANTA ROSA
               </Text>
               <Text style={[styles.main_text]}>NIT 8904813433</Text>
@@ -306,21 +304,23 @@ const headerPDF = (alcaldia) => {
     case "ALCALDIA MUNICIPAL DE EL COPEY":
       return (
         <View style={styles.row}>
-          <View style={styles.col_lg_3}>
+          <View style={[styles.col_lg_3, { marginRight: 1 }]}>
             <Image style={styles.img} src={escudoElCopey1} />
           </View>
-          <View style={[styles.col_header_copey]}>
+          <View style={[styles.col_header_copey, { marginRight: 1 }]}>
             <View style={[{ borderBottom: " 1px solid black", color: "red" }]}>
-              <Text style={{ fontSize: "10px" }}>RÉPUBLICA DE COLOMBIA</Text>
+              <Text style={{ fontSize: "12px", marginBottom: 2 }}>
+                RÉPUBLICA DE COLOMBIA
+              </Text>
             </View>
             <View style={[{ borderBottom: " 1px solid black", color: "red" }]}>
-              <Text style={{ fontSize: "10px" }}>DEPARTAMENTO DEL CESAR</Text>
+              <Text style={{ fontSize: "12px" }}>DEPARTAMENTO DEL CESAR</Text>
             </View>
             <View style={[{}]}>
-              <Text style={{ fontSize: "10px" }}>
+              <Text style={{ fontSize: "12px", marginTop: 3 }}>
                 ALCALDIA MUNICIPAL DE EL COPEY{" "}
               </Text>
-              <Text style={{ fontSize: "10px" }}>NIT 8000965875</Text>
+              <Text style={{ fontSize: "12px" }}>NIT 8000965875</Text>
             </View>
           </View>
 
@@ -332,10 +332,10 @@ const headerPDF = (alcaldia) => {
     case "ALCALDIA MUNICIPAL DE LA PAZ":
       return (
         <View style={styles.row}>
-          <View style={styles.col_lg_3}>
+          <View style={[styles.col_lg_3, { marginRight: 1 }]}>
             <Image style={styles.img} src={escudoLaPaz} />
           </View>
-          <View style={[styles.col_header_laPaz]}>
+          <View style={[styles.col_header_laPaz, { marginRight: 1 }]}>
             <View style={[styles.col_header_laPaz_small2]}>
               <Text style={{ fontSize: "12px" }}>
                 ALCALDIA MUNICIPAL DE LA PAZ
@@ -458,11 +458,12 @@ const mainText = (alcaldia) => {
               fontSize: "10.5px",
             }}
           >
-            La Secretaría de Hacienda del Municipio de SANTA ROSA, en uso de las
-            atribuciones conferidas por los artículos 684, 686, 688 del Estatuto
-            Tributario Nacional y El ACUERDO MUNICIPAL 015 DE 2007 por medio del
-            cual se actualiza el Estatuto Tributario Municipal, expide la
-            presente Liquidación Oficial del impuesto de Alumbrado Público:
+            La Secretaría de Hacienda del Municipio de Facatativá Cundinamarca,
+            en uso de las atribuciones conferidas por los artículos 684, 686,
+            688 del Estatuto Tributario Nacional y El Acuerdo Municipal 007 de
+            2018 por medio del cual se actualiza el Estatuto Tributario
+            Municipal, Expide la presente Liquidación Oficial del impuesto de
+            Alumbrado Público:
           </Text>
         </View>
       );
@@ -1168,7 +1169,7 @@ const footerPDF = (alcaldia) => {
             <View style={[styles.row, styles.p_center]}>
               <Text style={{}}>"Magangué educada, comunal e incluyente"</Text>
             </View>
-            <View style={[styles.row, styles.p_center]}>
+            <View style={[styles.p_center]}>
               <View style={[styles.line_footer_magangue]}></View>
             </View>
             <View style={[styles.row, styles.p_center]}>
@@ -1180,7 +1181,7 @@ const footerPDF = (alcaldia) => {
             <View style={[styles.row, styles.p_center]}>
               <Text>Teléfono: 6877720 - 6876020</Text>
             </View>
-            <View style={[styles.row_line, styles.p_center]}>
+            <View style={[styles.p_center]}>
               <View style={[styles.line_footer_magangue]}></View>
             </View>
           </View>
@@ -1213,6 +1214,11 @@ const footerPDF = (alcaldia) => {
               <Text style={[{}]}>
                 alcaldia@sanjuandelcesar-laguajira.gov.co Código Postal: 444030
               </Text>
+            </View>
+            <View style={[styles.row, styles.p_center]}>
+              <View
+                style={{ width: "350px", border: "1px solid #C4C4C4" }}
+              ></View>
             </View>
           </View>
         </View>
