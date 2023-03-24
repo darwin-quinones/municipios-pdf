@@ -7,6 +7,7 @@ import VistaWeb from "./components/VistaWeb";
 import { PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
 import PdfEjemplo from "./components/pdfEjemplo";
 import SelectFile from "./components/selectFile";
+import PDFActasInterventorias from "./components/PDFActasInterventorias";
 
 
 
@@ -16,7 +17,21 @@ import SelectFile from "./components/selectFile";
 function App() {
 
   return (
-    <SelectFile/>
+
+
+
+    <div style={{minHeight: "100vh"}}>
+  
+
+      <PDFViewer style={{width: "100%", height: "90vh"}}>
+        <PDFActasInterventorias/>
+      </PDFViewer>
+    </div>
+
+    //<SelectFile/>
+
+
+
     // <div style={{minHeight: "100vh"}}>
     // {/* <PDFViewer width="1000" height="600">
 
