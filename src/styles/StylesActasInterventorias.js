@@ -40,4 +40,14 @@ export const styles = StyleSheet.create({
         // border: "1px solid black",
         width: "505px",
       },
+      row: {
+        display: "flex",
+        
+        flexWrap: "wrap",
+      
+        flexDirection: "row",
+        paddingTop: 4,
+     
+        width: "505px",
+      },
 });
