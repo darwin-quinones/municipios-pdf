@@ -7,8 +7,8 @@ import {
   StyleSheet,
   View,
 } from "@react-pdf/renderer";
-import escudoColombia from "../img/EscudoColombia.png";
-import escudoSantaRosa from "../img/EscudoSantaRosa.png";
+import escudoColombia from "../Images/Santa Rosa/Escudo Colombia.png";
+import escudoSantaRosa from "../Images/Santa Rosa/Escudo Santa Rosa.png";
 
 // const styles = StyleSheet.create({
 //   body: {

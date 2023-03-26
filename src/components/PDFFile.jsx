@@ -1,8 +1,8 @@
 import React from "react";
 import { Page, Image, Text, Document, View, Note } from "@react-pdf/renderer";
 import { styles } from "./StylosFacturacionMunicipios";
-import escudoColombia from "../img/EscudoColombia.png";
-import escudoSantaRosa from "../img/EscudoSantaRosa.png";
+import escudoColombia from "../Images/Santa Rosa/Escudo Colombia.png";
+import escudoSantaRosa from "../Images/Santa Rosa/Escudo Santa Rosa.png";
 import escudoMagangue from "../Images/Magangue/Escudo Magangue.png";
 import escudoSanJuanCesar from "../Images/San Juan del Cesar/Escudo San Juan del Cesar.png";
 import escudoAlcaldiaSanJuanCesar from "../Images/San Juan del Cesar/Escudo Alcaldia.png";
