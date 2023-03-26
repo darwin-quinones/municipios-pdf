@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         paddingTop: 35,
         paddingBottom: 65,
         paddingHorizontal: 45,
-        fontSize: 9,
+        fontSize: 10,
       },
       title: {
         fontSize: 24,
@@ -42,12 +42,30 @@ export const styles = StyleSheet.create({
       },
       row: {
         display: "flex",
-        
         flexWrap: "wrap",
-      
         flexDirection: "row",
         paddingTop: 4,
-     
         width: "505px",
       },
+
+      table_row_left: {
+        flexDirection: "row",
+        border: "1px solid black",
+        borderBottom: 0,
+        width: 70,
+        justifyContent: "center",
+        
+      },
+      table_row_right: {
+        flexDirection: "row",
+        borderTop: "1px solid black",
+        borderRight: "1px solid black",
+        textAlign: "left",
+        width: 433,
+        padding: "10px",
+      },
+     center_text: {
+      marginTop: '15%'
+     }
+      
 });
