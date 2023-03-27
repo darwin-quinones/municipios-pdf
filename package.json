@@ -9,7 +9,11 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@types/file-saver": "^2.0.1",
     "bootstrap": "^5.2.3",
+    "buffer": "^6.0.3",
+    "docx": "^8.0.1",
+    "fs": "^0.0.1-security",
     "react": "^17.0.2",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^17.0.2",
@@ -18,7 +22,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
- 
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -46,5 +49,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
+  },
+  "node": {
+    "fs": false,
+    "Buffer": false
+  },
+  "devDependencies": {
+    "html-loader": "^4.2.0"
   }
 }
