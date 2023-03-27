@@ -26,9 +26,10 @@ function App() {
       <PDFViewer style={{width: "100%", height: "90vh"}}>
         <PDFActasInterventorias/>
       </PDFViewer>
+      <SelectFile/>
     </div>
 
-    //<SelectFile/>
+    
 
 
 

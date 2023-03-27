@@ -1,6 +1,6 @@
 import React from "react";
-import { Page, Image, Text, Document, View, Note } from "@react-pdf/renderer";
-import { styles } from "./StylosFacturacionMunicipios";
+import { Page, Image, Text, Document, View,} from "@react-pdf/renderer";
+import { styles } from "../styles/StylosFacturacionMunicipios";
 import escudoColombia from "../Images/Santa Rosa/Escudo Colombia.png";
 import escudoSantaRosa from "../Images/Santa Rosa/Escudo Santa Rosa.png";
 import escudoMagangue from "../Images/Magangue/Escudo Magangue.png";

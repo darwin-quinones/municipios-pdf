@@ -1,16 +1,6 @@
 import React from "react";
 import { StyleSheet, Font } from "@react-pdf/renderer";
-import fontCabin from "../font/Cabin.ttf";
-import cabinBold from "../font/Cabin-Bold.ttf";
-Font.register({
-  family: "Cabin",
-  fonts: [
-    {
-      src: cabinBold,
-      fontWeight: "bold",
-    },
-  ],
-});
+
 export const styles = StyleSheet.create({
   // Estilos Santa rosa
   body: {
@@ -49,18 +39,13 @@ export const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    // border: "1px solid black",
     width: "505px",
   },
   row: {
     display: "flex",
-    // -ms-flex-wrap: wrap,
     flexWrap: "wrap",
-    // marginRight: "-15px",
-    // marginLeft: "-15px",
     flexDirection: "row",
     paddingTop: 4,
-    // paddingBottom: 8,
     width: "505px",
   },
   row_line: {
@@ -189,15 +174,11 @@ export const styles = StyleSheet.create({
     width: "350px",
     border: "1px solid #C4C4C4",
   },
-  // style={[
-  //   styles.view,
-  //   { borderTop: "3px solid #C4C4C4", margin: "0px" },
-  // ]}
+ 
   //   Estilos de San juan del cesar
   col_img_header_sanJuanC: {
     width: "100px",
     height: "70px",
-    //border: "1px solid black",
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
@@ -288,7 +269,6 @@ export const styles = StyleSheet.create({
   col_footer_facatativa: {
     width: "250px",
     height: "50px",
-    //border: "1px solid black",
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
