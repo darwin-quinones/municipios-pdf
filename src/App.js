@@ -8,7 +8,7 @@ import { PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
 import PdfEjemplo from "./components/pdfEjemplo";
 import SelectFile from "./components/selectFile";
 import PDFActasInterventorias from "./components/PDFActasInterventorias";
-import WordActasInterventorias from "./components/wordFile/WordActasInterventorias";
+
 
 
 
@@ -20,15 +20,15 @@ function App() {
   return (
 
 
-     <WordActasInterventorias/>
-    // <div style={{minHeight: "100vh"}}>
+    //  <WordActasInterventorias/>
+    <div style={{minHeight: "100vh"}}>
   
 
-    //   <PDFViewer style={{width: "100%", height: "90vh"}}>
-    //     <PDFActasInterventorias/>
-    //   </PDFViewer>
-    //   <SelectFile/>
-    // </div>
+      <PDFViewer style={{width: "100%", height: "90vh"}}>
+        <PDFActasInterventorias/>
+      </PDFViewer>
+      <SelectFile/>
+    </div>
 
     
 
