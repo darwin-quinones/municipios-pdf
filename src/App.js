@@ -22,15 +22,16 @@ function App() {
   return (
 
 
+    
+    <div style={{minHeight: "100vh"}}>
     <WordActasInterventorias/>
-    // <div style={{minHeight: "100vh"}}>
   
 
-    //   <PDFViewer style={{width: "100%", height: "90vh"}}>
-    //     <PDFActasInterventorias/>
-    //   </PDFViewer>
-    //   <SelectFile/>
-    // </div>
+      <PDFViewer style={{width: "100%", height: "90vh"}}>
+        <PDFActasInterventorias/>
+      </PDFViewer>
+      <SelectFile/>
+    </div>
 
     
 
