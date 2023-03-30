@@ -11,6 +11,8 @@ import PDFActasInterventorias from "./components/PDFActasInterventorias";
 
 import { WordActasInterventorias }   from "./components/wordFile/WordActasInterventorias.tsx";
 import ExcelActasInterventorias from "./components/excelFile/ExcelActasInterventorias";
+import ExcelReporteOperadoresRedPeriodo from "./components/excelFile/ExcelReporteOperadoresRedPeriodo";
+import ExcelReporteComercializadores from "./components/excelFile/ExcelReporteComercializadores";
 
 
 
@@ -25,6 +27,8 @@ function App() {
 
     
     <div style={{minHeight: "100vh"}}>
+    <ExcelReporteComercializadores/>
+    <ExcelReporteOperadoresRedPeriodo/>
     <ExcelActasInterventorias />
     <WordActasInterventorias/>
   
