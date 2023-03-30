@@ -10,6 +10,7 @@ import SelectFile from "./components/selectFile";
 import PDFActasInterventorias from "./components/PDFActasInterventorias";
 
 import { WordActasInterventorias }   from "./components/wordFile/WordActasInterventorias.tsx";
+import ExcelActasInterventorias from "./components/excelFile/ExcelActasInterventorias";
 
 
 
@@ -24,6 +25,7 @@ function App() {
 
     
     <div style={{minHeight: "100vh"}}>
+    <ExcelActasInterventorias />
     <WordActasInterventorias/>
   
 
