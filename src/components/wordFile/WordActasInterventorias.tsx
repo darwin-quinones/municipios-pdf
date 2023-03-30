@@ -4,8 +4,6 @@ import { Document, Packer, Paragraph, TextRun, Table, TableCell, TableRow, Image
 
 
 import { saveAs } from "file-saver";
-import { experiences, education, skills, achievements } from "./cv-data.ts";
-import { DocumentCreator } from "./cv-generator.ts";
 import * as fs from "fs";
 import { Children } from "react";
 interface AppProps { }
