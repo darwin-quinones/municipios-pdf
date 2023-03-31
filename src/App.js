@@ -13,6 +13,8 @@ import { WordActasInterventorias }   from "./components/wordFile/WordActasInterv
 import ExcelActasInterventorias from "./components/excelFile/ExcelActasInterventorias";
 import ExcelReporteOperadoresRedPeriodo from "./components/excelFile/ExcelReporteOperadoresRedPeriodo";
 import ExcelReporteComercializadores from "./components/excelFile/ExcelReporteComercializadores";
+import ExcelReporteClientesEspeciales from "./components/excelFile/ExcelReporteClientesEspeciales";
+import ExcelReporteMunicipales from "./components/excelFile/ExcelReporteMunicipales";
 
 
 
@@ -27,6 +29,8 @@ function App() {
 
     
     <div style={{minHeight: "100vh"}}>
+    <ExcelReporteMunicipales/>
+    <ExcelReporteClientesEspeciales/>
     <ExcelReporteComercializadores/>
     <ExcelReporteOperadoresRedPeriodo/>
     <ExcelActasInterventorias />
