@@ -45,6 +45,9 @@ import membreteAguachica2 from "../Images/Aguachica/Membrete 2 - Aguachica.png";
 // let alcaldia = "ALCALDIA MUNICIPAL DE TURBACO";
 // let alcaldia = "ALCALDIA MUNICIPAL DE FACATATIVA";
 
+// facturacion de municipios
+
+
 const bancoFacatativa =
   "BANCO DE LA MICROEMPRESA DE COLOMBIA S.A. (MIBANCO S.A.) - FACATATIVA";
 const DIRECCION_CONTRIBUYENTE = "CRA. 2 NO. 7 - 120";

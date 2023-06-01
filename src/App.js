@@ -8,7 +8,7 @@ import { PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
 import PdfEjemplo from "./components/pdfEjemplo";
 import SelectFile from "./components/selectFile";
 import PDFActasInterventorias from "./components/PDFActasInterventorias";
-
+import { WordCartaCobroPersuasivo } from "./components/wordFile/WordCartaCobroPersuasivo.tsx";
 import { WordActasInterventorias }   from "./components/wordFile/WordActasInterventorias.tsx";
 import ExcelActasInterventorias from "./components/excelFile/ExcelActasInterventorias";
 import ExcelReporteOperadoresRedPeriodo from "./components/excelFile/ExcelReporteOperadoresRedPeriodo";
@@ -29,18 +29,19 @@ function App() {
 
     
     <div style={{minHeight: "100vh"}}>
-    <ExcelReporteMunicipales/>
+    {/* <ExcelReporteMunicipales/>
     <ExcelReporteClientesEspeciales/>
     <ExcelReporteComercializadores/>
     <ExcelReporteOperadoresRedPeriodo/>
-    <ExcelActasInterventorias />
-    <WordActasInterventorias/>
+    <ExcelActasInterventorias /> */}
+    <WordCartaCobroPersuasivo/> 
+    {/* <WordActasInterventorias/>
   
 
       <PDFViewer style={{width: "100%", height: "90vh"}}>
         <PDFActasInterventorias/>
       </PDFViewer>
-      <SelectFile/>
+      <SelectFile/> */}
     </div>
 
     

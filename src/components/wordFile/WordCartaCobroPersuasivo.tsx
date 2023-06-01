@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { Document, Packer, Paragraph, TextRun, Table, TableCell, TableRow, ImageRun, BorderStyle, VerticalAlign, AlignmentType, Spacing, Indent, PageBreak } from "../../../node_modules/docx/build";
+import { Document, Packer, Paragraph, TextRun, Table, TableCell, TableRow, ImageRun, BorderStyle, VerticalAlign, AlignmentType, Spacing, Indent, PageBreak, Alignment } from "docx";
 
 
 import { saveAs } from "file-saver";
@@ -18,7 +18,7 @@ async function urlToBlob(url) {
     return blob;
 }
 
-export const WordActasInterventorias = class WordActasInterventorias extends Component<AppProps, AppState> {
+export const WordCartaCobroPersuasivo = class WordCartaCobroPersuasivo extends Component<AppProps, AppState> {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,32 +35,58 @@ export const WordActasInterventorias = class WordActasInterventorias extends Com
                 {
                     properties: {},
                     children: [
+                        // new Paragraph({
+                        //     children: [
+                        //         new ImageRun({
+                        //             data: urlToBlob('https://i.imgur.com/2Z2WySD.png'),
+                        //             transformation: {
+                        //                 width: 100,
+                        //                 height: 100,
+                        //             },
+                        //         }),
+                        //     ],
+                        // }),
                         new Paragraph({
                             children: [
-                                new ImageRun({
-                                    data: urlToBlob('https://i.imgur.com/2Z2WySD.png'),
-                                    transformation: {
-                                        width: 100,
-                                        height: 100,
-                                    },
-                                }),
+                                new TextRun({ text: `SANTA ROSA, 01 de junio del 2023`, break: 1 }),
+                                new TextRun({ text: `Señores:`, break: 2, bold: true }),
+                                new TextRun({ text: `interconexion ELECTRICA S.A. E.S.P.`, allCaps: true, break: 1 }),
+                                new TextRun({ text: `NIT o CC 8600166103`, break: 1, }),
+                                new TextRun({ text: `Dirección: calle 000 # 111`, break: 1 }),
                             ],
                         }),
                         new Paragraph({
+                            children: [new TextRun({ text: `Aviso único de cobro persuasivo`, color: '#FF0000'})], alignment: AlignmentType.END,
+                        }),
+                        new Paragraph({
+                            children: [new TextRun({ text: `Cordial saludo,` }),]
+                        }),
+                        new Paragraph({
                             children: [
-                                new TextRun({ text: `Arjona, 20 De Julio De 2022`, break: 1 }),
-                                new TextRun({ text: `Señores:`, break: 3 }),
-                                new TextRun({ text: `MUNICIPIO DE ARJONA`, break: 1, bold: true, }),
-                                new TextRun({ text: `Att: SUPERVISOR CONTRATO DE CONCESIÓN ALUMBRADO PÚBLICO`, break: 1, }),
-                                new TextRun({ text: `Bolivar - Arjona`, break: 1 }),
-                                new TextRun({ text: `ASUNTO:`, bold: true, break: 1 }),
-                                new TextRun({ text: ` ENTREGA DE INFORME MES `, }),
-                                new TextRun({ text: `JUNIO 2022`, bold: true, }),
-                                new TextRun({ text: `Cordial saludo,`, break: 3 }),
-                                new TextRun({ text: `En nuestra calidad de Concesionario nos permitimos remitir la información correspondiente a la gestión adelantada en el periodo de: `, break: 2 }),
-                                new TextRun({ text: `Junio 2022`, bold: true, }),
-                                new TextRun({ text: ` `, break: 2, }),
-                            ],
+                                new TextRun({ break: 1, text: `Apreciado contribuyente, con el cumplimiento del pago del IMPUESTO DE ALUMBRADO PUBLICO, es posible generar inversiones en infraestructura y operación del servicio de alumbrado público, le invitamos a hacer parte del `}),
+                                new TextRun({ text: `PLAN DE NORMALIZACIÓN DE CARTERA.`, bold: true}),
+                            ],alignment: AlignmentType.JUSTIFIED
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({break: 1, text: `Es nuestro deber informarle que, ante el incumplimiento de las obligaciones tributarias sustanciales, el Municipio se encuentra obligado a adelantar el `, size: 30 }),
+                                new TextRun({text: `PROCEDIMIENTO ADMINISTRATIVO DE COBRO COACTIVO `, color: '#FF0000', size: 30}),
+                                new TextRun({ text: `para la recuperación de la cartera vencida del Impuesto de Alumbrado Público.`, size: 24, font: 'Arial Narrow'}),
+                            ],alignment: AlignmentType.JUSTIFIED, 
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({ break: 1, text: `En virtud de lo anterior, el municipio se encuentra facultado para la aplicación de medidas cautelares tales como: ` }),
+                                new TextRun({ text: `EMBARGO DE DINERO, SECUESTRO DE BIENES Y POSTERIOR REMATE DE TODO TIPO`, color: '#FF0000'}),
+                                new TextRun({ text: `, muebles e inmuebles, así como disponer de los depósitos de las cuentas bancarias, títulos valores, acciones en sociedades, cuotas sociales, etc. Adicionalmente el Municipio se verá obligado a reportarlo al `}),
+                                new TextRun({ text: `boletín de deudores morosos de la Contaduría General de la Nación, `, bold: true}),
+                                new TextRun({ text: `reporte que lo inhabilitaría en Entidades Financieras, contratación o vinculación con el Estado Colombiano. `,}),
+                            ], alignment: AlignmentType.JUSTIFIED,
+                        }),
+                        new Paragraph({
+                            children: [
+                                new TextRun({ break:1, text: `Una vez verificado en nuestras bases de datos, se detectó que, a la fecha, presenta mora en el pago de su(s) obligación(es), correspondientes al Impuesto de Alumbrado Público e intereses moratorios, sobre los períodos que a continuación se relacionan: ` }),
+                            ], alignment: AlignmentType.JUSTIFIED
                         }),
                         //  FINAL PARRAFOS DEL ENCABEZADO
 
@@ -544,7 +570,7 @@ export const WordActasInterventorias = class WordActasInterventorias extends Com
 
         Packer.toBlob(doc).then(blob => {
             console.log(blob);
-            saveAs(blob, "Actas de interventoria.docx");
+            saveAs(blob, "Carta cobro persuasivo.docx");
             console.log("Document created successfully");
         });
     }
@@ -554,7 +580,7 @@ export const WordActasInterventorias = class WordActasInterventorias extends Com
             <div>
 
                 <p>
-                    Actas de interventoria docx :)
+                    Carta Cobro Persuasivo docx :)
                     <button onClick={this.generate}>Generate docx!</button>
                 </p>
             </div>
